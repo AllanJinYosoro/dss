@@ -7,296 +7,423 @@ so the rest of the system can run on prebuilt or externally supplied datasets.
 
 from __future__ import annotations
 
+import os
 from datetime import date, timedelta
-from math import sin, tau
+from math import sin, pi
 from pathlib import Path
-from random import Random
-from typing import Iterable, List, Tuple
-
+from random import Random, uniform, choice, choices, randint, random
+from typing import List, Tuple, Dict, Optional
 import numpy as np
 import pandas as pd
 
-from .config import GENDERS, LANGUAGES, RACES, REGIONS, SERVICE_TYPES, SimulationConfig, SPECIALTIES
+from .config import GENDERS, LANGUAGES, RACES, REGIONS, SERVICE_TYPES, AGE_GROUPS,NO_SHOW_BASE_RATE,SimulationConfig, PCP_SPECIALTIES,SPECIALTY_ABBREVIATIONS
 from .models import Arrival, Doctor, Patient
 
-DEFAULT_DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = "data"
 PATIENTS_CSV = "patients.csv"
 DOCTORS_CSV = "doctors.csv"
+ARRIVALS_CSV = "arrivals.csv"
 
 
-def _seasonal_multiplier(day_of_year: int) -> float:
-    # Smooth annual seasonality: peaks mid-year, troughs in winter.
-    return 1.0 + 0.2 * sin(2 * tau * day_of_year / 365)
+CLASS_DEFINITIONS = {
+    ("M", "AD", "V1"): (3, 1.2205),
+    ("M", "AD", "V2"): (float('inf'), 25.2923),
+    ("F", "AD", "V1"): (10, 3.1106),
+    ("F", "AD", "V2"): (float('inf'), 25.2923),
+    ("F", "MA", "V1"): (2, 1.0585),
+    ("F", "MA", "V2"): (float('inf'), 6.3564),
+    ("M", "MA", "V1"): (10, 3.1929),
+    ("M", "MA", "V2"): (float('inf'), 21.3801),
+    ("M", "SE", "V1"): (12, 3.0342),
+    ("M", "SE", "V2"): (float('inf'), 33.3108),
+    ("F", "SE", "V1"): (10, 2.3556),
+    ("F", "SE", "V2"): (float('inf'), 24.8231),
+    ("M", "EL", "V1"): (10, 2.2273),
+    ("M", "EL", "V2"): (float('inf'), 29.4249),
+    ("F", "EL", "V1"): (6, 1.3654),
+    ("F", "EL", "V2"): (float('inf'), 17.3586),
+}
+
+AGE_GROUP_RANGES = {
+    "AD": (18, 40),
+    "MA": (40, 60),
+    "SE": (60, 75),
+    "EL": (75, 100)
+}
+
+def _seasonal_multiplier(day_of_year, year, shock_type=None):
+    tau = 2 * pi
+    base = 1.0 + 0.15 * sin(2 * tau * day_of_year / 365) + 0.1 * sin(4 * tau * day_of_year / 365)
+    
+    if year == 1:  # Second year
+        if day_of_year <= 182:  # First half
+            if shock_type == "family_practice":
+                base *= 1.3
+        else:  # Second half
+            if shock_type == "all":
+                base *= 1.25
+    
+    return base
+
+def _quarter_index(start_date, current_date):
+    months_diff = (current_date.year - start_date.year) * 12 + (current_date.month - start_date.month)
+    return months_diff // 3
+
+def _classify_patient(gender, age, historical_visits):
+    age_group = None
+    for group, (min_age, max_age) in AGE_GROUP_RANGES.items():
+        if min_age <= age < max_age:
+            age_group = group
+            break
+    
+    if age_group is None:
+        age_group = "AD"
+    
+    visit_freq_group = "V1"
+    for (g, ag, vfg), (threshold, _) in CLASS_DEFINITIONS.items():
+        if g == gender and ag == age_group and vfg == "V1":
+            if historical_visits <= threshold:
+                visit_freq_group = "V1"
+            else:
+                visit_freq_group = "V2"
+            break
+    
+    expected_visits = CLASS_DEFINITIONS.get((gender, age_group, visit_freq_group), (None, 1.0))[1]
+    class_code = f"{gender}-{age_group}-{visit_freq_group}"
+    
+    return class_code, expected_visits
+
+def _generate_historical_visits(age_group, gender):
+    base_visits = {
+        "AD": uniform(1, 5),
+        "MA": uniform(3, 8),
+        "SE": uniform(6, 15),
+        "EL": uniform(8, 20)
+    }
+    
+    adjustment = 1.2 if gender == "F" else 1.0
+    randomness = uniform(0.8, 1.2)
+    
+    return base_visits[age_group] * adjustment * randomness
 
 
-def _quarter_index(start: date, current: date) -> int:
-    months = (current.year - start.year) * 12 + (current.month - start.month)
-    return months // 3
+def _create_doctor(doctor_id, specialty, rng, cfg):
+    base_quality = uniform(0.55, 0.92)
+    if specialty == "internal_medicine":
+        base_quality += 0.05
+    elif specialty == "pediatrics":
+        base_quality += 0.03
+    
+    experience = randint(1, 40)
+    quality_adjustment = min(0.1, experience * 0.002)
+    
+    return Doctor(
+        doctor_id=doctor_id,
+        specialty=specialty,
+        region=choice(REGIONS),
+        language=choice(LANGUAGES),
+        quality_score=min(1.0, round(base_quality + quality_adjustment, 3)),
+        daily_minutes=cfg.doctor_daily_minutes,
+        gender=choice(GENDERS),
+        age=randint(30, 65),
+        race=choice(RACES),
+        service_type=choice(SERVICE_TYPES),
+        services_count=randint(1, 5),
+        experience_years=experience,
+        board_certified=random() > 0.1,
+        current_panel_size=0,
+        expected_workload=0.0,
+    )
 
-
-def generate_doctors(cfg: SimulationConfig) -> List[Doctor]:
-    doctors: List[Doctor] = []
+def generate_doctors(cfg):
+    doctors = []
     rng = Random(cfg.seed + 999)
-    doc_id = 1
+    doctor_id = 1
+    
     for specialty, count in cfg.base_doctor_counts.items():
         for _ in range(count):
-            doctors.append(_new_doctor_from_rng(doc_id, specialty, rng, cfg))
-            doc_id += 1
+            doctors.append(_create_doctor(doctor_id, specialty, rng, cfg))
+            doctor_id += 1
+    
     return doctors
 
 
-def _new_doctor_from_rng(doc_id: int, specialty: str, rng: Random, cfg: SimulationConfig) -> Doctor:
-    return Doctor(
-        doctor_id=doc_id,
-        specialty=specialty,
-        region=rng.choice(REGIONS),
-        language=rng.choice(LANGUAGES),
-        quality_score=round(rng.uniform(0.55, 0.92), 2),
-        daily_minutes=cfg.doctor_daily_minutes,
-        gender=rng.choice(GENDERS),
-        age=int(np.clip(rng.normalvariate(45, 10), 28, 70)),
-        race=rng.choice(RACES),
-        service_type=rng.choice(SERVICE_TYPES),
-        services_count=rng.randint(1, 5),
-    )
-
-
-AGE_BUCKETS = ["AD", "MA", "SE", "EL"]
-
-CP_TABLE_HOURS = {
-    "M-AD-V1": 1.2205,
-    "M-AD-V2": 25.2923,
-    "F-AD-V1": 3.1106,
-    "F-AD-V2": 25.2923,
-    "F-MA-V1": 1.0585,
-    "F-MA-V2": 6.3564,
-    "M-MA-V1": 3.1930,
-    "M-MA-V2": 21.3801,
-    "M-SE-V1": 3.0342,
-    "M-SE-V2": 33.3108,
-    "F-SE-V1": 2.3556,
-    "F-SE-V2": 24.8231,
-    "M-EL-V1": 2.2273,
-    "M-EL-V2": 29.4249,
-    "F-EL-V1": 1.3654,
-    "F-EL-V2": 17.3586,
-}
-
-def _class_from_demographics(gender: str, age_group: str, visit_freq: str) -> str:
-    vflag = "V2" if visit_freq == "high" else "V1"
-    return f"{gender}-{age_group}-{vflag}"
-
-def _service_minutes(cp_hours: float) -> int:
-    # Derive per-visit consumption: scale hours then clamp to [15, 90] minutes
-    minutes = cp_hours * 60 / max(1, cp_hours * 2) * 30  # keep variability mild
-    # fallback simpler: proportional to cp_hours*2
-    minutes = cp_hours * 2 * 60 / 2
-    minutes = max(15, min(90, int(round(minutes))))
-    return minutes
-
-
-def _draw_patient(
-    patient_id: int, rng: Random, cfg: SimulationConfig, year_idx: int
-) -> Patient:
-    age_group = rng.choices(AGE_BUCKETS, weights=[0.35, 0.30, 0.22, 0.13])[0]
-    gender = rng.choice(GENDERS)
-    race = rng.choice(RACES)
-    region = rng.choice(REGIONS)
-    language = rng.choices(LANGUAGES, weights=[0.72, 0.18, 0.10])[0]
-
-    specialty_request = rng.choice(SPECIALTIES)
-    if year_idx == 1:
-        # second year shock: pediatrics and internal gain mild lift
-        specialty_request = rng.choices(
-            SPECIALTIES, weights=[1.0, 1.1, 1.15], k=1
-        )[0]
-
-    visit_freq = "high" if rng.random() < 0.4 else "low"
-    cp_group = _class_from_demographics(gender, age_group, visit_freq)
-    cp_hours = CP_TABLE_HOURS[cp_group]
-    service_minutes = _service_minutes(cp_hours)
-
-    preference_vector = {
-        "region_bias": rng.uniform(0.35, 0.9),
-        "language_bias": rng.uniform(0.1, 0.5),
-        "quality_bias": rng.uniform(0.2, 0.6),
-        "gender_bias": rng.uniform(0.05, 0.25),
-        "race_bias": rng.uniform(0.05, 0.25),
-        "service_type_bias": rng.uniform(0.05, 0.3),
-        "service_count_bias": rng.uniform(0.05, 0.3),
-    }
-
-    return Patient(
-        patient_id=patient_id,
-        age_group=age_group,
-        gender=gender,
-        race=race,
-        region=region,
-        language=language,
-        visit_freq=visit_freq,
-        specialty_request=specialty_request,
-        preference_vector=preference_vector,
-        cp_group=cp_group,
-        cp_hours=cp_hours,
-        service_minutes=service_minutes,
-    )
-
-
-def generate_patients(cfg: SimulationConfig) -> List[Patient]:
+def generate_patients(cfg):
     rng = Random(cfg.seed)
-    patients: List[Patient] = []
-    # Generate a larger unique panel: years * patients_per_year (e.g., 2 years -> 60k)
+    patients = []
+    
     total_patients = int(cfg.patients_per_year * cfg.years)
-    for i in range(total_patients):
-        year_idx = 0
-        patients.append(_draw_patient(i + 1, rng, cfg, year_idx))
+    
+    for patient_id in range(1, total_patients + 1):
+        age_group = choices(list(AGE_GROUP_RANGES.keys()), weights=[0.35, 0.30, 0.22, 0.13])[0]
+        min_age, max_age = AGE_GROUP_RANGES[age_group]
+        age = randint(min_age, max_age - 1)
+        
+        gender = choice(GENDERS)
+        race = choice(RACES)
+        region = choice(REGIONS)
+        language = choices(LANGUAGES, weights=[0.72, 0.18, 0.10])[0]
+        
+        historical_visits = _generate_historical_visits(age_group, gender)
+        class_code, expected_visits = _classify_patient(gender, age, historical_visits)
+        
+        year_idx = patient_id // cfg.patients_per_year if cfg.patients_per_year > 0 else 0
+        
+        if year_idx == 0:
+            specialty_weights = [0.5, 0.3, 0.2]
+        else:
+            if patient_id % cfg.patients_per_year < cfg.patients_per_year / 2:
+                specialty_weights = [0.7, 0.2, 0.1]
+            else:
+                specialty_weights = [0.4, 0.35, 0.25]
+        
+        specialty_request = choices(PCP_SPECIALTIES, weights=specialty_weights)[0]
+        
+        if specialty_request == "family_practice":
+            service_minutes = randint(15, 25)
+        elif specialty_request == "internal_medicine":
+            service_minutes = randint(20, 30)
+        else:
+            service_minutes = randint(15, 20)
+        
+        preference_vector = {
+            "region_bias": uniform(0.35, 0.9),
+            "language_bias": uniform(0.1, 0.5),
+            "quality_bias": uniform(0.2, 0.6),
+            "gender_bias": uniform(0.05, 0.25),
+            "race_bias": uniform(0.05, 0.25),
+            "service_type_bias": uniform(0.05, 0.3),
+            "service_count_bias": uniform(0.05, 0.3),
+            "experience_bias": uniform(0.2, 0.6),
+            "board_certification_bias":uniform(0.2,0.6)
+        }
+        
+        total_weight = sum(preference_vector.values())
+        preference_vector = {k: v/total_weight for k, v in preference_vector.items()}
+        
+        patient = Patient(
+            patient_id=patient_id,
+            age=age,
+            age_group=age_group,
+            gender=gender,
+            race=race,
+            region=region,
+            language=language,
+            historical_visits=historical_visits,
+            cp_hours=expected_visits,
+            cp_group=class_code,
+            specialty_request=specialty_request,
+            service_minutes=service_minutes,
+            preference_vector=preference_vector,
+        )
+        
+        patients.append(patient)
+    
     return patients
 
 
-def generate_arrivals(cfg: SimulationConfig, patients: List[Patient]) -> Tuple[List[Arrival], List[date]]:
+
+def generate_arrivals(cfg, patients):
     rng = Random(cfg.seed + 123)
-    arrivals: List[Arrival] = []
-    calendar: List[date] = []
-
+    arrivals = []
+    calendar = []
+    
     days_total = cfg.years * 365
-    for offset in range(days_total):
-        current_day = cfg.start_date + timedelta(days=offset)
-        calendar.append(current_day)
-        doy = current_day.timetuple().tm_yday
-        year_idx = offset // 365
-        quarter_idx = _quarter_index(cfg.start_date, current_day)
-        seasonal = _seasonal_multiplier(doy)
-
-        for p in patients:
-            # approximate expected visits per year from cp_hours (cp_hours*2 ~= visits)
-            expected_visits = p.cp_hours * 2
-            lam = expected_visits * seasonal / 365
-            count = np.random.poisson(lam)
-            for _ in range(count):
-                latest_gap = int(np.clip(np.round(rng.normalvariate(14, 5)), 3, cfg.max_wait_days))
-                latest_date = current_day + timedelta(days=latest_gap)
-                service_minutes = p.service_minutes
-                no_show_risk = min(0.4, 0.08 + rng.random() * 0.1)
-                arrivals.append(
-                    Arrival(
-                        arrival_id=len(arrivals) + 1,
-                        patient_id=p.patient_id,
-                        arrival_date=current_day,
-                        latest_date=latest_date,
-                        service_minutes=service_minutes,
-                        specialty_request=p.specialty_request,
-                        no_show_risk=no_show_risk,
-                    )
+    patient_last_visit = {}
+    
+    for day_offset in range(days_total):
+        current_date = cfg.start_date + timedelta(days=day_offset)
+        calendar.append(current_date)
+        
+        day_of_year = current_date.timetuple().tm_yday
+        year_idx = day_offset // 365
+        
+        for patient in patients:
+            patient_start_day = (patient.patient_id % 365)
+            if day_offset < patient_start_day:
+                continue
+            
+            expected_visits = patient.cp_hours #新改的
+            
+            seasonal_factor = _seasonal_multiplier(
+                day_of_year, 
+                year_idx,
+                "family_practice" if year_idx == 1 and day_of_year <= 182 else "all" if year_idx == 1 else None
+            )
+            
+            patient_factor = 0.8 + (patient.patient_id % 10) * 0.04
+            daily_probability = (expected_visits * seasonal_factor * patient_factor) / 365.0
+            
+            last_visit = patient_last_visit.get(patient.patient_id)
+            if last_visit and (current_date - last_visit).days < 7:
+                daily_probability *= 0.1
+            
+            if rng.random() < min(daily_probability, 0.3):
+                latest_gap = int(np.clip(np.random.normal(14, 5), 3, cfg.max_wait_days))
+                latest_date = current_date + timedelta(days=latest_gap)
+                
+                base_risk = NO_SHOW_BASE_RATE
+                age_adjustment = -0.02 if patient.age > 60 else 0.01 if patient.age < 30 else 0
+                history_adjustment = -0.01 * min(patient.historical_visits / 10, 0.5)
+                patient_risk_factor = (patient.patient_id % 20) * 0.005
+                
+                no_show_risk = max(0.01, min(0.4, 
+                    base_risk + age_adjustment + history_adjustment + patient_risk_factor
+                ))
+                
+                arrival = Arrival(
+                    arrival_id=len(arrivals) + 1,
+                    patient_id=patient.patient_id,
+                    arrival_date=current_date,
+                    latest_date=latest_date,
+                    service_minutes=patient.service_minutes,
+                    specialty_request=patient.specialty_request,
+                    no_show_risk=round(no_show_risk, 3),
+                    patient_class=patient.cp_group,
+                    expected_visits=patient.cp_hours,
                 )
+                
+                arrivals.append(arrival)
+                patient_last_visit[patient.patient_id] = current_date
+    
     return arrivals, calendar
 
 
 # ---------------- Persistence helpers ----------------
 
 
-def patients_to_df(patients: List[Patient]) -> pd.DataFrame:
+# Data persistence functions
+def patients_to_df(patients):
     records = []
     for p in patients:
-        records.append(
-            {
-                "patient_id": p.patient_id,
-                "age_group": p.age_group,
-                "gender": p.gender,
-                "race": p.race,
-                "region": p.region,
-                "language": p.language,
-                "visit_freq": p.visit_freq,
-                "specialty_request": p.specialty_request,
-                "cp_group": p.cp_group,
-                "cp_hours": p.cp_hours,
-                "service_minutes": p.service_minutes,
-                "region_bias": p.preference_vector["region_bias"],
-                "language_bias": p.preference_vector["language_bias"],
-                "quality_bias": p.preference_vector["quality_bias"],
-                "gender_bias": p.preference_vector["gender_bias"],
-                "race_bias": p.preference_vector["race_bias"],
-                "service_type_bias": p.preference_vector["service_type_bias"],
-                "service_count_bias": p.preference_vector["service_count_bias"],
-            }
-        )
+        record = {
+            "patient_id": p.patient_id,
+            "age": p.age,
+            "age_group": p.age_group,
+            "gender": p.gender,
+            "race": p.race,
+            "region": p.region,
+            "language": p.language,
+            "historical_visits": p.historical_visits,
+            "cp_hours": p.cp_hours,
+            "cp_group": p.cp_group,
+            "specialty_request": p.specialty_request,
+            "service_minutes": p.service_minutes,
+        }
+        for key, value in p.preference_vector.items():
+            record[key] = value
+        records.append(record)
+    
     return pd.DataFrame.from_records(records)
 
-
-def doctors_to_df(doctors: List[Doctor]) -> pd.DataFrame:
+def doctors_to_df(doctors):
     records = []
     for d in doctors:
-        records.append(
-            {
-                "doctor_id": d.doctor_id,
-                "specialty": d.specialty,
-                "region": d.region,
-                "language": d.language,
-                "quality_score": d.quality_score,
-                "daily_minutes": d.daily_minutes,
-                "gender": d.gender,
-                "age": d.age,
-                "race": d.race,
-                "service_type": d.service_type,
-                "services_count": d.services_count,
-                "hires_at": d.hires_at,
-            }
-        )
+        record = {
+            "doctor_id": d.doctor_id,
+            "specialty": d.specialty,
+            "region": d.region,
+            "language": d.language,
+            "quality_score": d.quality_score,
+            "daily_minutes": d.daily_minutes,
+            "gender": d.gender,
+            "age": d.age,
+            "race": d.race,
+            "service_type": d.service_type,
+            "services_count": d.services_count,
+            "experience_years": d.experience_years,
+            "board_certified": d.board_certified,
+            "hires_at": d.hires_at,
+            "current_panel_size": d.current_panel_size,
+            "expected_workload": d.expected_workload,
+        }
+        records.append(record)
+    
     return pd.DataFrame.from_records(records)
 
-
-def arrivals_to_df(arrivals: List[Arrival]) -> pd.DataFrame:
+def arrivals_to_df(arrivals):
     records = []
     for a in arrivals:
-        records.append(
-            {
-                "arrival_id": a.arrival_id,
-                "patient_id": a.patient_id,
-                "arrival_date": a.arrival_date,
-                "latest_date": a.latest_date,
-                "service_minutes": a.service_minutes,
-                "specialty_request": a.specialty_request,
-                "no_show_risk": a.no_show_risk,
-            }
-        )
+        record = {
+            "arrival_id": a.arrival_id,
+            "patient_id": a.patient_id,
+            "arrival_date": a.arrival_date,
+            "latest_date": a.latest_date,
+            "service_minutes": a.service_minutes,
+            "specialty_request": a.specialty_request,
+            "no_show_risk": a.no_show_risk,
+            "patient_class": a.patient_class,
+            "expected_visits": a.expected_visits,
+        }
+        records.append(record)
+    
     return pd.DataFrame.from_records(records)
 
+def save_data(patients, doctors, arrivals, out_dir=DATA_DIR):
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    
+    # Convert to absolute paths
+    patients_path = os.path.join(out_dir, PATIENTS_CSV)
+    doctors_path = os.path.join(out_dir, DOCTORS_CSV)
+    arrivals_path = os.path.join(out_dir, ARRIVALS_CSV)
+    
+    # Save dataframes to CSV
+    patients_df = patients_to_df(patients)
+    doctors_df = doctors_to_df(doctors)
+    arrivals_df = arrivals_to_df(arrivals)
+    
+    patients_df.to_csv(patients_path, index=False)
+    doctors_df.to_csv(doctors_path, index=False)
+    arrivals_df.to_csv(arrivals_path, index=False)
+    
+    print(f"Patients data saved to: {patients_path}")
+    print(f"Doctors data saved to: {doctors_path}")
+    print(f"Arrivals data saved to: {arrivals_path}")
+    
+    # Print some statistics
+    print(f"\nData Summary:")
+    print(f"  Total patients: {len(patients)}")
+    print(f"  Total doctors: {len(doctors)}")
+    print(f"  Total arrivals: {len(arrivals)}")
+    
+    if len(arrivals) > 0:
+        print(f"  Date range: {arrivals[0].arrival_date} to {arrivals[-1].arrival_date}")
+        #print(f"  Average arrivals per day: {len(arrivals) / (cfg.years * 365):.1f}")
+    
+    return patients_df, doctors_df, arrivals_df
 
-def save_data(
-    patients: List[Patient], doctors: List[Doctor], arrivals: List[Arrival], out_dir: Path = DEFAULT_DATA_DIR
-) -> None:
-    out_dir.mkdir(parents=True, exist_ok=True)
-    patients_to_df(patients).to_csv(out_dir / PATIENTS_CSV, index=False)
-    doctors_to_df(doctors).to_csv(out_dir / DOCTORS_CSV, index=False)
-    arrivals_to_df(arrivals).to_csv(out_dir / "arrivals.csv", index=False)
-
-
-def _patient_from_row(row: pd.Series) -> Patient:
+def _patient_from_row(row):
+    preference_keys = ["region_bias", "language_bias", "quality_bias", "gender_bias", 
+                      "race_bias", "service_type_bias", "service_count_bias", 
+                       "experience_bias","board_certification_bias"]
+    
+    preference_vector = {}
+    for k in preference_keys:
+        if k in row:
+            preference_vector[k] = float(row[k])
+    
     return Patient(
         patient_id=int(row["patient_id"]),
+        age=int(row["age"]),
         age_group=str(row["age_group"]),
         gender=str(row["gender"]),
         race=str(row["race"]),
         region=str(row["region"]),
         language=str(row["language"]),
-        visit_freq=str(row["visit_freq"]),
-        specialty_request=str(row["specialty_request"]),
-        cp_group=str(row["cp_group"]),
+        historical_visits=float(row.get("historical_visits", 0)),
         cp_hours=float(row["cp_hours"]),
+        cp_group=str(row["cp_group"]),
+        specialty_request=str(row["specialty_request"]),
         service_minutes=int(row["service_minutes"]),
-        preference_vector={
-            "region_bias": float(row["region_bias"]),
-            "language_bias": float(row["language_bias"]),
-            "quality_bias": float(row["quality_bias"]),
-            "gender_bias": float(row["gender_bias"]),
-            "race_bias": float(row["race_bias"]),
-            "service_type_bias": float(row["service_type_bias"]),
-            "service_count_bias": float(row["service_count_bias"]),
-        },
+        preference_vector=preference_vector,
     )
 
-
-def _doctor_from_row(row: pd.Series) -> Doctor:
-    hires_at_val = pd.to_datetime(row["hires_at"]).date() if pd.notna(row["hires_at"]) else None
+def _doctor_from_row(row):
+    hires_at = None
+    if pd.notna(row["hires_at"]) and str(row["hires_at"]).strip() != "":
+        hires_at = pd.to_datetime(row["hires_at"]).date()
+    
     return Doctor(
         doctor_id=int(row["doctor_id"]),
         specialty=str(row["specialty"]),
@@ -309,11 +436,14 @@ def _doctor_from_row(row: pd.Series) -> Doctor:
         race=str(row["race"]),
         service_type=str(row["service_type"]),
         services_count=int(row["services_count"]),
-        hires_at=hires_at_val,
+        experience_years=int(row.get("experience_years", 10)),
+        board_certified=bool(row.get("board_certified", True)),
+        hires_at=hires_at,
+        current_panel_size=int(row.get("current_panel_size", 0)),
+        expected_workload=float(row.get("expected_workload", 0.0)),
     )
 
-
-def _arrival_from_row(row: pd.Series) -> Arrival:
+def _arrival_from_row(row):
     return Arrival(
         arrival_id=int(row["arrival_id"]),
         patient_id=int(row["patient_id"]),
@@ -322,22 +452,88 @@ def _arrival_from_row(row: pd.Series) -> Arrival:
         service_minutes=int(row["service_minutes"]),
         specialty_request=str(row["specialty_request"]),
         no_show_risk=float(row["no_show_risk"]),
+        patient_class=str(row.get("patient_class", "")),
+        expected_visits=float(row.get("expected_visits", 0)),
     )
 
-
-def load_data(data_dir: Path = DEFAULT_DATA_DIR) -> Tuple[List[Patient], List[Doctor], List[Arrival]]:
-    patients_path = data_dir / PATIENTS_CSV
-    doctors_path = data_dir / DOCTORS_CSV
-    arrivals_path = data_dir / "arrivals.csv"
-    if not (patients_path.exists() and doctors_path.exists() and arrivals_path.exists()):
-        raise FileNotFoundError(f"Missing patients/doctors/arrivals CSV under {data_dir}")
-
+def load_data(data_dir=DATA_DIR):
+    patients_path = os.path.join(data_dir, PATIENTS_CSV)
+    doctors_path = os.path.join(data_dir, DOCTORS_CSV)
+    arrivals_path = os.path.join(data_dir, ARRIVALS_CSV)
+    
+    if not all(os.path.exists(p) for p in [patients_path, doctors_path, arrivals_path]):
+        raise FileNotFoundError(f"Missing data files in {data_dir}")
+    
     p_df = pd.read_csv(patients_path)
     d_df = pd.read_csv(doctors_path)
     a_df = pd.read_csv(arrivals_path)
-
+    
     patients = [_patient_from_row(r) for _, r in p_df.iterrows()]
     doctors = [_doctor_from_row(r) for _, r in d_df.iterrows()]
     arrivals = [_arrival_from_row(r) for _, r in a_df.iterrows()]
+    
     arrivals.sort(key=lambda a: a.arrival_date)
+    
     return patients, doctors, arrivals
+
+def analyze_data(patients, doctors, arrivals):
+    """Analyze the generated data and print statistics."""
+    print("\n=== Data Analysis ===")
+    
+    # Patient statistics
+    print("\nPatient Statistics:")
+    print(f"  Total patients: {len(patients)}")
+    
+    age_groups = {}
+    genders = {}
+    specialties = {}
+    
+    for p in patients:
+        age_groups[p.age_group] = age_groups.get(p.age_group, 0) + 1
+        genders[p.gender] = genders.get(p.gender, 0) + 1
+        specialties[p.specialty_request] = specialties.get(p.specialty_request, 0) + 1
+    
+    print(f"  Age groups: {dict(age_groups)}")
+    print(f"  Genders: {dict(genders)}")
+    print(f"  Specialty requests: {dict(specialties)}")
+    
+    # Doctor statistics
+    print("\nDoctor Statistics:")
+    print(f"  Total doctors: {len(doctors)}")
+    
+    doc_specialties = {}
+    for d in doctors:
+        doc_specialties[d.specialty] = doc_specialties.get(d.specialty, 0) + 1
+    
+    print(f"  Specialties: {dict(doc_specialties)}")
+    
+    # Arrival statistics
+    print("\nArrival Statistics:")
+    print(f"  Total arrivals: {len(arrivals)}")
+    
+    if arrivals:
+        arrival_dates = [a.arrival_date for a in arrivals]
+        print(f"  Date range: {min(arrival_dates)} to {max(arrival_dates)}")
+        
+        # Count arrivals by month
+        arrivals_by_month = {}
+        for a in arrivals:
+            month_key = f"{a.arrival_date.year}-{a.arrival_date.month:02d}"
+            arrivals_by_month[month_key] = arrivals_by_month.get(month_key, 0) + 1
+        
+        print(f"  Average arrivals per day: {len(arrivals) / len(set(arrival_dates)):.1f}")
+        
+        # No-show statistics
+        avg_no_show = np.mean([a.no_show_risk for a in arrivals])
+        print(f"  Average no-show risk: {avg_no_show:.3f}")
+    
+    return {
+        "total_patients": len(patients),
+        "total_doctors": len(doctors),
+        "total_arrivals": len(arrivals),
+        "patient_age_groups": age_groups,
+        "patient_genders": genders,
+        "patient_specialties": specialties,
+        "doctor_specialties": doc_specialties
+    }
+

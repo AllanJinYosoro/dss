@@ -11,7 +11,7 @@ from random import Random
 
 from .config import REGIONS, LANGUAGES, SimulationConfig
 from .models import Doctor
-from .data_generation import _new_doctor_from_rng
+from .data_generation import _create_doctor
 
 
 class StaffingManager:
@@ -37,7 +37,7 @@ class StaffingManager:
 
     def _new_doctor(self, specialty: str, hire_date: date) -> Doctor:
         rng = Random(self._next_id * 13 + int(hire_date.strftime("%j")))
-        doc = _new_doctor_from_rng(self._next_id, specialty, rng, self.cfg)
+        doc = _create_doctor(self._next_id, specialty, rng, self.cfg)
         doc.hires_at = hire_date
         self._next_id += 1
         return doc

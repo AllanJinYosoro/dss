@@ -12,17 +12,19 @@ from typing import Dict, List, Optional
 @dataclass
 class Patient:
     patient_id: int
+    age:int #新增
     age_group: str  # AD/MA/SE/EL
     gender: str
     race: str
     region: str
     language: str
-    visit_freq: str  # high / low
+    historical_visits: float #原visit_freq: str  # high / low
+    cp_hours: float 
+    cp_group: str #class_code 
     specialty_request: str
+    service_minutes:int
     preference_vector: Dict[str, float]
-    cp_group: str
-    cp_hours: float
-    service_minutes: int
+    
 
 
 @dataclass
@@ -38,8 +40,14 @@ class Doctor:
     race: str
     service_type: str
     services_count: int
-    schedule: Dict[date, int] = field(default_factory=dict)
+    experience_years: int
+    board_certified: bool #新增
+    current_panel_size: int
+    expected_workload: int
     hires_at: Optional[date] = None
+    
+    schedule: Dict[date, int] = field(default_factory=dict) 
+    
 
     def remaining_minutes(self, day: date) -> int:
         return self.daily_minutes - self.schedule.get(day, 0)
@@ -49,7 +57,7 @@ class Doctor:
 
 
 @dataclass
-class Appointment:
+class Appointment: #先放着，原本的没有
     patient_id: int
     arrival_id: int
     doctor_id: Optional[int]
@@ -72,6 +80,8 @@ class Arrival:
     service_minutes: int
     specialty_request: str
     no_show_risk: float
+    patient_class: str #新加的
+    expected_visits: float #新加的
 
 
 @dataclass

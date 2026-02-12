@@ -15,7 +15,6 @@ import pandas as pd
 from .allocation import AllocationEngine
 from .config import SimulationConfig
 from .data_generation import (
-    DEFAULT_DATA_DIR,
     generate_doctors,
     generate_patients,
     generate_arrivals,
@@ -26,6 +25,7 @@ from .models import Appointment, Doctor, Patient, QuarterState, Arrival
 from .scheduling import Scheduler
 from .staffing import StaffingManager
 
+DEFAULT_DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 class Simulation:
     def __init__(self, cfg: SimulationConfig, data_dir: Optional[Path] = None, regenerate: bool = False):
@@ -149,7 +149,7 @@ class Simulation:
                     "race": p.race,
                     "region": p.region,
                     "language": p.language,
-                    "visit_freq": p.visit_freq,
+                    "historical_visits": p.historical_visits,
                     "specialty_request": p.specialty_request,
                     "service_minutes": a.service_minutes,
                 }
