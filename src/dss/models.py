@@ -19,10 +19,10 @@ class Patient:
     region: str
     language: str
     historical_visits: float #原visit_freq: str  # high / low
-    cp_hours: float 
+    cp: float #每年平均来访次数
     cp_group: str #class_code 
     specialty_request: str
-    service_minutes:int
+    allocated_doctor_id: int
     preference_vector: Dict[str, float]
     
 
@@ -43,7 +43,8 @@ class Doctor:
     experience_years: int
     board_certified: bool #新增
     current_panel_size: int
-    expected_workload: int
+    expected_workload: float
+    max_workload: float
     hires_at: Optional[date] = None
     
     schedule: Dict[date, int] = field(default_factory=dict) 

@@ -58,45 +58,47 @@ class Simulation:
 
         calendar_start = arrivals[0].arrival_date if arrivals else self.cfg.start_date
 
-        patient_lookup = {p.patient_id: p for p in patients}
-        primary_doctor: Dict[int, int] = {}
 
         for arrival in arrivals:
+            patient_lookup = {p.patient_id: p for p in patients}
+            doctor_lookup = {d.doctor_id: d for d in doctors}
+            
             patient = patient_lookup[arrival.patient_id]
+            specialty = self.allocator.pick_specialty(patient)
+            if pd.isna(patient.allocated_doctor_id):  #第一次来访 分配PCP
+                doctor_candidates = [d for d in doctors if d.specialty == specialty and d.expected_workload <d.max_workload]
+                if doctor_candidates == []:
+                    print('warning:',patient.patient_id)
+                ranked = self.allocator.rank_doctors(patient, doctor_candidates, arrival.arrival_date)
+                selected_doc_id = ranked[0].doctor_id
+                original_doctor_obj = doctor_lookup[selected_doc_id]
+        # 修改原始对象
+                patient.allocated_doctor_id = selected_doc_id
+                original_doctor_obj.current_panel_size += 1 
+                original_doctor_obj.expected_workload += patient.cp
+                ordered = ranked
+
+            else: #非第一次来访 优先自己的PCP，次考虑其他同专业+有空闲医生 
+                prim_id = patient.allocated_doctor_id
+                doctor_candidates = [d for d in doctors if d.specialty == specialty and d.expected_workload <d.max_workload]
+                primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
+                others = [d for d in doctor_candidates if d.doctor_id != prim_id]
+                ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
+                ordered = ([primary_doc] if primary_doc else []) + ranked_others
+
             q_idx = self._quarter_index(calendar_start, arrival.arrival_date)
             if q_idx != quarter_state.quarter_index:
                 # finalize prior quarter no-show estimate
                 if quarter_seen > 0:
                     quarter_state.no_show_rate = quarter_no_show / quarter_seen
                 quarter_state.cp_bias = 0.0
-                self.staffing.maybe_hire(
-                    quarter_turnaways, quarter_bookings, doctors, as_of=arrival.arrival_date
-                )
+                
                 quarter_turnaways = defaultdict(int)
                 quarter_bookings = defaultdict(int)
                 quarter_no_show = 0
                 quarter_seen = 0
                 quarter_state.quarter_index = q_idx
-
-            specialty = self.allocator.pick_specialty(patient)
-
-            doctor_candidates = [
-                d
-                for d in doctors
-                if d.specialty == specialty and (d.hires_at is None or arrival.arrival_date >= d.hires_at)
-            ]
-
-            if arrival.patient_id not in primary_doctor:
-                ranked = self.allocator.rank_doctors(patient, doctor_candidates, arrival.arrival_date)
-                if ranked:
-                    primary_doctor[arrival.patient_id] = ranked[0].doctor_id
-                ordered = ranked
-            else:
-                prim_id = primary_doctor[arrival.patient_id]
-                primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
-                others = [d for d in doctor_candidates if d.doctor_id != prim_id]
-                ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
-                ordered = ([primary_doc] if primary_doc else []) + ranked_others
+            
 
             appt = self.scheduler.schedule(arrival, ordered, quarter_state)
 
@@ -115,13 +117,48 @@ class Simulation:
             if not appt.allocated:
                 quarter_turnaways[specialty] += 1
 
+            
+            for specialty in ['family_practice','internal_medicine','pediatrics']:
+                if self.staffing.maybe_hire(doctors,specialty):
+                    doc = self.staffing._new_doctor(specialty,arrival.arrival_date)
+                    doctors.append(doc)
+
         df = self._to_dataframe(appointments, patients, arrivals)
+
+        data_doctor = [
+            {
+                "doctor_id": doc.doctor_id,
+                "specialty":doc.specialty,
+                "region":doc.region,
+                "language":doc.language,
+                "quality_score":doc.quality_score,
+                "daily_minutes":doc.daily_minutes,
+                "gender":doc.gender,
+                "age":doc.age,
+                "race":doc.race,
+                "service_type":doc.service_type,
+                "services_count":doc.services_count,
+                "experience_years":doc.experience_years,
+                "board_certified":doc.board_certified,
+                "current_panel_size":doc.current_panel_size,
+                "expeceted_workload": doc.expected_workload, 
+                "max_workload": doc.max_workload,
+                "hires_at":doc.hires_at
+            } 
+            for doc in doctors
+        ]
+
+        # 直接创建 DataFrame
+        df_doctor = pd.DataFrame(data_doctor)
+
         metrics = self._compute_metrics(df)
-        return df, metrics
+        return df, metrics,df_doctor
 
     def _quarter_index(self, start: date, current: date) -> int:
         months = (current.year - start.year) * 12 + (current.month - start.month)
         return months // 3
+
+
 
     def _to_dataframe(
         self, appointments: List[Appointment], patients: List[Patient], arrivals: List[Arrival]

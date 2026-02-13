@@ -133,6 +133,7 @@ def _create_doctor(doctor_id, specialty, rng, cfg):
         board_certified=random() > 0.1,
         current_panel_size=0,
         expected_workload=0.0,
+        max_workload = 1560.0
     )
 
 def generate_doctors(cfg):
@@ -179,12 +180,6 @@ def generate_patients(cfg):
         
         specialty_request = choices(PCP_SPECIALTIES, weights=specialty_weights)[0]
         
-        if specialty_request == "family_practice":
-            service_minutes = randint(15, 25)
-        elif specialty_request == "internal_medicine":
-            service_minutes = randint(20, 30)
-        else:
-            service_minutes = randint(15, 20)
         
         preference_vector = {
             "region_bias": uniform(0.35, 0.9),
@@ -210,10 +205,10 @@ def generate_patients(cfg):
             region=region,
             language=language,
             historical_visits=historical_visits,
-            cp_hours=expected_visits,
+            cp=expected_visits,
             cp_group=class_code,
             specialty_request=specialty_request,
-            service_minutes=service_minutes,
+            allocated_doctor_id= None,
             preference_vector=preference_vector,
         )
         
@@ -243,7 +238,7 @@ def generate_arrivals(cfg, patients):
             if day_offset < patient_start_day:
                 continue
             
-            expected_visits = patient.cp_hours #新改的
+            expected_visits = patient.cp #新改的
             
             seasonal_factor = _seasonal_multiplier(
                 day_of_year, 
@@ -271,16 +266,23 @@ def generate_arrivals(cfg, patients):
                     base_risk + age_adjustment + history_adjustment + patient_risk_factor
                 ))
                 
+                if patient.specialty_request == "family_practice":
+                    service_minutes = randint(15, 25)
+                elif patient.specialty_request == "internal_medicine":
+                    service_minutes = randint(20, 30)
+                else:
+                    service_minutes = randint(15, 20)
+
                 arrival = Arrival(
                     arrival_id=len(arrivals) + 1,
                     patient_id=patient.patient_id,
                     arrival_date=current_date,
                     latest_date=latest_date,
-                    service_minutes=patient.service_minutes,
+                    service_minutes=service_minutes,
                     specialty_request=patient.specialty_request,
                     no_show_risk=round(no_show_risk, 3),
                     patient_class=patient.cp_group,
-                    expected_visits=patient.cp_hours,
+                    expected_visits=patient.cp,
                 )
                 
                 arrivals.append(arrival)
@@ -305,10 +307,11 @@ def patients_to_df(patients):
             "region": p.region,
             "language": p.language,
             "historical_visits": p.historical_visits,
-            "cp_hours": p.cp_hours,
+            "cp": p.cp,
             "cp_group": p.cp_group,
             "specialty_request": p.specialty_request,
-            "service_minutes": p.service_minutes,
+            "allocated_doctor_id":p.allocated_doctor_id
+            
         }
         for key, value in p.preference_vector.items():
             record[key] = value
@@ -336,6 +339,7 @@ def doctors_to_df(doctors):
             "hires_at": d.hires_at,
             "current_panel_size": d.current_panel_size,
             "expected_workload": d.expected_workload,
+            "max_workload":d.max_workload
         }
         records.append(record)
     
@@ -412,10 +416,10 @@ def _patient_from_row(row):
         region=str(row["region"]),
         language=str(row["language"]),
         historical_visits=float(row.get("historical_visits", 0)),
-        cp_hours=float(row["cp_hours"]),
+        cp=float(row["cp"]),
         cp_group=str(row["cp_group"]),
         specialty_request=str(row["specialty_request"]),
-        service_minutes=int(row["service_minutes"]),
+        allocated_doctor_id=row["allocated_doctor_id"],
         preference_vector=preference_vector,
     )
 
@@ -441,6 +445,7 @@ def _doctor_from_row(row):
         hires_at=hires_at,
         current_panel_size=int(row.get("current_panel_size", 0)),
         expected_workload=float(row.get("expected_workload", 0.0)),
+        max_workload = float(row.get("max_workload",1560.0))
     )
 
 def _arrival_from_row(row):

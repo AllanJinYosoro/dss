@@ -17,23 +17,15 @@ from .data_generation import _create_doctor
 class StaffingManager:
     def __init__(self, cfg: SimulationConfig):
         self.cfg = cfg
-        self._next_id = 10_000  # distinct id range for hires
+        self._next_id = cfg.base_doctor_counts_all+1  # distinct id range for hires
 
-    def maybe_hire(
-        self,
-        quarter_turnaways: Dict[str, int],
-        quarter_bookings: Dict[str, int],
-        roster: List[Doctor],
-        as_of: date,
-    ) -> List[Doctor]:
-        additions: List[Doctor] = []
-        for specialty, turns in quarter_turnaways.items():
-            bookings = max(1, quarter_bookings.get(specialty, 1))
-            overload = turns / bookings
-            if overload > 0.08 or bookings > 800:  # persistent saturation
-                additions.append(self._new_doctor(specialty, as_of))
-        roster.extend(additions)
-        return additions
+    def maybe_hire(self,doctors,specialty) -> bool:
+        specialist_doctors = [doc for doc in doctors if doc.specialty == specialty]
+        if not specialist_doctors:
+            return False
+        
+        result = all(doc.expected_workload > doc.max_workload for doc in specialist_doctors)
+        return result
 
     def _new_doctor(self, specialty: str, hire_date: date) -> Doctor:
         rng = Random(self._next_id * 13 + int(hire_date.strftime("%j")))

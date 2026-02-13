@@ -8,14 +8,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Dict, List
 
-""" 老版 区别specialties格式不一样
-SPECIALTIES: List[str] = ["general", "internal", "pediatrics"]
-REGIONS: List[str] = ["north", "central", "south"]
-LANGUAGES: List[str] = ["en", "es", "zh"]
-RACES: List[str] = ["white", "black", "asian", "hispanic", "other"]
-GENDERS: List[str] = ["F", "M"]
-SERVICE_TYPES: List[str] = ["group", "solo"]
- """
+
 GENDERS = ["M", "F"]
 LANGUAGES = ["en", "es", "zh"]
 RACES = ["White", "Black", "Asian", "Hispanic", "Other"]
@@ -44,6 +37,7 @@ class SimulationConfig:
     base_doctor_counts: Dict[str, int] = field(
         default_factory=lambda: {"family_practice": 20, "internal_medicine": 10, "pediatrics": 8}
     )
+    base_doctor_counts_all: int = 38
     avg_patients_per_doctor :int = 1500 #新增
     appointment_duration : int = 20 #新增
     pcp_surge_multiplier: float = 1.35  # Q1-Q2 of year 2

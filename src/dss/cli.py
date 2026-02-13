@@ -34,8 +34,9 @@ def simulate(
     cfg = SimulationConfig(years=years, patients_per_year=patients_per_year, seed=seed)
     sim = Simulation(cfg, data_dir=data_dir, regenerate=regen_data)
     console.log("Running simulation...", style="bold")
-    df, metrics = sim.run()
+    df, metrics,df_doctor = sim.run()
 
+    df_doctor.to_csv('doctors_end.csv',index = False)
     _print_metrics(metrics)
     if csv_out:
         df.to_csv(csv_out, index=False)
@@ -43,6 +44,7 @@ def simulate(
 
     if plot or png_out:
         plot_overview(df, outfile=png_out)
+
 
 
 def _print_metrics(metrics: dict) -> None:
