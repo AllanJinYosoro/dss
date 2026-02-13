@@ -10,7 +10,7 @@ from typing import List, Sequence
 
 import numpy as np
 
-#from .config import SimulationConfig
+from .config import SimulationConfig
 from .models import Doctor, Patient
 
 
