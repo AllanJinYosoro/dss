@@ -35,9 +35,9 @@ class SimulationConfig:
     ) """
     doctor_daily_minutes: int = 6 * 60  # usable minutes per physician per workday
     base_doctor_counts: Dict[str, int] = field(
-        default_factory=lambda: {"family_practice": 20, "internal_medicine": 10, "pediatrics": 8}
+        default_factory=lambda: {"family_practice": 200, "internal_medicine": 100, "pediatrics": 80}
     )
-    base_doctor_counts_all: int = 38
+    base_doctor_counts_all: int = 380
     avg_patients_per_doctor :int = 1500 #新增
     appointment_duration : int = 20 #新增
     pcp_surge_multiplier: float = 1.35  # Q1-Q2 of year 2

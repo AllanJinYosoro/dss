@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from datetime import date
 from typing import Dict, List
-
+import numpy as np 
 from random import Random
 
 from .config import REGIONS, LANGUAGES, SimulationConfig
@@ -23,8 +23,9 @@ class StaffingManager:
         specialist_doctors = [doc for doc in doctors if doc.specialty == specialty]
         if not specialist_doctors:
             return False
-        
-        result = all(doc.expected_workload > doc.max_workload for doc in specialist_doctors)
+        sum1 = np.sum([doc.expected_workload for doc in specialist_doctors])
+        sum2 = np.sum([doc.max_workload for doc in specialist_doctors])
+        result = sum1 > 0.995*sum2
         return result
 
     def _new_doctor(self, specialty: str, hire_date: date) -> Doctor:
