@@ -116,7 +116,18 @@ def _create_doctor(doctor_id, specialty, rng, cfg):
     
     experience = randint(1, 40)
     quality_adjustment = min(0.1, experience * 0.002)
-    
+
+    start_2023 = date(2023, 1, 1)
+    end_2023 = date(2023, 12, 31)
+    all_dates_2023 = [start_2023 + timedelta(days=i) for i in range((end_2023 - start_2023).days + 1)]
+    work_dates_2023 = rng.sample(all_dates_2023, 130)
+    start_2024 = date(2024, 1, 1)
+    end_2024 = date(2024, 12, 31)
+    all_dates_2024 = [start_2024 + timedelta(days=i) for i in range((end_2024 - start_2024).days + 1)]
+    work_dates_2024 = rng.sample(all_dates_2024, 130)
+    work_dates_all = work_dates_2023+work_dates_2024
+    str_dates = [d.strftime('%Y-%m-%d') for d in work_dates_all]
+
     return Doctor(
         doctor_id=doctor_id,
         specialty=specialty,
@@ -133,7 +144,8 @@ def _create_doctor(doctor_id, specialty, rng, cfg):
         board_certified=random() > 0.1,
         current_panel_size=0,
         expected_workload=0.0,
-        max_workload = 1560.0
+        max_workload = 1560.0,
+        work_dates = str_dates
     )
 
 def generate_doctors(cfg):
@@ -346,6 +358,7 @@ def doctors_to_df(doctors):
             "current_panel_size": d.current_panel_size,
             "expected_workload": d.expected_workload,
             "max_workload":d.max_workload
+            "work_dates":d.work_dates
         }
         records.append(record)
     
@@ -452,6 +465,7 @@ def _doctor_from_row(row):
         current_panel_size=int(row.get("current_panel_size", 0)),
         expected_workload=float(row.get("expected_workload", 0.0)),
         max_workload = float(row.get("max_workload",1560.0))
+        work_dates = row["work_dates"]
     )
 
 def _arrival_from_row(row):
