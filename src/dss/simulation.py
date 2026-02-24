@@ -56,6 +56,9 @@ class Simulation:
         quarter_turnaways: Dict[str, int] = defaultdict(int)
         quarter_bookings: Dict[str, int] = defaultdict(int)
 
+        # 记录每次预约安排后的医生 schedule 变化（方案2：每次预约后保存）
+        schedule_log: List[Dict] = []
+
         calendar_start = arrivals[0].arrival_date if arrivals else self.cfg.start_date
 
 
@@ -63,6 +66,8 @@ class Simulation:
         doctor_lookup = {d.doctor_id: d for d in doctors}
 
         for arrival in arrivals:
+            # 假设固定服务时间
+            arrival.service_minutes = 30
             patient = patient_lookup[arrival.patient_id]
             specialty = self.allocator.pick_specialty(patient)
             if pd.isna(patient.allocated_doctor_id):  #第一次来访 分配PCP
@@ -81,10 +86,12 @@ class Simulation:
             prim_id = patient.allocated_doctor_id
             doctor_candidates = [d for d in doctors if d.specialty == specialty]
             primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
+            
             """ 
             others = [d for d in doctor_candidates if d.doctor_id != prim_id]
             ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
-            ordered = ([primary_doc] if primary_doc else []) + ranked_others """
+            ordered = ([primary_doc] if primary_doc else []) + ranked_others
+            """
 
             q_idx = self._quarter_index(calendar_start, arrival.arrival_date)
             if q_idx != quarter_state.quarter_index:
@@ -98,9 +105,27 @@ class Simulation:
                 quarter_no_show = 0
                 quarter_seen = 0
                 quarter_state.quarter_index = q_idx
+
+            ordered = ([primary_doc] if primary_doc else []) + doctor_candidates
             
             #需要改动
             appt = self.scheduler.schedule(arrival, ordered, quarter_state)
+
+            # 方案2：每次预约后保存医生 schedule 变化
+            if appt.allocated and appt.scheduled_date and appt.doctor_id is not None:
+                doctor_obj = doctor_lookup.get(appt.doctor_id)
+                if doctor_obj:
+                    schedule_record = {
+                        "arrival_id": arrival.arrival_id,
+                        "patient_id": arrival.patient_id,
+                        "doctor_id": appt.doctor_id,
+                        "arrival_date": arrival.arrival_date,
+                        "scheduled_date": appt.scheduled_date,
+                        "service_minutes": arrival.service_minutes,
+                        "total_minutes_on_day": doctor_obj.schedule.get(appt.scheduled_date, 0),
+                        "specialty": appt.specialty,
+                    }
+                    schedule_log.append(schedule_record)
 
             # simulate no-show outcome if scheduled
             if appt.allocated and appt.scheduled_date:
@@ -152,13 +177,22 @@ class Simulation:
         # 直接创建 DataFrame
         df_doctor = pd.DataFrame(data_doctor)
 
+        # 将 schedule_log 转换为 DataFrame
+        df_schedule = pd.DataFrame(schedule_log) if schedule_log else pd.DataFrame()
+
+        # 保存 schedule 日志到 CSV 文件
+        if not df_schedule.empty:
+            schedule_path = self.data_dir / "schedule_log.csv"
+            df_schedule.to_csv(schedule_path, index=False)
+            print(f"Schedule log saved to: {schedule_path}")
+            print(f"Total schedule records: {len(df_schedule)}")
+
         metrics = self._compute_metrics(df)
-        return df, metrics,df_doctor
+        return df, metrics, df_doctor, df_schedule
 
     def _quarter_index(self, start: date, current: date) -> int:
         months = (current.year - start.year) * 12 + (current.month - start.month)
         return months // 3
-
 
 
     def _to_dataframe(

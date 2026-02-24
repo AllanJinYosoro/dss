@@ -55,7 +55,8 @@ class Scheduler:
     def schedule(
         self, arrival: Arrival, doctor_choices: Sequence[Doctor], state: QuarterState
     ) -> Appointment:
-        for doctor in doctor_choices:
+        # 首先检查primarydoctor是否可行，可行则直接安排，
+            doctor = doctor_choices[0] if doctor_choices else None
             slot = self._first_available_day(
                 doctor,
                 arrival.arrival_date,
@@ -77,15 +78,81 @@ class Scheduler:
                     wait_days=wait,
                     allocated=True,
                 )
-        return Appointment(
-            patient_id=arrival.patient_id,
-            arrival_id=arrival.arrival_id,
-            doctor_id=None,
-            specialty=doctor_choices[0].specialty if doctor_choices else "unknown",
-            scheduled_date=None,
-            arrival_date=arrival.arrival_date,
-            latest_date=arrival.latest_date,
-            wait_days=None,
-            allocated=False,
-            reason="No capacity before latest acceptable date",
-        )
+            else:
+                # find the earliest available slot among all candidates (including primary if exists)
+                earliest_slot = None
+                for doctor in doctor_choices:
+                    slot = self._first_available_day(
+                        doctor,
+                        arrival.arrival_date,
+                        arrival.latest_date,
+                        arrival.service_minutes,
+                        state,
+                    )
+                    if slot and (not earliest_slot or slot < earliest_slot[1]):
+                        earliest_slot = (doctor, slot)
+                if earliest_slot:
+                    # print("find earliest")
+                    doctor, slot = earliest_slot
+                    doctor.book(slot, arrival.service_minutes)
+                    wait = (slot - arrival.arrival_date).days
+                    return Appointment(
+                        patient_id=arrival.patient_id,
+                        arrival_id=arrival.arrival_id,
+                        doctor_id=doctor.doctor_id,
+                        specialty=doctor.specialty,
+                        scheduled_date=slot,
+                        arrival_date=arrival.arrival_date,
+                        latest_date=arrival.latest_date,
+                        wait_days=wait,
+                        allocated=True,
+                    )
+                else:
+                    return Appointment(
+                        patient_id=arrival.patient_id,
+                        arrival_id=arrival.arrival_id,
+                        doctor_id=None,
+                        specialty=doctor_choices[0].specialty if doctor_choices else "unknown",
+                        scheduled_date=None,
+                        arrival_date=arrival.arrival_date,
+                        latest_date=arrival.latest_date,
+                        wait_days=None,
+                        allocated=False,
+                        reason="No capacity before latest acceptable date",
+                    )
+                 
+                 
+        # for doctor in doctor_choices:
+        #     slot = self._first_available_day(
+        #         doctor,
+        #         arrival.arrival_date,
+        #         arrival.latest_date,
+        #         arrival.service_minutes,
+        #         state,
+        #     )
+        #     if slot:
+        #         doctor.book(slot, arrival.service_minutes)
+        #         wait = (slot - arrival.arrival_date).days
+        #         return Appointment(
+        #             patient_id=arrival.patient_id,
+        #             arrival_id=arrival.arrival_id,
+        #             doctor_id=doctor.doctor_id,
+        #             specialty=doctor.specialty,
+        #             scheduled_date=slot,
+        #             arrival_date=arrival.arrival_date,
+        #             latest_date=arrival.latest_date,
+        #             wait_days=wait,
+        #             allocated=True,
+        #         )
+        # return Appointment(
+        #     patient_id=arrival.patient_id,
+        #     arrival_id=arrival.arrival_id,
+        #     doctor_id=None,
+        #     specialty=doctor_choices[0].specialty if doctor_choices else "unknown",
+        #     scheduled_date=None,
+        #     arrival_date=arrival.arrival_date,
+        #     latest_date=arrival.latest_date,
+        #     wait_days=None,
+        #     allocated=False,
+        #     reason="No capacity before latest acceptable date",
+        # )

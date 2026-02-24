@@ -39,7 +39,7 @@ def simulate(
     cfg = SimulationConfig(years=years, patients_per_year=patients_per_year, seed=seed)
     sim = Simulation(cfg, data_dir=data_dir, regenerate=regen_data)
     console.log("Running simulation...", style="bold")
-    df, _metrics, df_doctor = sim.run()
+    df, _metrics, df_doctor, df_schedule = sim.run()
 
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     run_dir = artifacts_dir / run_id
@@ -56,6 +56,11 @@ def simulate(
     )
     log_path = write_run_log(run_metrics, run_dir / "run_metrics.log")
     df_doctor.to_csv(run_dir / "doctors_end.csv", index=False)
+
+    # 保存 schedule 日志
+    if not df_schedule.empty:
+        df_schedule.to_csv(run_dir / "schedule_log.csv", index=False)
+        console.log(f"Saved schedule log ({len(df_schedule)} records)")
 
     _print_metrics(
         {
