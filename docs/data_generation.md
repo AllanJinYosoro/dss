@@ -1,6 +1,6 @@
 # 数据生成说明（基于《数据说明.html》）
 
-本文件描述当前模拟生成的三份核心数据：`patients.csv`、`doctors.csv`、`arrivals.csv`。字段、分布和生成逻辑与《数据说明.html》保持一致，并已在 `data_generation_nb.py`（由 `data generation.ipynb` 导出）中实现。
+本文件描述当前模拟生成的三份核心数据：`patients.csv`、`doctors.csv`、`arrivals.csv`。字段、分布和生成逻辑以当前 `src/dss/data_generation.py` 为准。
 
 ## 总览
 - 生成规模：默认 2 年、约 60,000 名患者，≈100,000+ 到达记录，40 名医生（基于基线配置）。
@@ -80,13 +80,11 @@
 4. **数据落盘**：输出至项目根 `data/` 目录的 `patients.csv` / `doctors.csv` / `arrivals.csv`。
 
 ## 代码位置与使用
-- Notebook 源：`data generation.ipynb`
-- 导出脚本：`src/dss/data_generation_nb.py`（由 nbconvert 生成，可直接导入复用其中函数/常量）。
+- 数据生成代码：`src/dss/data_generation.py`
 - 运行再生成示例：
   ```bash
-  uv run python -m dss.data_generation_nb  # 如需自写入口，可在脚本末尾添加 main
+  uv run dss --regen-data
   ```
-  或继续使用项目内的 CLI：`uv run dss --regen-data`（沿用现有 pipeline）。
 
 
 ## New Doctor Field: working_weeks_by_year

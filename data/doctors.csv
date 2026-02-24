@@ -1,381 +1,381 @@
-doctor_id,specialty,region,language,quality_score,daily_minutes,gender,age,race,service_type,services_count,experience_years,board_certified,hires_at,current_panel_size,expected_workload,max_workload
-1,family_practice,North,en,0.649,360,M,61,Black,group,4,21,False,,0,0.0,1560.0
-2,family_practice,Central,en,0.691,360,F,56,Asian,group,4,30,True,,0,0.0,1560.0
-3,family_practice,East,es,0.723,360,M,31,Hispanic,solo,2,16,True,,0,0.0,1560.0
-4,family_practice,West,zh,0.623,360,M,36,Asian,group,1,16,True,,0,0.0,1560.0
-5,family_practice,North,zh,0.947,360,F,31,Asian,group,4,29,True,,0,0.0,1560.0
-6,family_practice,North,es,0.729,360,M,32,White,solo,1,39,True,,0,0.0,1560.0
-7,family_practice,South,zh,0.866,360,F,48,Asian,group,2,1,False,,0,0.0,1560.0
-8,family_practice,Central,zh,0.896,360,F,58,Black,group,4,39,True,,0,0.0,1560.0
-9,family_practice,West,zh,0.815,360,M,50,White,solo,1,39,True,,0,0.0,1560.0
-10,family_practice,Central,es,0.871,360,F,40,Other,solo,5,29,True,,0,0.0,1560.0
-11,family_practice,East,es,0.653,360,M,45,White,solo,5,6,True,,0,0.0,1560.0
-12,family_practice,Central,zh,0.62,360,F,45,Other,solo,1,4,True,,0,0.0,1560.0
-13,family_practice,East,zh,0.811,360,M,30,Hispanic,solo,5,25,True,,0,0.0,1560.0
-14,family_practice,South,es,0.779,360,M,35,Black,solo,1,30,True,,0,0.0,1560.0
-15,family_practice,West,en,0.922,360,M,34,White,solo,2,30,True,,0,0.0,1560.0
-16,family_practice,West,es,0.613,360,M,49,Asian,solo,2,16,True,,0,0.0,1560.0
-17,family_practice,North,es,0.831,360,F,32,Hispanic,group,2,31,True,,0,0.0,1560.0
-18,family_practice,South,en,0.807,360,M,53,Other,group,5,38,True,,0,0.0,1560.0
-19,family_practice,South,es,0.831,360,F,56,Asian,group,2,6,True,,0,0.0,1560.0
-20,family_practice,Central,zh,0.626,360,M,65,Black,solo,4,26,True,,0,0.0,1560.0
-21,family_practice,Central,es,0.84,360,F,43,Black,group,3,3,True,,0,0.0,1560.0
-22,family_practice,East,es,0.761,360,M,55,Other,solo,1,28,True,,0,0.0,1560.0
-23,family_practice,Central,en,0.895,360,F,48,Black,group,4,19,True,,0,0.0,1560.0
-24,family_practice,East,es,0.661,360,F,62,Black,solo,1,32,True,,0,0.0,1560.0
-25,family_practice,East,es,0.714,360,F,49,Hispanic,solo,3,17,True,,0,0.0,1560.0
-26,family_practice,North,es,0.736,360,M,57,White,group,2,8,True,,0,0.0,1560.0
-27,family_practice,West,en,0.942,360,F,37,Other,group,3,30,True,,0,0.0,1560.0
-28,family_practice,East,zh,0.754,360,F,31,Hispanic,solo,1,38,True,,0,0.0,1560.0
-29,family_practice,South,es,0.72,360,M,55,White,solo,4,38,True,,0,0.0,1560.0
-30,family_practice,Central,es,0.79,360,F,39,Hispanic,group,4,34,True,,0,0.0,1560.0
-31,family_practice,Central,zh,0.709,360,M,48,White,group,3,22,True,,0,0.0,1560.0
-32,family_practice,North,es,0.837,360,F,42,White,solo,1,35,True,,0,0.0,1560.0
-33,family_practice,East,zh,0.919,360,F,62,Black,solo,1,32,False,,0,0.0,1560.0
-34,family_practice,West,zh,0.87,360,M,64,Other,group,2,25,True,,0,0.0,1560.0
-35,family_practice,East,es,0.761,360,F,34,Other,solo,5,24,True,,0,0.0,1560.0
-36,family_practice,Central,en,0.588,360,M,43,Hispanic,group,5,2,False,,0,0.0,1560.0
-37,family_practice,West,zh,0.817,360,F,64,Other,group,3,20,True,,0,0.0,1560.0
-38,family_practice,North,zh,0.991,360,F,36,Black,group,1,40,True,,0,0.0,1560.0
-39,family_practice,Central,en,0.926,360,F,44,White,group,1,8,True,,0,0.0,1560.0
-40,family_practice,East,zh,0.939,360,F,56,Black,group,2,30,True,,0,0.0,1560.0
-41,family_practice,North,en,0.929,360,F,34,White,group,3,26,True,,0,0.0,1560.0
-42,family_practice,Central,zh,0.864,360,M,63,Hispanic,solo,3,21,True,,0,0.0,1560.0
-43,family_practice,North,en,0.618,360,F,54,White,solo,1,19,True,,0,0.0,1560.0
-44,family_practice,South,es,0.682,360,M,57,Black,solo,4,27,True,,0,0.0,1560.0
-45,family_practice,West,en,0.889,360,M,62,Other,solo,5,16,True,,0,0.0,1560.0
-46,family_practice,East,en,0.61,360,M,59,Other,group,2,14,True,,0,0.0,1560.0
-47,family_practice,East,es,0.696,360,M,64,White,group,5,22,True,,0,0.0,1560.0
-48,family_practice,East,en,0.633,360,F,33,White,group,2,24,True,,0,0.0,1560.0
-49,family_practice,East,zh,0.802,360,F,47,White,group,1,34,True,,0,0.0,1560.0
-50,family_practice,South,es,0.975,360,M,52,Hispanic,group,4,29,True,,0,0.0,1560.0
-51,family_practice,North,es,0.893,360,F,49,Black,solo,4,18,False,,0,0.0,1560.0
-52,family_practice,Central,es,0.593,360,M,43,Hispanic,group,2,17,True,,0,0.0,1560.0
-53,family_practice,South,zh,0.643,360,M,58,Asian,group,4,5,False,,0,0.0,1560.0
-54,family_practice,North,es,0.917,360,M,51,Other,group,2,8,False,,0,0.0,1560.0
-55,family_practice,South,en,0.727,360,M,45,Hispanic,solo,2,20,True,,0,0.0,1560.0
-56,family_practice,East,zh,0.843,360,M,33,Hispanic,solo,3,28,True,,0,0.0,1560.0
-57,family_practice,East,es,0.624,360,M,62,Hispanic,group,1,12,True,,0,0.0,1560.0
-58,family_practice,West,zh,0.976,360,F,35,Asian,solo,2,40,True,,0,0.0,1560.0
-59,family_practice,West,en,0.617,360,M,58,Other,solo,4,31,True,,0,0.0,1560.0
-60,family_practice,East,en,0.845,360,M,64,Asian,group,2,25,True,,0,0.0,1560.0
-61,family_practice,West,zh,0.78,360,F,47,White,solo,5,39,True,,0,0.0,1560.0
-62,family_practice,North,en,0.828,360,M,64,Asian,group,2,6,True,,0,0.0,1560.0
-63,family_practice,North,en,0.71,360,M,45,Asian,group,4,23,False,,0,0.0,1560.0
-64,family_practice,North,zh,0.913,360,M,31,Other,group,2,19,False,,0,0.0,1560.0
-65,family_practice,East,es,0.614,360,F,58,Asian,group,1,22,True,,0,0.0,1560.0
-66,family_practice,West,es,0.84,360,M,34,Black,group,3,20,True,,0,0.0,1560.0
-67,family_practice,South,zh,0.594,360,M,65,Asian,group,3,5,True,,0,0.0,1560.0
-68,family_practice,North,en,0.932,360,F,40,Black,group,4,22,False,,0,0.0,1560.0
-69,family_practice,Central,es,0.754,360,F,38,Black,solo,4,19,True,,0,0.0,1560.0
-70,family_practice,West,es,0.819,360,M,61,Hispanic,solo,3,23,True,,0,0.0,1560.0
-71,family_practice,North,es,0.677,360,M,31,Hispanic,group,4,14,True,,0,0.0,1560.0
-72,family_practice,North,zh,0.898,360,M,36,Asian,solo,5,12,True,,0,0.0,1560.0
-73,family_practice,South,zh,0.883,360,F,44,Other,solo,4,26,True,,0,0.0,1560.0
-74,family_practice,East,en,0.634,360,F,62,Hispanic,group,3,7,True,,0,0.0,1560.0
-75,family_practice,North,zh,0.883,360,F,49,Asian,group,1,1,True,,0,0.0,1560.0
-76,family_practice,North,zh,0.88,360,F,44,Asian,group,2,11,True,,0,0.0,1560.0
-77,family_practice,Central,en,0.752,360,M,44,Black,solo,3,23,False,,0,0.0,1560.0
-78,family_practice,South,es,0.759,360,F,43,White,group,5,37,True,,0,0.0,1560.0
-79,family_practice,Central,zh,0.821,360,M,42,Black,solo,5,24,True,,0,0.0,1560.0
-80,family_practice,North,zh,0.675,360,F,56,Hispanic,solo,5,38,True,,0,0.0,1560.0
-81,family_practice,North,en,0.861,360,M,65,White,group,2,19,True,,0,0.0,1560.0
-82,family_practice,Central,es,0.898,360,F,41,Hispanic,solo,3,26,True,,0,0.0,1560.0
-83,family_practice,Central,zh,0.697,360,F,57,Hispanic,group,1,38,True,,0,0.0,1560.0
-84,family_practice,West,en,0.702,360,F,62,Black,group,5,33,True,,0,0.0,1560.0
-85,family_practice,East,es,0.696,360,F,64,Black,solo,2,18,True,,0,0.0,1560.0
-86,family_practice,Central,es,0.721,360,M,61,Other,solo,4,12,True,,0,0.0,1560.0
-87,family_practice,South,zh,0.848,360,F,50,Hispanic,group,4,27,True,,0,0.0,1560.0
-88,family_practice,West,es,0.748,360,M,64,Other,group,2,17,True,,0,0.0,1560.0
-89,family_practice,South,es,0.928,360,M,42,Asian,solo,3,8,True,,0,0.0,1560.0
-90,family_practice,South,es,0.87,360,M,32,Black,solo,5,36,True,,0,0.0,1560.0
-91,family_practice,East,zh,0.914,360,F,54,Asian,solo,1,4,True,,0,0.0,1560.0
-92,family_practice,South,en,0.943,360,F,38,Other,solo,4,27,True,,0,0.0,1560.0
-93,family_practice,South,en,0.948,360,M,44,White,solo,1,37,True,,0,0.0,1560.0
-94,family_practice,South,en,0.711,360,M,49,Black,solo,3,5,True,,0,0.0,1560.0
-95,family_practice,North,es,0.826,360,F,60,Asian,group,4,18,True,,0,0.0,1560.0
-96,family_practice,Central,en,0.927,360,F,47,Black,solo,2,34,True,,0,0.0,1560.0
-97,family_practice,Central,en,0.755,360,F,52,Asian,solo,4,10,True,,0,0.0,1560.0
-98,family_practice,Central,en,0.729,360,M,36,Other,group,1,30,True,,0,0.0,1560.0
-99,family_practice,West,es,0.686,360,M,30,White,group,2,33,True,,0,0.0,1560.0
-100,family_practice,East,en,0.748,360,M,44,White,solo,2,10,True,,0,0.0,1560.0
-101,family_practice,South,en,0.61,360,F,62,Hispanic,group,5,20,True,,0,0.0,1560.0
-102,family_practice,Central,zh,0.986,360,M,59,White,solo,4,38,True,,0,0.0,1560.0
-103,family_practice,East,zh,0.883,360,F,59,Other,group,5,38,True,,0,0.0,1560.0
-104,family_practice,Central,es,0.897,360,M,33,Black,group,3,3,True,,0,0.0,1560.0
-105,family_practice,West,zh,0.875,360,F,39,Other,solo,3,19,False,,0,0.0,1560.0
-106,family_practice,North,es,0.787,360,F,34,White,solo,4,2,True,,0,0.0,1560.0
-107,family_practice,West,en,0.884,360,F,56,Hispanic,solo,2,19,False,,0,0.0,1560.0
-108,family_practice,North,en,0.908,360,F,64,Black,group,4,39,True,,0,0.0,1560.0
-109,family_practice,West,es,0.712,360,M,51,Hispanic,group,2,37,True,,0,0.0,1560.0
-110,family_practice,West,es,0.718,360,F,65,Asian,group,3,27,True,,0,0.0,1560.0
-111,family_practice,South,es,0.65,360,F,59,Other,group,1,28,True,,0,0.0,1560.0
-112,family_practice,North,en,0.802,360,M,30,Black,solo,1,38,True,,0,0.0,1560.0
-113,family_practice,West,es,0.654,360,M,49,Asian,group,5,20,True,,0,0.0,1560.0
-114,family_practice,West,zh,0.815,360,M,36,Black,solo,3,10,True,,0,0.0,1560.0
-115,family_practice,East,zh,0.935,360,M,35,Asian,solo,5,24,True,,0,0.0,1560.0
-116,family_practice,South,en,0.658,360,F,62,Asian,group,4,6,True,,0,0.0,1560.0
-117,family_practice,North,zh,0.978,360,F,63,Asian,group,2,34,True,,0,0.0,1560.0
-118,family_practice,East,en,0.759,360,F,58,Asian,solo,4,5,True,,0,0.0,1560.0
-119,family_practice,South,en,0.925,360,M,57,White,group,1,22,True,,0,0.0,1560.0
-120,family_practice,East,zh,0.72,360,F,38,Black,group,3,30,True,,0,0.0,1560.0
-121,family_practice,South,en,0.631,360,M,30,Other,group,2,12,False,,0,0.0,1560.0
-122,family_practice,East,es,0.791,360,M,45,Other,solo,4,24,True,,0,0.0,1560.0
-123,family_practice,Central,en,0.88,360,M,31,Hispanic,solo,5,14,True,,0,0.0,1560.0
-124,family_practice,North,en,0.707,360,F,47,Other,group,2,8,True,,0,0.0,1560.0
-125,family_practice,East,zh,0.832,360,F,35,Asian,group,4,29,True,,0,0.0,1560.0
-126,family_practice,East,es,0.669,360,M,59,White,group,4,32,True,,0,0.0,1560.0
-127,family_practice,South,es,0.692,360,M,53,Other,group,5,15,False,,0,0.0,1560.0
-128,family_practice,East,es,0.868,360,F,59,Asian,solo,3,1,True,,0,0.0,1560.0
-129,family_practice,East,es,0.72,360,M,36,Other,solo,2,8,True,,0,0.0,1560.0
-130,family_practice,South,zh,0.676,360,M,41,Hispanic,solo,3,33,False,,0,0.0,1560.0
-131,family_practice,West,es,0.796,360,F,39,White,group,3,14,True,,0,0.0,1560.0
-132,family_practice,South,zh,0.721,360,M,56,Asian,solo,1,17,True,,0,0.0,1560.0
-133,family_practice,East,en,0.889,360,F,57,White,solo,3,23,False,,0,0.0,1560.0
-134,family_practice,South,en,0.878,360,F,60,Hispanic,solo,2,23,True,,0,0.0,1560.0
-135,family_practice,West,zh,0.891,360,M,48,Other,group,2,34,True,,0,0.0,1560.0
-136,family_practice,South,zh,0.965,360,M,52,Other,solo,4,32,True,,0,0.0,1560.0
-137,family_practice,West,es,0.789,360,F,65,Other,solo,4,13,True,,0,0.0,1560.0
-138,family_practice,Central,zh,0.837,360,F,30,White,group,3,34,True,,0,0.0,1560.0
-139,family_practice,South,es,0.694,360,M,43,Other,solo,3,18,True,,0,0.0,1560.0
-140,family_practice,East,es,0.654,360,M,43,White,group,3,1,True,,0,0.0,1560.0
-141,family_practice,West,es,0.742,360,M,30,Black,solo,5,21,True,,0,0.0,1560.0
-142,family_practice,North,zh,0.562,360,F,61,Other,group,5,2,True,,0,0.0,1560.0
-143,family_practice,North,zh,0.67,360,F,63,Asian,group,4,14,True,,0,0.0,1560.0
-144,family_practice,East,es,0.698,360,M,63,Hispanic,group,3,34,True,,0,0.0,1560.0
-145,family_practice,Central,zh,0.819,360,F,43,Black,group,2,36,True,,0,0.0,1560.0
-146,family_practice,North,es,0.866,360,F,61,Asian,solo,1,35,True,,0,0.0,1560.0
-147,family_practice,North,en,0.765,360,F,52,White,solo,5,23,False,,0,0.0,1560.0
-148,family_practice,South,es,0.794,360,F,33,Other,group,1,8,True,,0,0.0,1560.0
-149,family_practice,South,en,0.867,360,F,47,Hispanic,solo,3,31,False,,0,0.0,1560.0
-150,family_practice,West,zh,0.701,360,F,51,Black,group,2,4,True,,0,0.0,1560.0
-151,family_practice,East,zh,0.875,360,M,40,Hispanic,group,2,40,False,,0,0.0,1560.0
-152,family_practice,East,en,0.81,360,M,36,Asian,group,4,32,True,,0,0.0,1560.0
-153,family_practice,North,en,0.671,360,F,44,Asian,solo,1,12,True,,0,0.0,1560.0
-154,family_practice,West,zh,0.683,360,F,59,Black,group,2,12,True,,0,0.0,1560.0
-155,family_practice,East,zh,0.756,360,F,65,Asian,group,1,2,True,,0,0.0,1560.0
-156,family_practice,West,es,0.698,360,M,44,Black,group,1,1,True,,0,0.0,1560.0
-157,family_practice,North,zh,0.898,360,F,64,Hispanic,group,1,24,True,,0,0.0,1560.0
-158,family_practice,South,zh,0.59,360,F,33,Hispanic,solo,1,18,True,,0,0.0,1560.0
-159,family_practice,Central,en,0.601,360,F,54,Other,group,2,14,True,,0,0.0,1560.0
-160,family_practice,Central,es,0.62,360,F,62,White,group,3,33,True,,0,0.0,1560.0
-161,family_practice,South,zh,0.853,360,F,37,Asian,solo,2,33,True,,0,0.0,1560.0
-162,family_practice,North,es,0.94,360,M,49,Asian,group,3,29,True,,0,0.0,1560.0
-163,family_practice,East,es,0.791,360,F,65,Hispanic,solo,5,32,True,,0,0.0,1560.0
-164,family_practice,West,en,0.624,360,M,48,Hispanic,solo,5,8,True,,0,0.0,1560.0
-165,family_practice,West,zh,0.792,360,F,34,Other,group,2,21,True,,0,0.0,1560.0
-166,family_practice,West,es,0.604,360,F,30,White,group,4,12,True,,0,0.0,1560.0
-167,family_practice,Central,en,0.794,360,F,31,Other,group,4,33,True,,0,0.0,1560.0
-168,family_practice,East,zh,0.69,360,F,62,Hispanic,solo,5,24,True,,0,0.0,1560.0
-169,family_practice,East,es,0.869,360,M,58,Black,group,4,37,True,,0,0.0,1560.0
-170,family_practice,North,zh,0.885,360,F,36,Hispanic,solo,1,11,True,,0,0.0,1560.0
-171,family_practice,North,en,0.724,360,M,34,Other,solo,5,20,True,,0,0.0,1560.0
-172,family_practice,West,es,0.703,360,M,47,Asian,solo,3,12,True,,0,0.0,1560.0
-173,family_practice,East,en,0.667,360,M,40,Black,solo,2,25,False,,0,0.0,1560.0
-174,family_practice,Central,en,0.706,360,F,43,White,solo,1,39,True,,0,0.0,1560.0
-175,family_practice,West,en,0.68,360,M,36,Other,solo,5,40,True,,0,0.0,1560.0
-176,family_practice,South,en,0.834,360,M,39,Asian,solo,1,30,True,,0,0.0,1560.0
-177,family_practice,Central,es,0.93,360,F,60,Hispanic,group,5,10,True,,0,0.0,1560.0
-178,family_practice,Central,es,0.816,360,F,63,White,solo,4,28,True,,0,0.0,1560.0
-179,family_practice,East,zh,0.946,360,M,51,Black,group,3,25,True,,0,0.0,1560.0
-180,family_practice,East,es,0.803,360,F,34,Hispanic,solo,2,38,True,,0,0.0,1560.0
-181,family_practice,North,es,0.805,360,M,50,Asian,group,4,13,True,,0,0.0,1560.0
-182,family_practice,South,es,0.648,360,F,64,Other,solo,2,36,True,,0,0.0,1560.0
-183,family_practice,West,en,0.625,360,M,36,Other,group,3,15,False,,0,0.0,1560.0
-184,family_practice,West,es,0.86,360,F,60,Asian,group,1,35,True,,0,0.0,1560.0
-185,family_practice,East,es,0.855,360,F,60,Other,solo,2,35,True,,0,0.0,1560.0
-186,family_practice,Central,es,0.96,360,F,46,Other,solo,2,31,True,,0,0.0,1560.0
-187,family_practice,Central,es,0.579,360,M,30,Asian,solo,5,8,True,,0,0.0,1560.0
-188,family_practice,East,es,0.92,360,M,43,Asian,group,3,6,True,,0,0.0,1560.0
-189,family_practice,East,es,0.947,360,F,49,Black,solo,2,21,True,,0,0.0,1560.0
-190,family_practice,East,es,0.8,360,F,62,Black,solo,3,26,True,,0,0.0,1560.0
-191,family_practice,East,es,0.732,360,M,39,Hispanic,solo,3,23,True,,0,0.0,1560.0
-192,family_practice,West,zh,0.81,360,M,59,Hispanic,group,1,12,True,,0,0.0,1560.0
-193,family_practice,Central,zh,0.623,360,M,60,Hispanic,solo,5,34,True,,0,0.0,1560.0
-194,family_practice,West,es,0.661,360,F,64,Asian,solo,2,17,True,,0,0.0,1560.0
-195,family_practice,East,es,0.92,360,F,50,White,solo,3,31,True,,0,0.0,1560.0
-196,family_practice,West,en,0.587,360,M,41,White,solo,5,2,True,,0,0.0,1560.0
-197,family_practice,East,en,0.733,360,M,30,Other,solo,2,10,False,,0,0.0,1560.0
-198,family_practice,East,en,0.722,360,F,53,White,solo,5,18,True,,0,0.0,1560.0
-199,family_practice,North,zh,0.924,360,M,65,Black,group,3,14,True,,0,0.0,1560.0
-200,family_practice,Central,en,0.739,360,M,59,Other,group,2,15,False,,0,0.0,1560.0
-201,internal_medicine,South,en,0.815,360,F,45,Asian,solo,2,4,True,,0,0.0,1560.0
-202,internal_medicine,East,zh,0.729,360,F,64,Other,solo,5,29,True,,0,0.0,1560.0
-203,internal_medicine,Central,en,0.854,360,F,63,White,solo,4,27,True,,0,0.0,1560.0
-204,internal_medicine,North,es,0.878,360,F,46,White,solo,5,34,True,,0,0.0,1560.0
-205,internal_medicine,Central,es,0.892,360,F,53,Hispanic,solo,5,19,True,,0,0.0,1560.0
-206,internal_medicine,East,en,1.0,360,F,42,Hispanic,group,1,35,True,,0,0.0,1560.0
-207,internal_medicine,North,es,0.794,360,M,50,White,group,2,26,True,,0,0.0,1560.0
-208,internal_medicine,East,es,0.801,360,F,42,Other,group,4,38,True,,0,0.0,1560.0
-209,internal_medicine,North,zh,0.964,360,M,30,Hispanic,group,2,26,True,,0,0.0,1560.0
-210,internal_medicine,West,es,0.769,360,M,62,Other,solo,2,18,True,,0,0.0,1560.0
-211,internal_medicine,North,es,0.713,360,M,53,Asian,group,3,10,True,,0,0.0,1560.0
-212,internal_medicine,East,en,0.681,360,F,33,Other,group,5,16,False,,0,0.0,1560.0
-213,internal_medicine,Central,zh,0.949,360,F,48,Hispanic,solo,4,12,True,,0,0.0,1560.0
-214,internal_medicine,North,en,0.819,360,F,42,Other,group,4,14,True,,0,0.0,1560.0
-215,internal_medicine,North,es,0.835,360,F,50,Asian,solo,3,8,True,,0,0.0,1560.0
-216,internal_medicine,South,zh,0.76,360,F,33,White,solo,3,3,True,,0,0.0,1560.0
-217,internal_medicine,North,zh,1.0,360,F,43,Black,solo,2,25,True,,0,0.0,1560.0
-218,internal_medicine,South,es,0.722,360,F,46,Asian,group,1,35,False,,0,0.0,1560.0
-219,internal_medicine,East,en,0.684,360,F,40,Other,solo,5,17,True,,0,0.0,1560.0
-220,internal_medicine,East,en,0.703,360,M,31,Asian,solo,1,10,True,,0,0.0,1560.0
-221,internal_medicine,West,en,0.964,360,M,35,Hispanic,solo,3,35,True,,0,0.0,1560.0
-222,internal_medicine,South,es,0.683,360,M,30,Other,group,2,11,True,,0,0.0,1560.0
-223,internal_medicine,North,en,0.669,360,F,35,Other,solo,1,13,True,,0,0.0,1560.0
-224,internal_medicine,Central,zh,0.754,360,M,56,Asian,group,3,25,True,,0,0.0,1560.0
-225,internal_medicine,Central,es,0.76,360,M,43,White,solo,2,16,True,,0,0.0,1560.0
-226,internal_medicine,West,es,0.789,360,M,56,Black,solo,5,32,True,,0,0.0,1560.0
-227,internal_medicine,West,en,0.613,360,F,56,Black,solo,5,1,True,,0,0.0,1560.0
-228,internal_medicine,East,zh,0.924,360,F,57,Black,group,2,39,True,,0,0.0,1560.0
-229,internal_medicine,East,en,0.719,360,M,63,Black,group,3,19,True,,0,0.0,1560.0
-230,internal_medicine,South,zh,0.963,360,F,46,White,solo,3,16,True,,0,0.0,1560.0
-231,internal_medicine,North,en,0.997,360,M,30,White,group,3,36,True,,0,0.0,1560.0
-232,internal_medicine,East,zh,0.982,360,M,60,Asian,group,5,13,True,,0,0.0,1560.0
-233,internal_medicine,East,en,0.763,360,F,44,Other,group,2,3,True,,0,0.0,1560.0
-234,internal_medicine,East,en,1.0,360,M,39,Asian,group,3,32,True,,0,0.0,1560.0
-235,internal_medicine,East,es,0.686,360,F,58,Asian,group,2,6,False,,0,0.0,1560.0
-236,internal_medicine,North,zh,0.926,360,F,35,Hispanic,group,3,38,True,,0,0.0,1560.0
-237,internal_medicine,Central,zh,0.652,360,F,59,Black,group,2,24,True,,0,0.0,1560.0
-238,internal_medicine,East,zh,0.878,360,F,41,White,solo,4,20,True,,0,0.0,1560.0
-239,internal_medicine,South,zh,0.713,360,M,55,Black,solo,2,29,False,,0,0.0,1560.0
-240,internal_medicine,East,en,0.768,360,M,55,Asian,solo,1,19,True,,0,0.0,1560.0
-241,internal_medicine,East,es,0.959,360,F,38,Black,group,1,26,True,,0,0.0,1560.0
-242,internal_medicine,North,en,0.911,360,M,61,Asian,group,1,13,True,,0,0.0,1560.0
-243,internal_medicine,West,zh,0.949,360,M,54,Asian,group,4,31,True,,0,0.0,1560.0
-244,internal_medicine,Central,en,0.876,360,F,60,Other,solo,1,18,True,,0,0.0,1560.0
-245,internal_medicine,Central,en,0.97,360,F,65,Hispanic,group,4,15,True,,0,0.0,1560.0
-246,internal_medicine,East,es,0.942,360,F,43,Other,group,1,26,True,,0,0.0,1560.0
-247,internal_medicine,South,en,0.835,360,F,33,Hispanic,solo,5,37,True,,0,0.0,1560.0
-248,internal_medicine,Central,zh,0.996,360,M,63,Hispanic,group,5,22,True,,0,0.0,1560.0
-249,internal_medicine,West,es,1.0,360,M,30,Hispanic,group,3,38,True,,0,0.0,1560.0
-250,internal_medicine,Central,es,0.66,360,F,59,White,group,4,7,True,,0,0.0,1560.0
-251,internal_medicine,South,es,0.836,360,F,36,Black,group,4,9,True,,0,0.0,1560.0
-252,internal_medicine,North,zh,0.702,360,F,39,Asian,solo,2,37,True,,0,0.0,1560.0
-253,internal_medicine,South,es,0.918,360,M,35,Asian,solo,2,4,True,,0,0.0,1560.0
-254,internal_medicine,West,zh,0.778,360,F,57,Black,solo,5,21,True,,0,0.0,1560.0
-255,internal_medicine,Central,es,0.686,360,M,36,Asian,group,4,14,True,,0,0.0,1560.0
-256,internal_medicine,East,en,0.918,360,M,62,Hispanic,group,3,39,False,,0,0.0,1560.0
-257,internal_medicine,Central,zh,0.647,360,F,63,Other,solo,5,14,True,,0,0.0,1560.0
-258,internal_medicine,Central,es,0.905,360,F,48,Asian,solo,1,39,True,,0,0.0,1560.0
-259,internal_medicine,South,en,0.656,360,M,49,Other,solo,2,15,True,,0,0.0,1560.0
-260,internal_medicine,North,es,0.784,360,F,55,Hispanic,group,1,15,True,,0,0.0,1560.0
-261,internal_medicine,Central,en,0.764,360,M,37,White,solo,5,35,True,,0,0.0,1560.0
-262,internal_medicine,Central,es,0.929,360,M,49,Other,solo,5,38,True,,0,0.0,1560.0
-263,internal_medicine,South,zh,0.672,360,F,49,Other,group,2,15,True,,0,0.0,1560.0
-264,internal_medicine,West,es,0.952,360,F,56,Other,solo,1,6,True,,0,0.0,1560.0
-265,internal_medicine,Central,zh,0.71,360,F,43,White,solo,5,21,True,,0,0.0,1560.0
-266,internal_medicine,South,en,0.832,360,F,35,Hispanic,solo,3,8,True,,0,0.0,1560.0
-267,internal_medicine,North,zh,0.937,360,F,32,White,group,5,16,True,,0,0.0,1560.0
-268,internal_medicine,West,es,1.0,360,M,42,White,solo,4,19,True,,0,0.0,1560.0
-269,internal_medicine,Central,zh,1.0,360,F,55,Hispanic,solo,2,36,True,,0,0.0,1560.0
-270,internal_medicine,North,en,0.768,360,F,39,Hispanic,group,5,33,True,,0,0.0,1560.0
-271,internal_medicine,East,en,0.615,360,M,31,Hispanic,solo,4,7,True,,0,0.0,1560.0
-272,internal_medicine,East,es,0.651,360,F,32,Black,group,4,6,True,,0,0.0,1560.0
-273,internal_medicine,West,es,0.686,360,F,55,White,solo,1,8,True,,0,0.0,1560.0
-274,internal_medicine,North,zh,0.739,360,M,36,Black,group,4,22,True,,0,0.0,1560.0
-275,internal_medicine,Central,zh,0.65,360,M,55,White,solo,3,11,True,,0,0.0,1560.0
-276,internal_medicine,West,en,0.877,360,F,43,Asian,solo,1,20,True,,0,0.0,1560.0
-277,internal_medicine,North,zh,0.812,360,M,40,Hispanic,solo,1,12,True,,0,0.0,1560.0
-278,internal_medicine,West,zh,0.663,360,M,63,Black,solo,3,5,True,,0,0.0,1560.0
-279,internal_medicine,South,en,1.0,360,M,53,Asian,solo,4,34,True,,0,0.0,1560.0
-280,internal_medicine,South,en,0.721,360,F,51,Other,solo,4,35,True,,0,0.0,1560.0
-281,internal_medicine,East,en,0.668,360,M,35,Asian,solo,5,24,True,,0,0.0,1560.0
-282,internal_medicine,West,zh,0.681,360,F,44,White,solo,2,31,False,,0,0.0,1560.0
-283,internal_medicine,West,en,0.698,360,F,47,Hispanic,solo,2,39,True,,0,0.0,1560.0
-284,internal_medicine,West,en,0.93,360,M,57,White,group,1,11,True,,0,0.0,1560.0
-285,internal_medicine,West,en,0.72,360,F,33,Asian,solo,2,6,True,,0,0.0,1560.0
-286,internal_medicine,Central,es,0.635,360,M,31,Asian,group,5,16,True,,0,0.0,1560.0
-287,internal_medicine,East,es,0.925,360,M,36,Asian,solo,4,13,True,,0,0.0,1560.0
-288,internal_medicine,West,zh,0.734,360,F,49,Other,solo,4,39,True,,0,0.0,1560.0
-289,internal_medicine,Central,es,0.784,360,F,62,Black,solo,3,36,True,,0,0.0,1560.0
-290,internal_medicine,South,es,0.797,360,F,56,Other,group,2,10,True,,0,0.0,1560.0
-291,internal_medicine,North,zh,0.744,360,M,46,Hispanic,solo,2,6,True,,0,0.0,1560.0
-292,internal_medicine,South,zh,0.727,360,F,41,White,solo,5,40,True,,0,0.0,1560.0
-293,internal_medicine,East,es,0.739,360,F,37,Other,solo,3,6,True,,0,0.0,1560.0
-294,internal_medicine,West,zh,1.0,360,M,50,Black,group,3,29,False,,0,0.0,1560.0
-295,internal_medicine,Central,zh,0.75,360,M,38,Hispanic,group,4,13,True,,0,0.0,1560.0
-296,internal_medicine,West,es,0.831,360,F,33,Asian,group,2,24,True,,0,0.0,1560.0
-297,internal_medicine,West,en,0.912,360,M,31,White,group,5,40,True,,0,0.0,1560.0
-298,internal_medicine,East,zh,0.837,360,F,43,Hispanic,group,2,27,True,,0,0.0,1560.0
-299,internal_medicine,North,zh,0.771,360,F,36,Other,solo,3,8,True,,0,0.0,1560.0
-300,internal_medicine,North,es,0.845,360,F,62,Black,group,5,34,False,,0,0.0,1560.0
-301,pediatrics,South,zh,0.856,360,M,60,White,solo,1,1,True,,0,0.0,1560.0
-302,pediatrics,Central,es,0.909,360,M,40,Other,group,2,1,True,,0,0.0,1560.0
-303,pediatrics,South,es,0.71,360,F,36,Hispanic,solo,3,20,True,,0,0.0,1560.0
-304,pediatrics,West,zh,0.92,360,M,35,Hispanic,group,4,37,True,,0,0.0,1560.0
-305,pediatrics,West,zh,0.617,360,M,39,Black,solo,5,10,True,,0,0.0,1560.0
-306,pediatrics,North,es,0.814,360,F,40,Hispanic,group,4,8,True,,0,0.0,1560.0
-307,pediatrics,West,zh,0.743,360,F,36,Asian,group,3,30,True,,0,0.0,1560.0
-308,pediatrics,South,zh,0.875,360,M,59,Hispanic,solo,3,1,True,,0,0.0,1560.0
-309,pediatrics,Central,zh,0.68,360,M,39,Asian,solo,3,14,True,,0,0.0,1560.0
-310,pediatrics,Central,zh,0.898,360,F,65,Black,group,3,7,True,,0,0.0,1560.0
-311,pediatrics,West,es,0.811,360,M,56,Hispanic,group,5,28,True,,0,0.0,1560.0
-312,pediatrics,Central,es,0.709,360,M,51,Asian,solo,5,20,True,,0,0.0,1560.0
-313,pediatrics,North,zh,0.718,360,F,32,Hispanic,group,2,34,True,,0,0.0,1560.0
-314,pediatrics,South,zh,0.718,360,F,33,Hispanic,group,3,4,True,,0,0.0,1560.0
-315,pediatrics,West,es,0.705,360,M,62,White,solo,3,24,True,,0,0.0,1560.0
-316,pediatrics,North,es,0.779,360,F,32,Asian,group,4,20,True,,0,0.0,1560.0
-317,pediatrics,South,en,0.907,360,F,58,Asian,group,3,32,True,,0,0.0,1560.0
-318,pediatrics,Central,es,0.979,360,F,32,Asian,solo,3,22,True,,0,0.0,1560.0
-319,pediatrics,South,es,0.674,360,F,46,Hispanic,group,4,16,True,,0,0.0,1560.0
-320,pediatrics,Central,zh,0.943,360,M,48,Asian,solo,4,30,True,,0,0.0,1560.0
-321,pediatrics,North,es,0.83,360,M,61,Hispanic,solo,3,39,False,,0,0.0,1560.0
-322,pediatrics,Central,zh,0.614,360,F,54,White,solo,5,14,True,,0,0.0,1560.0
-323,pediatrics,North,en,0.615,360,M,56,Asian,group,5,2,True,,0,0.0,1560.0
-324,pediatrics,West,es,0.774,360,M,37,Hispanic,group,5,18,False,,0,0.0,1560.0
-325,pediatrics,North,en,0.758,360,F,30,Black,solo,4,7,False,,0,0.0,1560.0
-326,pediatrics,South,en,0.942,360,F,45,Asian,solo,4,4,False,,0,0.0,1560.0
-327,pediatrics,West,en,0.768,360,F,56,Black,group,3,35,True,,0,0.0,1560.0
-328,pediatrics,West,zh,1.0,360,M,45,Other,group,2,39,True,,0,0.0,1560.0
-329,pediatrics,East,en,0.652,360,F,62,Black,solo,4,6,True,,0,0.0,1560.0
-330,pediatrics,North,en,0.731,360,F,38,Asian,solo,1,25,True,,0,0.0,1560.0
-331,pediatrics,Central,zh,0.712,360,M,41,Other,group,1,33,True,,0,0.0,1560.0
-332,pediatrics,Central,en,0.948,360,M,32,White,group,5,6,True,,0,0.0,1560.0
-333,pediatrics,East,en,1.0,360,M,49,White,solo,5,37,True,,0,0.0,1560.0
-334,pediatrics,East,en,0.888,360,F,37,White,solo,4,9,True,,0,0.0,1560.0
-335,pediatrics,South,zh,0.605,360,M,65,Asian,solo,1,11,True,,0,0.0,1560.0
-336,pediatrics,East,es,0.802,360,M,50,Asian,group,3,28,True,,0,0.0,1560.0
-337,pediatrics,North,en,0.659,360,M,33,Hispanic,group,5,7,True,,0,0.0,1560.0
-338,pediatrics,North,zh,0.912,360,F,46,Other,group,5,28,True,,0,0.0,1560.0
-339,pediatrics,East,en,0.706,360,M,62,Hispanic,group,2,16,True,,0,0.0,1560.0
-340,pediatrics,East,es,0.889,360,M,59,Asian,solo,2,29,True,,0,0.0,1560.0
-341,pediatrics,Central,es,0.738,360,M,49,White,group,1,10,True,,0,0.0,1560.0
-342,pediatrics,Central,zh,0.939,360,M,65,White,group,5,12,True,,0,0.0,1560.0
-343,pediatrics,West,zh,0.878,360,M,46,Other,solo,5,39,True,,0,0.0,1560.0
-344,pediatrics,East,en,0.694,360,F,60,Hispanic,group,1,32,True,,0,0.0,1560.0
-345,pediatrics,Central,en,0.904,360,M,51,White,group,1,9,True,,0,0.0,1560.0
-346,pediatrics,West,en,0.756,360,F,39,Black,group,5,18,True,,0,0.0,1560.0
-347,pediatrics,West,en,0.82,360,F,30,Black,group,3,24,True,,0,0.0,1560.0
-348,pediatrics,Central,es,0.637,360,F,32,Black,group,1,18,False,,0,0.0,1560.0
-349,pediatrics,South,es,0.861,360,M,43,Other,solo,4,18,False,,0,0.0,1560.0
-350,pediatrics,East,es,0.603,360,M,58,Hispanic,solo,5,9,True,,0,0.0,1560.0
-351,pediatrics,Central,en,0.914,360,F,63,Hispanic,group,4,14,True,,0,0.0,1560.0
-352,pediatrics,North,zh,0.812,360,F,56,White,group,3,11,True,,0,0.0,1560.0
-353,pediatrics,North,es,0.757,360,F,38,Hispanic,group,2,22,False,,0,0.0,1560.0
-354,pediatrics,East,es,0.883,360,F,37,White,group,5,19,False,,0,0.0,1560.0
-355,pediatrics,South,zh,0.765,360,F,50,Black,solo,2,4,True,,0,0.0,1560.0
-356,pediatrics,North,es,0.676,360,M,57,White,group,1,25,True,,0,0.0,1560.0
-357,pediatrics,North,en,0.898,360,F,41,White,solo,2,34,True,,0,0.0,1560.0
-358,pediatrics,Central,en,0.649,360,F,65,Asian,solo,3,30,True,,0,0.0,1560.0
-359,pediatrics,South,en,0.871,360,M,39,Hispanic,group,1,15,True,,0,0.0,1560.0
-360,pediatrics,West,en,0.839,360,F,50,Hispanic,solo,4,39,True,,0,0.0,1560.0
-361,pediatrics,West,zh,0.955,360,F,61,Other,solo,1,29,True,,0,0.0,1560.0
-362,pediatrics,South,en,0.71,360,F,40,Asian,group,5,27,True,,0,0.0,1560.0
-363,pediatrics,Central,en,0.63,360,M,64,Asian,solo,1,20,True,,0,0.0,1560.0
-364,pediatrics,Central,zh,0.867,360,M,65,Hispanic,group,4,35,True,,0,0.0,1560.0
-365,pediatrics,North,zh,0.774,360,M,61,White,group,3,14,True,,0,0.0,1560.0
-366,pediatrics,West,en,0.941,360,M,41,Other,group,3,36,True,,0,0.0,1560.0
-367,pediatrics,Central,en,0.612,360,F,47,White,solo,5,3,True,,0,0.0,1560.0
-368,pediatrics,East,en,0.978,360,M,35,White,solo,5,32,True,,0,0.0,1560.0
-369,pediatrics,East,en,0.62,360,M,50,Hispanic,group,5,16,True,,0,0.0,1560.0
-370,pediatrics,West,es,0.813,360,M,47,Black,group,5,19,True,,0,0.0,1560.0
-371,pediatrics,East,en,0.67,360,M,47,Asian,group,5,4,True,,0,0.0,1560.0
-372,pediatrics,North,zh,0.889,360,F,44,Other,solo,1,29,True,,0,0.0,1560.0
-373,pediatrics,Central,en,0.754,360,F,39,Black,group,3,21,False,,0,0.0,1560.0
-374,pediatrics,Central,en,0.656,360,F,38,Asian,group,3,1,True,,0,0.0,1560.0
-375,pediatrics,West,zh,0.96,360,M,47,Black,solo,1,6,True,,0,0.0,1560.0
-376,pediatrics,South,es,0.815,360,M,48,Other,solo,4,35,True,,0,0.0,1560.0
-377,pediatrics,Central,en,0.641,360,F,46,Hispanic,solo,1,7,True,,0,0.0,1560.0
-378,pediatrics,South,zh,0.878,360,M,38,Black,solo,1,23,True,,0,0.0,1560.0
-379,pediatrics,East,en,0.809,360,M,50,Other,solo,4,1,True,,0,0.0,1560.0
-380,pediatrics,South,es,0.871,360,M,45,Asian,group,1,24,True,,0,0.0,1560.0
+doctor_id,specialty,region,language,quality_score,daily_minutes,gender,age,race,service_type,services_count,experience_years,board_certified,hires_at,current_panel_size,expected_workload,max_workload,working_weeks_by_year
+1,family_practice,South,es,0.821,360,F,50,Black,group,2,17,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 8, 10, 11, 14, 15, 17, 21, 23, 25, 27, 29, 30, 32, 34, 37, 38, 41, 44, 45, 46, 47, 49, 50], ""2024"": [3, 4, 9, 12, 13, 14, 16, 18, 20, 24, 25, 26, 28, 31, 32, 34, 37, 38, 39, 41, 42, 43, 48, 50, 51, 52]}"
+2,family_practice,Central,en,0.868,360,M,48,White,solo,5,37,True,,0,0.0,46800,"{""2023"": [5, 8, 9, 10, 11, 14, 15, 16, 17, 18, 19, 23, 24, 25, 27, 30, 32, 36, 38, 39, 41, 42, 43, 45, 46, 50], ""2024"": [4, 8, 9, 10, 12, 13, 19, 20, 21, 22, 26, 28, 30, 31, 33, 34, 35, 36, 37, 38, 41, 42, 45, 47, 49, 50]}"
+3,family_practice,East,es,0.797,360,F,42,Other,solo,3,29,True,,0,0.0,46800,"{""2023"": [6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 21, 23, 24, 25, 26, 32, 34, 39, 41, 42, 44, 45, 48, 49, 50, 52], ""2024"": [4, 5, 6, 7, 9, 10, 13, 16, 17, 18, 23, 24, 25, 26, 27, 29, 30, 31, 32, 33, 35, 37, 45, 46, 49, 52]}"
+4,family_practice,East,es,0.94,360,M,63,Asian,solo,4,32,True,,0,0.0,46800,"{""2023"": [1, 6, 7, 8, 9, 11, 13, 16, 18, 24, 27, 28, 29, 30, 32, 33, 35, 37, 39, 40, 42, 43, 44, 45, 48, 52], ""2024"": [1, 4, 5, 6, 7, 9, 10, 11, 15, 16, 23, 24, 25, 29, 31, 32, 33, 37, 38, 40, 42, 43, 44, 46, 49, 50]}"
+5,family_practice,South,en,0.743,360,F,40,Hispanic,solo,3,35,True,,0,0.0,46800,"{""2023"": [7, 8, 10, 12, 13, 14, 17, 18, 20, 23, 24, 25, 27, 29, 30, 31, 34, 37, 41, 42, 45, 46, 48, 49, 50, 51], ""2024"": [1, 2, 4, 7, 10, 12, 13, 15, 16, 18, 19, 22, 23, 28, 29, 39, 40, 43, 45, 46, 47, 48, 49, 50, 51, 52]}"
+6,family_practice,North,en,0.735,360,M,48,White,solo,4,2,True,,0,0.0,46800,"{""2023"": [3, 7, 8, 10, 11, 16, 19, 21, 23, 24, 25, 26, 27, 29, 32, 34, 35, 36, 37, 38, 39, 43, 46, 47, 48, 51], ""2024"": [2, 3, 6, 9, 10, 11, 13, 14, 15, 16, 18, 19, 24, 25, 26, 30, 33, 36, 37, 38, 42, 45, 47, 48, 49, 52]}"
+7,family_practice,West,en,0.813,360,M,41,White,group,5,25,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 8, 9, 10, 12, 16, 18, 19, 20, 21, 22, 24, 27, 28, 29, 34, 37, 41, 43, 44, 47, 50, 51], ""2024"": [1, 3, 4, 8, 9, 11, 12, 14, 21, 22, 25, 26, 27, 28, 29, 30, 35, 37, 40, 41, 43, 46, 47, 48, 50, 52]}"
+8,family_practice,East,en,0.851,360,M,38,White,solo,2,24,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 7, 8, 15, 16, 17, 20, 23, 25, 26, 27, 28, 29, 32, 34, 35, 37, 38, 46, 47, 49, 51, 52], ""2024"": [1, 2, 3, 4, 5, 7, 11, 12, 14, 19, 21, 22, 24, 25, 28, 29, 30, 35, 37, 39, 40, 42, 44, 46, 49, 50]}"
+9,family_practice,South,es,0.766,360,F,40,Other,group,5,20,True,,0,0.0,46800,"{""2023"": [1, 2, 7, 8, 9, 11, 13, 14, 15, 17, 19, 20, 24, 25, 26, 28, 29, 30, 31, 32, 37, 40, 42, 47, 51, 52], ""2024"": [1, 2, 5, 8, 9, 10, 12, 13, 15, 19, 20, 23, 24, 25, 26, 27, 29, 31, 32, 33, 35, 38, 40, 47, 50, 52]}"
+10,family_practice,East,zh,0.709,360,M,34,White,solo,2,3,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 7, 9, 12, 14, 19, 22, 23, 24, 25, 27, 29, 30, 32, 33, 34, 35, 36, 42, 46, 47, 50, 51, 52], ""2024"": [4, 5, 6, 7, 11, 15, 18, 19, 20, 22, 25, 26, 27, 28, 31, 33, 34, 35, 36, 39, 41, 42, 44, 47, 48, 50]}"
+11,family_practice,West,es,0.993,360,M,38,Black,group,2,40,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 30, 31, 32, 34, 35, 38, 39, 40, 43, 44, 46, 47], ""2024"": [3, 4, 7, 9, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 23, 27, 29, 30, 33, 36, 38, 42, 43, 44, 46, 49]}"
+12,family_practice,West,zh,0.625,360,M,64,Black,solo,3,2,False,,0,0.0,46800,"{""2023"": [1, 7, 9, 11, 12, 13, 15, 17, 19, 23, 24, 25, 27, 28, 33, 34, 35, 37, 39, 41, 43, 44, 46, 47, 48, 52], ""2024"": [1, 6, 10, 12, 16, 18, 19, 20, 21, 23, 25, 26, 28, 29, 30, 34, 36, 38, 39, 41, 42, 46, 47, 48, 49, 51]}"
+13,family_practice,East,es,0.615,360,F,33,White,solo,4,23,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 8, 14, 15, 17, 19, 21, 22, 23, 24, 25, 26, 28, 30, 32, 33, 34, 35, 36, 37, 41, 45, 46, 48], ""2024"": [1, 2, 5, 7, 8, 9, 10, 12, 13, 16, 24, 25, 27, 28, 29, 30, 32, 33, 34, 37, 40, 41, 42, 43, 51, 52]}"
+14,family_practice,North,zh,0.689,360,M,46,Other,solo,2,19,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 8, 11, 12, 14, 16, 17, 18, 20, 21, 23, 24, 26, 28, 33, 36, 38, 39, 40, 43, 45, 46, 47, 49], ""2024"": [2, 3, 4, 7, 8, 10, 13, 14, 15, 18, 21, 22, 23, 26, 27, 29, 30, 31, 32, 33, 35, 37, 40, 44, 47, 51]}"
+15,family_practice,Central,es,0.768,360,M,34,Black,solo,1,7,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 8, 9, 11, 12, 13, 17, 18, 19, 20, 25, 28, 29, 31, 33, 34, 39, 42, 43, 45, 46, 49], ""2024"": [3, 4, 6, 7, 13, 15, 17, 18, 19, 23, 25, 28, 29, 30, 31, 34, 35, 36, 37, 38, 43, 44, 46, 49, 50, 51]}"
+16,family_practice,East,es,0.654,360,M,36,Asian,solo,4,32,True,,0,0.0,46800,"{""2023"": [8, 10, 11, 12, 13, 17, 18, 20, 21, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 40, 44, 45, 46, 47, 49, 51], ""2024"": [1, 2, 3, 8, 9, 11, 14, 15, 16, 17, 20, 21, 22, 23, 26, 29, 30, 32, 34, 38, 39, 43, 44, 45, 47, 51]}"
+17,family_practice,North,zh,0.921,360,F,41,Black,group,3,39,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 10, 13, 15, 16, 19, 20, 22, 25, 29, 31, 32, 35, 36, 39, 41, 42, 43, 45, 46, 51, 52], ""2024"": [1, 2, 5, 6, 9, 10, 11, 13, 14, 15, 16, 17, 20, 22, 25, 30, 31, 32, 33, 36, 37, 38, 43, 45, 47, 49]}"
+18,family_practice,North,zh,0.78,360,F,58,Black,solo,1,29,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 20, 22, 24, 26, 36, 40, 41, 42, 44, 45, 48, 49, 52], ""2024"": [3, 5, 6, 8, 9, 11, 14, 16, 18, 21, 22, 23, 28, 31, 32, 33, 35, 36, 37, 39, 42, 45, 47, 49, 50, 52]}"
+19,family_practice,North,es,0.887,360,F,49,Hispanic,solo,5,20,False,,0,0.0,46800,"{""2023"": [2, 3, 6, 8, 9, 13, 16, 17, 18, 20, 24, 27, 29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 42, 44, 47, 48], ""2024"": [2, 5, 6, 7, 8, 9, 10, 13, 16, 18, 20, 21, 22, 23, 24, 26, 27, 28, 32, 35, 37, 38, 39, 46, 48, 49]}"
+20,family_practice,Central,en,0.736,360,F,36,Hispanic,solo,3,2,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 9, 10, 11, 12, 14, 15, 16, 17, 19, 20, 22, 24, 25, 27, 29, 30, 31, 34, 35, 36, 39, 44, 52], ""2024"": [2, 4, 5, 6, 8, 9, 10, 13, 14, 15, 16, 18, 26, 27, 29, 32, 35, 36, 37, 40, 41, 46, 47, 50, 51, 52]}"
+21,family_practice,North,en,0.806,360,M,54,White,group,5,18,True,,0,0.0,46800,"{""2023"": [4, 5, 7, 9, 10, 11, 12, 13, 16, 17, 19, 20, 25, 26, 27, 28, 29, 32, 33, 36, 38, 40, 45, 46, 47, 52], ""2024"": [1, 2, 3, 5, 7, 8, 10, 11, 15, 20, 22, 23, 25, 29, 31, 34, 35, 37, 38, 43, 44, 45, 46, 49, 50, 51]}"
+22,family_practice,South,zh,0.935,360,F,64,Other,solo,5,30,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 8, 9, 13, 16, 17, 18, 23, 24, 25, 27, 31, 33, 34, 36, 38, 43, 44, 45, 46, 49, 51, 52], ""2024"": [1, 2, 3, 4, 5, 6, 14, 17, 20, 21, 25, 28, 31, 32, 33, 35, 36, 37, 38, 41, 44, 46, 47, 49, 50, 52]}"
+23,family_practice,Central,es,0.737,360,F,64,Other,group,5,22,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 8, 9, 15, 19, 20, 21, 24, 25, 30, 32, 33, 34, 35, 36, 37, 39, 40, 43, 44, 46, 47, 49, 52], ""2024"": [1, 3, 4, 7, 8, 10, 11, 12, 13, 14, 17, 18, 20, 22, 26, 31, 34, 35, 38, 41, 42, 45, 48, 50, 51, 52]}"
+24,family_practice,East,es,0.828,360,M,52,Black,group,3,16,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 7, 8, 12, 13, 14, 15, 17, 18, 19, 20, 23, 28, 31, 35, 36, 39, 40, 41, 43, 44, 49, 51], ""2024"": [1, 4, 5, 6, 8, 10, 16, 18, 20, 22, 30, 31, 32, 34, 35, 37, 38, 39, 40, 41, 42, 44, 45, 48, 49, 52]}"
+25,family_practice,West,en,0.657,360,M,45,Hispanic,group,1,6,False,,0,0.0,46800,"{""2023"": [2, 3, 4, 6, 7, 8, 9, 11, 12, 14, 15, 19, 23, 25, 27, 28, 29, 33, 35, 39, 42, 43, 45, 46, 49, 52], ""2024"": [1, 2, 6, 7, 8, 10, 11, 12, 14, 15, 18, 20, 25, 26, 27, 28, 32, 35, 36, 37, 38, 42, 45, 46, 50, 51]}"
+26,family_practice,West,es,0.699,360,M,46,Asian,group,4,10,True,,0,0.0,46800,"{""2023"": [3, 7, 11, 13, 15, 16, 17, 19, 20, 21, 23, 24, 27, 29, 30, 31, 34, 35, 37, 39, 42, 43, 44, 46, 50, 52], ""2024"": [1, 4, 6, 7, 8, 10, 11, 13, 15, 19, 20, 22, 24, 29, 32, 33, 35, 38, 40, 43, 44, 46, 47, 48, 50, 52]}"
+27,family_practice,North,es,0.824,360,F,62,Hispanic,group,2,40,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 7, 8, 10, 11, 13, 17, 18, 21, 23, 24, 25, 26, 27, 31, 34, 39, 42, 44, 48, 50, 52], ""2024"": [4, 9, 10, 12, 15, 19, 21, 24, 25, 26, 27, 28, 29, 36, 38, 39, 40, 41, 44, 45, 46, 47, 48, 49, 50, 52]}"
+28,family_practice,South,zh,0.716,360,F,56,White,solo,2,13,True,,0,0.0,46800,"{""2023"": [5, 6, 12, 13, 14, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 30, 32, 34, 35, 36, 38, 44, 45, 47, 48, 51], ""2024"": [1, 2, 3, 4, 6, 9, 10, 13, 15, 16, 17, 18, 24, 30, 31, 32, 33, 34, 35, 36, 37, 38, 42, 43, 48, 51]}"
+29,family_practice,West,en,0.911,360,F,41,Black,group,4,11,True,,0,0.0,46800,"{""2023"": [2, 5, 7, 11, 15, 18, 21, 22, 24, 25, 26, 28, 30, 31, 33, 34, 36, 37, 40, 41, 42, 43, 45, 46, 50, 52], ""2024"": [4, 5, 6, 8, 10, 11, 13, 15, 16, 25, 26, 27, 30, 31, 32, 35, 36, 37, 38, 39, 44, 45, 46, 49, 50, 51]}"
+30,family_practice,West,zh,0.609,360,M,43,Hispanic,solo,5,21,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 7, 8, 9, 10, 12, 14, 16, 19, 21, 22, 23, 24, 25, 28, 29, 33, 36, 37, 43, 45, 46, 49, 52], ""2024"": [2, 4, 6, 7, 8, 9, 11, 12, 15, 17, 18, 19, 20, 24, 25, 29, 34, 38, 39, 40, 41, 42, 44, 46, 49, 50]}"
+31,family_practice,East,en,0.647,360,F,63,Hispanic,group,1,1,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 8, 11, 13, 14, 15, 16, 19, 21, 25, 27, 29, 30, 31, 32, 37, 38, 40, 43, 44, 46, 47, 48, 51], ""2024"": [2, 7, 8, 10, 14, 17, 18, 19, 25, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 48, 49, 50]}"
+32,family_practice,North,zh,0.862,360,M,58,Asian,solo,2,7,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 8, 9, 11, 12, 14, 15, 17, 20, 21, 22, 25, 28, 31, 32, 34, 35, 37, 38, 40, 41, 45, 46, 52], ""2024"": [1, 3, 5, 6, 8, 9, 13, 17, 18, 19, 20, 23, 25, 28, 31, 33, 35, 37, 38, 39, 44, 46, 47, 48, 49, 52]}"
+33,family_practice,South,zh,0.896,360,F,61,White,group,1,14,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 7, 8, 9, 11, 14, 17, 18, 19, 21, 22, 24, 25, 26, 28, 29, 34, 35, 39, 41, 44, 47, 50, 51], ""2024"": [1, 5, 6, 7, 8, 9, 11, 13, 14, 16, 17, 18, 19, 25, 27, 32, 33, 35, 36, 39, 43, 45, 47, 49, 50, 51]}"
+34,family_practice,Central,es,0.746,360,M,31,Other,solo,4,23,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 7, 9, 11, 12, 17, 18, 19, 26, 27, 28, 29, 31, 33, 34, 35, 38, 39, 40, 44, 45, 47, 51], ""2024"": [1, 4, 5, 7, 8, 10, 13, 16, 18, 19, 20, 22, 23, 24, 26, 30, 31, 34, 37, 42, 44, 47, 48, 49, 50, 51]}"
+35,family_practice,North,zh,0.831,360,F,59,White,group,2,11,True,,0,0.0,46800,"{""2023"": [2, 6, 9, 11, 14, 16, 19, 21, 22, 24, 25, 26, 30, 31, 34, 36, 37, 38, 40, 42, 44, 45, 46, 49, 51, 52], ""2024"": [1, 2, 5, 7, 8, 11, 12, 13, 15, 16, 17, 22, 24, 25, 27, 28, 29, 31, 36, 37, 39, 43, 45, 47, 49, 52]}"
+36,family_practice,North,en,0.655,360,M,56,Hispanic,solo,5,1,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 9, 11, 12, 13, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 29, 31, 39, 40, 43, 45, 49], ""2024"": [1, 2, 3, 6, 14, 16, 19, 20, 21, 24, 25, 29, 33, 35, 36, 37, 39, 40, 41, 42, 44, 45, 47, 48, 49, 50]}"
+37,family_practice,East,zh,0.69,360,F,32,Asian,group,2,12,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 8, 11, 13, 14, 15, 17, 18, 20, 21, 22, 25, 27, 29, 32, 33, 34, 36, 37, 43, 48, 50, 51, 52], ""2024"": [2, 3, 4, 5, 7, 8, 10, 12, 14, 16, 17, 19, 20, 21, 22, 26, 28, 30, 33, 36, 38, 41, 42, 43, 44, 51]}"
+38,family_practice,North,zh,0.746,360,M,65,Asian,solo,2,6,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 7, 8, 15, 17, 18, 20, 24, 26, 32, 34, 35, 36, 37, 40, 41, 42, 43, 45, 46, 47, 48, 49, 51], ""2024"": [1, 2, 3, 5, 9, 11, 12, 13, 14, 17, 18, 19, 23, 26, 29, 33, 35, 37, 40, 44, 45, 46, 49, 50, 51, 52]}"
+39,family_practice,West,zh,0.731,360,M,33,Black,group,3,3,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 8, 9, 14, 21, 23, 24, 25, 28, 31, 35, 37, 38, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50], ""2024"": [2, 5, 6, 7, 8, 10, 14, 16, 18, 19, 20, 22, 23, 29, 32, 33, 36, 38, 39, 40, 42, 43, 45, 47, 48, 51]}"
+40,family_practice,West,en,0.58,360,F,50,Black,solo,3,3,True,,0,0.0,46800,"{""2023"": [1, 5, 9, 10, 12, 15, 17, 18, 19, 20, 21, 22, 24, 26, 27, 30, 32, 33, 35, 36, 37, 39, 45, 46, 50, 51], ""2024"": [2, 3, 4, 7, 11, 15, 16, 18, 22, 25, 28, 29, 30, 31, 32, 34, 35, 36, 40, 41, 42, 45, 46, 49, 51, 52]}"
+41,family_practice,East,zh,0.727,360,M,47,Black,group,1,5,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 7, 9, 12, 14, 16, 18, 19, 20, 21, 23, 24, 28, 31, 35, 36, 38, 39, 41, 45, 46, 47, 48, 49], ""2024"": [3, 4, 7, 11, 12, 14, 15, 18, 21, 22, 23, 24, 28, 29, 31, 32, 33, 36, 40, 42, 44, 46, 48, 49, 50, 51]}"
+42,family_practice,South,zh,0.67,360,F,57,Black,solo,2,4,True,,0,0.0,46800,"{""2023"": [4, 6, 7, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 23, 25, 26, 27, 28, 29, 36, 39, 44, 45, 47, 50, 51], ""2024"": [1, 3, 5, 6, 9, 11, 12, 18, 19, 22, 26, 28, 30, 31, 32, 34, 37, 38, 39, 40, 41, 44, 46, 47, 51, 52]}"
+43,family_practice,East,en,0.738,360,M,64,Asian,group,4,6,True,,0,0.0,46800,"{""2023"": [2, 4, 9, 10, 14, 15, 18, 20, 22, 24, 25, 28, 29, 30, 31, 34, 36, 38, 39, 40, 43, 45, 46, 48, 49, 52], ""2024"": [1, 3, 7, 8, 11, 13, 14, 15, 16, 17, 18, 21, 24, 25, 29, 30, 31, 32, 33, 34, 35, 45, 46, 48, 50, 52]}"
+44,family_practice,West,es,0.729,360,M,48,Black,solo,2,30,True,,0,0.0,46800,"{""2023"": [2, 7, 8, 11, 13, 15, 16, 18, 22, 23, 25, 27, 28, 29, 31, 33, 34, 35, 36, 39, 40, 43, 45, 49, 50, 51], ""2024"": [2, 3, 4, 6, 7, 9, 14, 16, 17, 18, 24, 25, 27, 29, 35, 36, 37, 38, 39, 40, 44, 46, 47, 48, 51, 52]}"
+45,family_practice,North,zh,0.922,360,F,62,Other,solo,5,2,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 7, 9, 12, 17, 18, 21, 22, 24, 25, 29, 30, 33, 35, 37, 40, 42, 43, 45, 46, 48, 49, 50, 52], ""2024"": [2, 4, 5, 7, 11, 14, 16, 17, 18, 19, 24, 27, 30, 31, 33, 38, 39, 40, 41, 43, 47, 48, 49, 50, 51, 52]}"
+46,family_practice,Central,zh,0.689,360,M,46,Asian,group,4,33,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 9, 10, 11, 12, 15, 17, 18, 21, 23, 26, 29, 33, 34, 37, 38, 41, 42, 43, 44, 47, 48, 49], ""2024"": [2, 6, 7, 8, 10, 11, 12, 13, 15, 16, 18, 26, 28, 29, 30, 31, 32, 33, 37, 39, 40, 43, 45, 47, 51, 52]}"
+47,family_practice,East,zh,0.638,360,F,52,Asian,group,2,14,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 9, 10, 11, 12, 13, 17, 18, 20, 23, 24, 25, 30, 33, 35, 37, 39, 40, 43, 47, 50, 51, 52], ""2024"": [3, 7, 8, 10, 11, 12, 13, 16, 18, 23, 24, 26, 27, 28, 29, 31, 33, 35, 38, 40, 41, 42, 47, 48, 49, 51]}"
+48,family_practice,North,en,0.878,360,F,63,White,group,1,28,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 21, 24, 26, 27, 29, 31, 32, 34, 36, 37, 38, 47, 48, 49, 50], ""2024"": [1, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 18, 20, 21, 24, 26, 27, 30, 32, 38, 39, 41, 42, 45, 48, 52]}"
+49,family_practice,West,zh,0.761,360,F,60,White,solo,2,6,True,,0,0.0,46800,"{""2023"": [1, 4, 6, 7, 8, 9, 10, 11, 12, 14, 16, 19, 23, 26, 27, 31, 34, 35, 38, 39, 41, 44, 46, 47, 48, 50], ""2024"": [5, 7, 8, 11, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34, 35, 37, 39, 40, 41, 43, 45, 46, 47, 49, 50, 52]}"
+50,family_practice,Central,es,0.927,360,M,60,White,solo,5,27,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 11, 12, 13, 14, 16, 17, 18, 20, 21, 25, 26, 28, 29, 31, 32, 33, 35, 40, 42, 48, 49, 51], ""2024"": [2, 4, 6, 7, 8, 12, 13, 14, 18, 19, 20, 21, 23, 25, 28, 33, 35, 36, 39, 40, 41, 44, 45, 49, 50, 52]}"
+51,family_practice,North,zh,0.76,360,M,50,Other,solo,1,34,True,,0,0.0,46800,"{""2023"": [6, 8, 9, 10, 12, 13, 15, 21, 22, 23, 25, 26, 27, 28, 29, 31, 33, 34, 35, 36, 40, 46, 47, 50, 51, 52], ""2024"": [2, 3, 7, 8, 9, 15, 17, 18, 20, 21, 23, 24, 25, 26, 29, 31, 34, 37, 40, 41, 42, 43, 44, 45, 49, 52]}"
+52,family_practice,North,en,0.752,360,F,30,White,group,3,19,True,,0,0.0,46800,"{""2023"": [2, 8, 9, 11, 17, 18, 19, 21, 22, 23, 25, 26, 28, 30, 32, 33, 35, 36, 37, 38, 40, 42, 43, 47, 48, 51], ""2024"": [2, 4, 6, 7, 11, 13, 19, 20, 22, 24, 27, 34, 35, 36, 37, 38, 40, 41, 42, 46, 47, 48, 49, 50, 51, 52]}"
+53,family_practice,West,es,0.815,360,F,45,Black,solo,2,32,False,,0,0.0,46800,"{""2023"": [2, 3, 10, 11, 13, 15, 16, 17, 20, 21, 22, 26, 28, 30, 31, 32, 33, 34, 35, 38, 40, 41, 43, 47, 51, 52], ""2024"": [1, 2, 5, 8, 10, 11, 15, 18, 21, 22, 25, 26, 27, 32, 33, 34, 37, 38, 40, 41, 43, 45, 47, 49, 50, 51]}"
+54,family_practice,North,zh,0.812,360,M,48,Black,solo,3,10,True,,0,0.0,46800,"{""2023"": [1, 4, 6, 8, 13, 16, 17, 20, 23, 24, 26, 27, 29, 30, 32, 33, 35, 38, 39, 40, 41, 42, 43, 44, 46, 51], ""2024"": [2, 3, 4, 7, 8, 11, 15, 16, 17, 19, 20, 22, 24, 26, 28, 29, 30, 31, 32, 34, 36, 41, 43, 49, 50, 52]}"
+55,family_practice,East,es,0.893,360,M,63,Hispanic,solo,3,29,False,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 7, 8, 10, 12, 13, 14, 16, 17, 19, 23, 24, 29, 31, 32, 33, 35, 37, 39, 41, 47, 50], ""2024"": [2, 3, 5, 6, 8, 12, 13, 14, 15, 17, 21, 24, 26, 28, 34, 36, 37, 38, 39, 42, 43, 44, 45, 46, 47, 51]}"
+56,family_practice,East,en,0.677,360,F,52,Asian,solo,5,33,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 10, 11, 13, 16, 17, 19, 20, 21, 23, 26, 30, 32, 35, 38, 39, 41, 42, 45, 46, 47, 50], ""2024"": [1, 5, 6, 9, 10, 14, 18, 19, 21, 22, 23, 24, 26, 27, 29, 30, 33, 37, 39, 40, 41, 43, 44, 45, 47, 49]}"
+57,family_practice,Central,es,0.839,360,M,58,Asian,solo,3,23,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 7, 10, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27, 30, 32, 33, 36, 37, 38, 41, 45, 46, 47], ""2024"": [3, 4, 5, 8, 9, 10, 12, 16, 19, 21, 23, 25, 27, 30, 31, 32, 33, 34, 36, 38, 41, 42, 45, 46, 47, 48]}"
+58,family_practice,Central,es,0.817,360,M,30,Other,solo,2,17,True,,0,0.0,46800,"{""2023"": [4, 6, 9, 15, 16, 18, 19, 20, 22, 27, 28, 30, 31, 32, 35, 37, 39, 41, 42, 43, 46, 48, 49, 50, 51, 52], ""2024"": [5, 8, 10, 12, 13, 15, 17, 18, 19, 20, 21, 22, 24, 27, 29, 30, 31, 33, 34, 37, 38, 40, 47, 48, 49, 51]}"
+59,family_practice,West,es,0.928,360,M,40,White,solo,3,15,True,,0,0.0,46800,"{""2023"": [2, 4, 7, 10, 11, 13, 14, 15, 17, 21, 22, 27, 29, 31, 36, 37, 40, 41, 42, 43, 44, 45, 48, 49, 50, 51], ""2024"": [1, 2, 5, 12, 13, 15, 16, 19, 21, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 38, 40, 43, 44, 46]}"
+60,family_practice,Central,zh,0.916,360,M,33,Other,solo,1,15,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 9, 14, 15, 18, 19, 21, 23, 24, 26, 28, 29, 32, 33, 35, 36, 37, 38, 41, 42, 46, 49], ""2024"": [3, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 21, 23, 24, 27, 28, 29, 30, 31, 32, 36, 41, 45, 47, 51, 52]}"
+61,family_practice,East,en,0.653,360,M,61,Other,solo,1,25,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 8, 9, 10, 11, 12, 14, 15, 17, 20, 21, 26, 28, 29, 32, 35, 36, 40, 41, 42, 44, 47, 50, 51], ""2024"": [1, 4, 5, 6, 8, 10, 11, 12, 13, 16, 17, 18, 22, 26, 29, 30, 31, 33, 34, 35, 36, 37, 44, 46, 47, 49]}"
+62,family_practice,West,es,0.804,360,M,44,Black,group,5,9,True,,0,0.0,46800,"{""2023"": [1, 4, 7, 8, 9, 10, 11, 16, 17, 20, 21, 25, 26, 28, 31, 32, 33, 34, 35, 37, 40, 45, 46, 47, 50, 51], ""2024"": [4, 6, 7, 9, 12, 13, 17, 18, 21, 22, 23, 24, 28, 29, 31, 33, 35, 38, 40, 43, 44, 46, 47, 49, 50, 52]}"
+63,family_practice,North,en,0.73,360,M,32,Other,solo,3,15,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 7, 8, 9, 10, 11, 13, 15, 16, 18, 20, 25, 26, 30, 33, 35, 40, 44, 46, 48, 49, 50, 51], ""2024"": [2, 4, 7, 8, 12, 13, 16, 18, 20, 22, 23, 26, 28, 29, 31, 33, 35, 37, 38, 39, 42, 44, 46, 47, 48, 50]}"
+64,family_practice,Central,es,0.673,360,F,50,Black,group,3,23,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 13, 15, 18, 19, 20, 21, 26, 28, 29, 30, 34, 35, 36, 37, 38, 39, 42, 43, 46, 48, 50, 52], ""2024"": [3, 5, 7, 10, 11, 13, 14, 15, 17, 19, 20, 22, 23, 24, 25, 29, 33, 34, 36, 39, 44, 45, 47, 48, 49, 51]}"
+65,family_practice,South,es,0.746,360,M,65,Asian,solo,4,40,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 8, 10, 12, 15, 19, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32, 34, 38, 39, 41, 44, 46, 50, 52], ""2024"": [5, 6, 7, 8, 11, 12, 16, 21, 23, 25, 27, 28, 30, 32, 33, 34, 35, 38, 39, 41, 42, 44, 45, 47, 48, 51]}"
+66,family_practice,Central,en,0.903,360,F,37,White,group,4,27,False,,0,0.0,46800,"{""2023"": [1, 6, 11, 12, 13, 14, 16, 18, 20, 22, 23, 24, 25, 28, 29, 31, 32, 33, 35, 36, 39, 41, 42, 44, 47, 52], ""2024"": [2, 3, 5, 7, 8, 13, 16, 17, 19, 21, 22, 24, 26, 27, 29, 31, 32, 33, 35, 37, 43, 44, 46, 47, 51, 52]}"
+67,family_practice,South,en,0.766,360,F,65,Black,group,3,26,True,,0,0.0,46800,"{""2023"": [1, 3, 9, 12, 13, 15, 16, 19, 21, 30, 31, 33, 34, 35, 36, 37, 40, 41, 42, 45, 46, 47, 48, 50, 51, 52], ""2024"": [3, 5, 6, 7, 8, 12, 15, 16, 20, 21, 22, 27, 28, 30, 34, 36, 39, 40, 42, 43, 46, 47, 48, 49, 51, 52]}"
+68,family_practice,East,es,0.663,360,F,44,Black,group,1,40,True,,0,0.0,46800,"{""2023"": [3, 4, 8, 10, 11, 14, 15, 17, 18, 22, 23, 25, 27, 29, 31, 34, 36, 38, 40, 42, 43, 47, 48, 49, 50, 51], ""2024"": [1, 4, 10, 11, 14, 17, 18, 19, 20, 21, 25, 26, 27, 28, 30, 31, 32, 34, 36, 37, 38, 39, 42, 43, 44, 49]}"
+69,family_practice,North,zh,0.947,360,M,59,Other,solo,3,26,False,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 7, 9, 10, 17, 19, 21, 22, 24, 25, 26, 27, 30, 33, 34, 35, 36, 37, 39, 40, 41, 46, 50], ""2024"": [1, 9, 11, 17, 20, 22, 23, 26, 28, 30, 31, 33, 34, 35, 37, 39, 40, 41, 44, 45, 46, 47, 48, 49, 50, 51]}"
+70,family_practice,South,en,0.724,360,F,65,Other,group,2,26,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 7, 9, 12, 16, 18, 19, 20, 24, 25, 26, 28, 30, 32, 36, 39, 42, 44, 46, 50, 51, 52], ""2024"": [1, 3, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 21, 22, 24, 25, 31, 34, 37, 39, 41, 43, 45, 46, 47, 48]}"
+71,family_practice,Central,es,0.632,360,F,54,White,group,4,40,True,,0,0.0,46800,"{""2023"": [1, 3, 9, 10, 11, 12, 14, 15, 16, 19, 23, 25, 27, 28, 30, 31, 34, 37, 38, 39, 40, 41, 44, 45, 49, 52], ""2024"": [1, 3, 5, 7, 9, 11, 16, 17, 21, 22, 23, 24, 26, 27, 28, 30, 32, 34, 35, 37, 40, 43, 46, 48, 51, 52]}"
+72,family_practice,Central,es,0.845,360,M,45,White,group,3,26,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 10, 11, 12, 13, 14, 17, 20, 21, 22, 24, 27, 29, 31, 32, 33, 36, 38, 39, 41, 42, 48, 51, 52], ""2024"": [1, 2, 7, 8, 9, 11, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 30, 32, 34, 37, 38, 40, 44, 47, 49, 51]}"
+73,family_practice,South,zh,0.799,360,F,49,White,group,2,32,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 10, 11, 13, 16, 17, 18, 19, 24, 25, 26, 29, 32, 34, 41, 43, 45, 46, 47, 49, 51, 52], ""2024"": [3, 5, 6, 7, 8, 9, 11, 14, 16, 20, 21, 26, 28, 30, 31, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 51]}"
+74,family_practice,East,en,0.829,360,F,45,Other,solo,1,39,True,,0,0.0,46800,"{""2023"": [1, 5, 7, 8, 11, 12, 13, 14, 15, 18, 20, 22, 23, 26, 27, 28, 29, 31, 33, 35, 39, 40, 47, 48, 49, 50], ""2024"": [3, 4, 7, 13, 16, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 37, 40, 42, 45, 47, 49, 52]}"
+75,family_practice,North,en,0.709,360,M,57,Black,group,5,35,True,,0,0.0,46800,"{""2023"": [4, 5, 7, 9, 14, 16, 17, 18, 19, 20, 22, 24, 25, 27, 30, 34, 36, 37, 40, 41, 43, 44, 47, 48, 50, 52], ""2024"": [2, 3, 6, 9, 10, 11, 14, 15, 17, 18, 19, 20, 21, 24, 25, 26, 28, 31, 36, 37, 39, 40, 41, 46, 48, 50]}"
+76,family_practice,North,zh,0.793,360,M,34,White,group,2,26,True,,0,0.0,46800,"{""2023"": [3, 6, 8, 11, 12, 13, 14, 17, 21, 23, 24, 25, 28, 29, 30, 33, 35, 36, 37, 39, 40, 43, 45, 46, 49, 51], ""2024"": [1, 2, 4, 5, 7, 10, 18, 19, 20, 25, 28, 31, 33, 34, 35, 36, 39, 40, 41, 42, 43, 44, 46, 47, 48, 51]}"
+77,family_practice,South,es,0.826,360,M,60,Asian,solo,3,32,False,,0,0.0,46800,"{""2023"": [2, 6, 7, 8, 10, 13, 16, 17, 19, 22, 24, 25, 26, 27, 28, 30, 32, 35, 38, 39, 42, 44, 46, 47, 48, 50], ""2024"": [1, 3, 4, 5, 10, 11, 13, 15, 16, 19, 22, 23, 27, 28, 33, 35, 38, 40, 42, 43, 45, 47, 48, 49, 50, 52]}"
+78,family_practice,North,zh,0.577,360,M,37,Black,group,5,6,True,,0,0.0,46800,"{""2023"": [1, 3, 9, 12, 14, 15, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 31, 34, 38, 39, 40, 41, 43, 46, 49, 50], ""2024"": [1, 2, 4, 5, 9, 10, 12, 13, 17, 19, 24, 29, 30, 31, 32, 33, 34, 35, 38, 40, 41, 43, 44, 46, 51, 52]}"
+79,family_practice,East,en,0.603,360,F,57,White,solo,2,26,True,,0,0.0,46800,"{""2023"": [6, 7, 8, 9, 12, 13, 18, 20, 21, 23, 26, 28, 29, 32, 34, 35, 37, 38, 39, 40, 42, 44, 45, 47, 48, 52], ""2024"": [4, 5, 6, 12, 13, 15, 16, 18, 20, 21, 23, 24, 30, 35, 36, 37, 38, 41, 42, 43, 45, 46, 48, 50, 51, 52]}"
+80,family_practice,Central,en,0.925,360,F,56,Hispanic,solo,3,17,True,,0,0.0,46800,"{""2023"": [5, 6, 7, 8, 10, 11, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 26, 28, 30, 34, 37, 41, 42, 45, 47, 51], ""2024"": [1, 2, 5, 7, 15, 16, 17, 19, 20, 22, 23, 24, 26, 30, 31, 34, 36, 37, 38, 39, 40, 41, 43, 44, 45, 49]}"
+81,family_practice,Central,en,0.802,360,M,50,Black,solo,2,30,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 9, 12, 14, 18, 20, 22, 23, 25, 26, 28, 30, 31, 32, 33, 34, 38, 40, 43, 45, 47, 49, 51, 52], ""2024"": [2, 3, 5, 7, 8, 9, 13, 14, 18, 21, 23, 24, 25, 26, 28, 36, 37, 38, 41, 42, 45, 46, 48, 49, 50, 52]}"
+82,family_practice,West,zh,0.688,360,F,33,Asian,solo,3,25,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 8, 10, 11, 13, 16, 19, 21, 22, 24, 25, 32, 34, 35, 36, 37, 38, 41, 44, 45, 46, 47, 50, 51], ""2024"": [1, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 28, 30, 39, 45, 46, 48, 51]}"
+83,family_practice,North,es,0.687,360,F,40,Asian,solo,4,16,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 10, 12, 15, 17, 19, 20, 23, 24, 26, 27, 28, 29, 30, 32, 36, 40, 41, 42, 46, 47, 48, 49, 52], ""2024"": [1, 3, 6, 9, 10, 12, 13, 14, 15, 19, 20, 21, 27, 30, 32, 33, 34, 35, 36, 37, 40, 42, 45, 46, 48, 49]}"
+84,family_practice,West,es,0.81,360,F,60,Other,solo,3,31,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 9, 10, 11, 13, 15, 16, 17, 18, 19, 21, 23, 24, 26, 29, 32, 39, 41, 45, 47, 48, 50, 51, 52], ""2024"": [3, 5, 6, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 34, 39, 40, 46, 47, 52]}"
+85,family_practice,South,es,0.793,360,M,43,Hispanic,solo,1,19,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 11, 12, 13, 15, 17, 19, 22, 25, 27, 29, 32, 34, 35, 37, 39, 40, 41, 43, 46, 47, 51, 52], ""2024"": [2, 3, 5, 7, 9, 11, 12, 13, 15, 17, 18, 19, 21, 23, 25, 27, 31, 32, 33, 36, 39, 40, 41, 48, 50, 52]}"
+86,family_practice,North,zh,0.742,360,F,36,Other,group,4,35,True,,0,0.0,46800,"{""2023"": [3, 6, 8, 9, 10, 11, 14, 17, 18, 21, 22, 23, 24, 25, 27, 29, 33, 35, 36, 38, 40, 41, 42, 43, 45, 46], ""2024"": [1, 2, 3, 6, 7, 8, 9, 16, 18, 19, 20, 23, 26, 27, 28, 29, 31, 32, 33, 34, 37, 38, 39, 49, 51, 52]}"
+87,family_practice,North,en,0.76,360,F,51,Black,group,1,26,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 6, 7, 8, 9, 10, 12, 15, 16, 18, 19, 24, 25, 26, 30, 33, 38, 40, 41, 42, 44, 45, 46, 48], ""2024"": [1, 2, 3, 4, 7, 12, 14, 16, 18, 19, 22, 24, 25, 29, 31, 33, 34, 38, 40, 42, 43, 44, 47, 49, 50, 52]}"
+88,family_practice,West,es,0.882,360,F,39,Other,group,5,21,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 7, 9, 12, 19, 20, 21, 23, 24, 26, 27, 28, 29, 30, 33, 35, 37, 39, 41, 42, 45, 50, 52], ""2024"": [2, 3, 6, 7, 10, 11, 13, 15, 17, 18, 19, 21, 24, 26, 27, 29, 30, 33, 34, 37, 40, 44, 47, 49, 51, 52]}"
+89,family_practice,West,en,0.708,360,F,38,Hispanic,group,3,1,False,,0,0.0,46800,"{""2023"": [2, 3, 5, 7, 8, 9, 10, 12, 15, 16, 18, 19, 22, 23, 25, 28, 33, 34, 36, 39, 40, 41, 43, 45, 47, 48], ""2024"": [1, 3, 4, 5, 6, 9, 11, 15, 16, 18, 19, 20, 21, 23, 25, 26, 27, 31, 32, 34, 38, 40, 42, 43, 48, 49]}"
+90,family_practice,North,en,0.691,360,M,40,Asian,group,4,23,True,,0,0.0,46800,"{""2023"": [3, 10, 12, 13, 14, 15, 20, 23, 24, 25, 26, 30, 31, 32, 33, 35, 36, 37, 39, 40, 41, 43, 44, 50, 51, 52], ""2024"": [2, 3, 6, 8, 9, 12, 13, 16, 18, 19, 20, 23, 26, 28, 29, 33, 36, 39, 40, 42, 46, 47, 48, 49, 51, 52]}"
+91,family_practice,Central,en,0.698,360,F,39,Black,solo,2,11,True,,0,0.0,46800,"{""2023"": [1, 4, 7, 8, 10, 14, 15, 18, 20, 21, 22, 24, 25, 28, 29, 30, 31, 32, 36, 39, 40, 41, 45, 47, 48, 50], ""2024"": [2, 7, 10, 12, 14, 15, 21, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 38, 41, 42, 44, 45, 47, 49, 50, 52]}"
+92,family_practice,East,es,0.649,360,M,32,Asian,solo,4,20,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 8, 10, 13, 14, 15, 17, 19, 20, 21, 25, 28, 32, 33, 34, 38, 39, 41, 44, 45, 48, 50, 51, 52], ""2024"": [1, 2, 3, 4, 6, 10, 14, 16, 18, 20, 22, 24, 26, 30, 31, 33, 34, 35, 37, 38, 39, 45, 48, 49, 50, 51]}"
+93,family_practice,East,es,0.913,360,F,43,Black,group,4,5,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 9, 11, 13, 15, 17, 19, 20, 21, 23, 26, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 47, 50], ""2024"": [1, 2, 3, 5, 7, 8, 12, 13, 18, 19, 22, 23, 24, 25, 27, 28, 29, 30, 31, 33, 37, 39, 40, 43, 46, 50]}"
+94,family_practice,East,zh,0.839,360,F,36,Other,solo,5,17,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 6, 8, 10, 11, 12, 13, 14, 15, 17, 20, 21, 22, 28, 29, 32, 33, 34, 37, 39, 44, 49, 50, 51], ""2024"": [1, 7, 8, 11, 12, 13, 14, 15, 17, 18, 21, 23, 26, 29, 30, 31, 32, 33, 37, 40, 44, 45, 46, 47, 49, 50]}"
+95,family_practice,North,zh,0.904,360,M,46,Asian,solo,5,14,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 8, 14, 15, 16, 18, 19, 21, 23, 27, 29, 30, 31, 32, 33, 36, 37, 39, 40, 42, 43, 44, 48, 49], ""2024"": [5, 9, 10, 12, 13, 16, 17, 19, 21, 23, 26, 31, 33, 34, 36, 37, 38, 39, 41, 43, 44, 46, 49, 50, 51, 52]}"
+96,family_practice,East,zh,0.826,360,M,60,Asian,solo,3,24,True,,0,0.0,46800,"{""2023"": [5, 6, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 24, 27, 28, 32, 33, 35, 38, 39, 40, 41, 46, 47, 50, 52], ""2024"": [2, 3, 5, 6, 11, 12, 14, 17, 18, 20, 26, 27, 28, 30, 34, 36, 37, 39, 40, 41, 44, 45, 46, 47, 49, 51]}"
+97,family_practice,North,en,0.796,360,M,45,White,solo,4,17,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 10, 11, 13, 17, 19, 20, 22, 24, 26, 31, 32, 33, 34, 35, 40, 41, 45, 46, 47, 48, 49, 51], ""2024"": [1, 2, 4, 7, 9, 10, 14, 15, 16, 17, 19, 22, 23, 24, 26, 30, 31, 36, 37, 38, 40, 43, 44, 47, 51, 52]}"
+98,family_practice,North,zh,0.78,360,M,52,Hispanic,solo,2,20,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 6, 8, 12, 13, 15, 16, 17, 20, 24, 25, 26, 28, 30, 31, 35, 36, 38, 40, 43, 47, 50, 51, 52], ""2024"": [2, 3, 6, 10, 12, 13, 14, 17, 18, 19, 21, 25, 28, 29, 31, 35, 36, 37, 39, 41, 44, 45, 46, 48, 51, 52]}"
+99,family_practice,Central,en,0.783,360,M,63,Other,solo,2,37,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 17, 26, 28, 29, 34, 38, 40, 41, 42, 43, 44, 47, 48, 50, 51], ""2024"": [4, 5, 6, 11, 14, 18, 19, 21, 22, 25, 27, 29, 30, 31, 33, 35, 36, 37, 40, 41, 45, 48, 49, 50, 51, 52]}"
+100,family_practice,South,es,0.888,360,M,60,Other,group,4,6,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 10, 15, 16, 18, 19, 22, 23, 24, 27, 29, 30, 31, 32, 34, 36, 37, 38, 44, 45, 49, 51, 52], ""2024"": [2, 3, 5, 6, 10, 12, 15, 17, 18, 20, 23, 24, 25, 32, 33, 34, 35, 36, 37, 39, 41, 43, 44, 47, 48, 52]}"
+101,family_practice,North,en,0.702,360,F,30,Asian,group,5,4,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 12, 13, 15, 19, 20, 22, 23, 24, 25, 28, 30, 31, 32, 35, 36, 38, 40, 41, 44, 46, 47, 51], ""2024"": [2, 3, 4, 6, 10, 12, 13, 16, 19, 20, 21, 22, 25, 26, 27, 29, 33, 36, 37, 40, 41, 44, 48, 49, 50, 52]}"
+102,family_practice,North,zh,0.867,360,M,38,Black,group,4,28,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 9, 11, 14, 15, 17, 20, 22, 23, 24, 29, 31, 33, 35, 38, 39, 42, 44, 48, 49, 50, 51], ""2024"": [2, 6, 7, 8, 10, 11, 12, 16, 19, 20, 26, 27, 28, 29, 30, 32, 34, 37, 38, 39, 44, 45, 48, 49, 50, 51]}"
+103,family_practice,East,en,0.938,360,M,37,White,group,5,29,True,,0,0.0,46800,"{""2023"": [3, 4, 6, 7, 10, 13, 15, 16, 18, 19, 20, 22, 26, 29, 31, 32, 41, 42, 43, 44, 45, 46, 48, 49, 51, 52], ""2024"": [1, 4, 7, 8, 9, 10, 11, 12, 16, 19, 23, 24, 25, 27, 30, 31, 33, 36, 39, 40, 43, 46, 47, 49, 50, 52]}"
+104,family_practice,North,zh,0.8,360,F,58,Hispanic,solo,4,40,True,,0,0.0,46800,"{""2023"": [3, 7, 8, 13, 14, 16, 19, 20, 21, 23, 24, 25, 30, 31, 32, 34, 35, 36, 37, 38, 41, 43, 44, 47, 48, 51], ""2024"": [4, 5, 6, 7, 9, 10, 11, 12, 16, 17, 21, 22, 23, 25, 26, 28, 29, 32, 33, 35, 36, 37, 39, 42, 47, 48]}"
+105,family_practice,North,en,0.649,360,M,46,Other,solo,3,16,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 21, 22, 23, 24, 25, 28, 29, 30, 31, 36, 37, 45, 48], ""2024"": [2, 3, 6, 8, 9, 12, 14, 18, 21, 24, 25, 26, 28, 30, 32, 34, 35, 36, 37, 38, 39, 41, 43, 47, 50, 51]}"
+106,family_practice,North,zh,0.568,360,F,51,Black,group,2,3,True,,0,0.0,46800,"{""2023"": [1, 2, 6, 7, 9, 12, 13, 14, 17, 18, 20, 25, 26, 27, 29, 30, 32, 40, 41, 42, 43, 44, 46, 48, 50, 51], ""2024"": [2, 3, 8, 9, 12, 13, 14, 15, 22, 23, 24, 27, 29, 30, 35, 36, 37, 38, 39, 41, 43, 45, 47, 48, 50, 51]}"
+107,family_practice,Central,zh,0.833,360,F,51,Other,group,5,28,True,,0,0.0,46800,"{""2023"": [5, 8, 9, 10, 11, 12, 15, 16, 17, 20, 21, 24, 28, 30, 31, 32, 34, 35, 36, 37, 39, 40, 43, 44, 45, 48], ""2024"": [2, 6, 11, 12, 14, 15, 20, 22, 25, 26, 27, 29, 30, 31, 33, 35, 37, 38, 41, 43, 44, 46, 47, 48, 50, 52]}"
+108,family_practice,South,en,0.794,360,M,36,Hispanic,solo,5,12,True,,0,0.0,46800,"{""2023"": [2, 5, 7, 8, 11, 14, 15, 16, 17, 18, 20, 21, 25, 27, 28, 30, 33, 34, 35, 43, 44, 45, 47, 49, 51, 52], ""2024"": [1, 2, 6, 8, 10, 11, 12, 13, 14, 17, 18, 21, 22, 26, 29, 30, 31, 32, 35, 37, 38, 39, 40, 43, 49, 51]}"
+109,family_practice,South,zh,0.964,360,M,52,Hispanic,solo,4,39,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 8, 13, 15, 20, 24, 25, 27, 28, 30, 31, 33, 34, 37, 39, 40, 41, 42, 45, 47, 48, 51, 52], ""2024"": [1, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 17, 26, 27, 28, 29, 30, 31, 33, 34, 40, 41, 43, 46, 50, 51]}"
+110,family_practice,Central,en,0.763,360,M,56,Asian,group,1,28,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 6, 11, 16, 19, 20, 24, 28, 29, 30, 31, 34, 35, 36, 38, 39, 41, 42, 43, 45, 48, 49, 50, 52], ""2024"": [5, 6, 7, 8, 13, 15, 18, 21, 22, 24, 26, 27, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47]}"
+111,family_practice,Central,en,0.631,360,F,33,Black,group,2,19,True,,0,0.0,46800,"{""2023"": [1, 5, 7, 8, 9, 10, 11, 13, 15, 16, 18, 26, 28, 29, 31, 32, 36, 37, 39, 41, 43, 45, 46, 49, 50, 51], ""2024"": [2, 3, 4, 6, 7, 8, 12, 15, 19, 21, 23, 30, 31, 32, 33, 36, 37, 39, 43, 45, 46, 48, 49, 50, 51, 52]}"
+112,family_practice,Central,es,0.715,360,M,34,White,group,4,13,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 8, 9, 11, 13, 15, 16, 17, 20, 22, 27, 29, 34, 36, 37, 38, 40, 42, 44, 45, 46, 49, 50, 51], ""2024"": [2, 4, 5, 6, 8, 12, 13, 14, 15, 16, 21, 24, 25, 27, 29, 30, 31, 32, 34, 35, 36, 37, 42, 47, 50, 52]}"
+113,family_practice,West,en,0.65,360,F,59,Other,group,2,7,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 8, 9, 10, 13, 14, 15, 22, 23, 26, 29, 33, 34, 35, 40, 41, 42, 43, 44, 46, 48, 49, 51, 52], ""2024"": [1, 4, 8, 13, 14, 18, 20, 21, 25, 28, 30, 31, 32, 33, 34, 35, 38, 39, 40, 42, 44, 46, 47, 49, 51, 52]}"
+114,family_practice,West,zh,0.824,360,F,49,White,solo,5,18,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 6, 8, 10, 11, 12, 14, 16, 17, 18, 19, 21, 24, 25, 27, 28, 30, 31, 35, 41, 43, 48, 49, 52], ""2024"": [4, 8, 10, 11, 12, 13, 15, 16, 18, 20, 22, 24, 27, 29, 32, 34, 35, 37, 38, 39, 41, 42, 43, 44, 48, 49]}"
+115,family_practice,Central,es,0.66,360,M,65,White,group,4,40,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 11, 14, 15, 16, 17, 18, 20, 22, 23, 24, 26, 29, 36, 37, 39, 40, 41, 43, 44, 47, 49, 51], ""2024"": [1, 2, 4, 7, 10, 11, 12, 13, 14, 15, 17, 18, 21, 22, 23, 28, 29, 35, 38, 41, 42, 43, 45, 47, 50, 51]}"
+116,family_practice,North,en,0.598,360,F,58,Hispanic,solo,3,19,True,,0,0.0,46800,"{""2023"": [1, 3, 9, 11, 13, 15, 16, 17, 18, 19, 23, 25, 27, 28, 29, 30, 32, 34, 36, 37, 38, 39, 43, 45, 46, 51], ""2024"": [1, 4, 5, 8, 12, 14, 15, 20, 21, 22, 25, 26, 27, 29, 32, 33, 34, 37, 39, 40, 41, 44, 45, 47, 48, 52]}"
+117,family_practice,Central,zh,0.883,360,M,33,Hispanic,solo,4,17,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 7, 9, 12, 15, 21, 22, 23, 25, 31, 33, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 52], ""2024"": [5, 6, 7, 8, 9, 10, 11, 13, 16, 20, 23, 24, 26, 27, 28, 30, 32, 34, 36, 39, 40, 42, 45, 47, 48, 51]}"
+118,family_practice,West,zh,0.869,360,M,45,Other,solo,2,30,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 8, 13, 15, 16, 17, 19, 21, 24, 25, 28, 33, 35, 37, 39, 42, 43, 44, 45, 46, 48, 49], ""2024"": [2, 4, 5, 7, 9, 16, 19, 21, 23, 24, 26, 27, 30, 33, 34, 35, 36, 38, 39, 41, 42, 43, 44, 50, 51, 52]}"
+119,family_practice,West,zh,0.921,360,F,42,White,solo,2,19,False,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 7, 8, 9, 10, 11, 16, 17, 20, 21, 22, 24, 27, 34, 35, 36, 40, 44, 45, 46, 48, 49, 52], ""2024"": [2, 4, 5, 8, 10, 12, 16, 17, 18, 23, 25, 28, 29, 30, 33, 35, 36, 38, 39, 41, 42, 43, 45, 46, 49, 50]}"
+120,family_practice,South,es,0.803,360,M,58,Black,group,3,38,False,,0,0.0,46800,"{""2023"": [1, 6, 7, 11, 12, 17, 18, 19, 20, 24, 26, 27, 28, 29, 31, 33, 34, 36, 37, 38, 39, 40, 42, 44, 48, 52], ""2024"": [1, 2, 3, 4, 5, 7, 10, 11, 13, 17, 18, 21, 25, 27, 29, 30, 33, 36, 37, 38, 41, 45, 47, 49, 50, 51]}"
+121,family_practice,North,zh,0.733,360,M,58,Asian,solo,1,39,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 16, 17, 18, 20, 23, 25, 28, 29, 31, 33, 37, 41, 42, 46, 49, 51], ""2024"": [1, 8, 9, 10, 14, 15, 17, 18, 20, 21, 24, 25, 28, 29, 32, 33, 34, 37, 38, 39, 41, 42, 47, 48, 49, 51]}"
+122,family_practice,South,zh,0.737,360,F,56,Black,solo,2,29,True,,0,0.0,46800,"{""2023"": [1, 4, 14, 17, 21, 22, 23, 24, 25, 26, 28, 29, 32, 34, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48], ""2024"": [2, 3, 10, 11, 12, 15, 17, 18, 19, 20, 22, 23, 25, 26, 27, 28, 33, 36, 39, 40, 41, 43, 44, 47, 49, 52]}"
+123,family_practice,Central,zh,0.829,360,M,52,White,solo,4,40,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 9, 11, 13, 14, 15, 16, 17, 18, 21, 25, 28, 32, 33, 35, 36, 40, 42, 44, 45, 46, 47, 49, 52], ""2024"": [1, 2, 3, 4, 7, 13, 15, 17, 22, 25, 26, 28, 29, 30, 31, 32, 33, 36, 40, 41, 43, 45, 46, 47, 51, 52]}"
+124,family_practice,Central,zh,0.686,360,F,30,Asian,group,3,30,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 9, 11, 13, 14, 19, 20, 21, 24, 31, 32, 33, 34, 36, 39, 41, 42, 43, 44, 46, 49, 51], ""2024"": [1, 2, 3, 5, 8, 14, 15, 20, 22, 23, 24, 25, 27, 28, 29, 31, 33, 35, 36, 38, 40, 42, 44, 45, 46, 52]}"
+125,family_practice,West,en,0.741,360,M,61,Black,solo,2,29,True,,0,0.0,46800,"{""2023"": [4, 6, 8, 10, 12, 13, 15, 16, 17, 18, 20, 22, 23, 24, 29, 32, 34, 36, 37, 39, 40, 41, 44, 48, 50, 51], ""2024"": [5, 7, 8, 13, 14, 15, 18, 20, 22, 23, 24, 25, 27, 28, 29, 31, 33, 35, 36, 38, 40, 44, 45, 46, 50, 52]}"
+126,family_practice,Central,es,0.879,360,M,30,White,solo,4,23,True,,0,0.0,46800,"{""2023"": [1, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 21, 23, 29, 30, 34, 36, 38, 40, 41, 44, 45, 46, 48, 49, 52], ""2024"": [2, 3, 5, 7, 9, 11, 12, 13, 19, 23, 25, 27, 28, 30, 32, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 50]}"
+127,family_practice,South,en,0.813,360,M,45,Hispanic,solo,1,9,True,,0,0.0,46800,"{""2023"": [4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 23, 24, 27, 28, 29, 30, 35, 37, 40, 43, 45, 46, 51, 52], ""2024"": [1, 3, 4, 6, 10, 12, 17, 19, 21, 22, 26, 27, 28, 30, 31, 33, 34, 35, 39, 40, 42, 46, 47, 49, 51, 52]}"
+128,family_practice,South,en,0.934,360,M,30,Other,group,1,14,True,,0,0.0,46800,"{""2023"": [2, 8, 12, 16, 17, 18, 20, 23, 26, 27, 30, 33, 34, 35, 37, 39, 40, 41, 42, 43, 44, 45, 47, 50, 51, 52], ""2024"": [1, 2, 3, 4, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 22, 24, 27, 29, 35, 37, 38, 39, 40, 41, 45, 46]}"
+129,family_practice,West,zh,0.757,360,F,59,Other,solo,1,37,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 9, 10, 11, 18, 19, 20, 23, 25, 27, 28, 29, 30, 31, 33, 34, 35, 39, 41, 42, 46, 50, 51], ""2024"": [4, 6, 8, 11, 12, 13, 14, 21, 23, 24, 26, 27, 28, 33, 35, 37, 39, 40, 41, 42, 43, 46, 47, 48, 49, 51]}"
+130,family_practice,Central,en,0.573,360,M,41,Asian,solo,1,1,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 6, 9, 11, 13, 18, 21, 25, 29, 30, 31, 33, 36, 37, 40, 42, 44, 45, 46, 47, 48, 49, 50, 51], ""2024"": [3, 4, 5, 7, 9, 12, 13, 17, 22, 23, 24, 25, 29, 30, 31, 33, 34, 35, 39, 40, 41, 44, 45, 46, 50, 51]}"
+131,family_practice,North,en,0.765,360,F,45,Asian,group,1,8,True,,0,0.0,46800,"{""2023"": [3, 7, 8, 9, 10, 13, 16, 17, 21, 22, 23, 28, 31, 32, 34, 35, 38, 41, 42, 43, 45, 48, 49, 50, 51, 52], ""2024"": [2, 4, 7, 8, 9, 10, 11, 12, 15, 19, 20, 24, 26, 29, 31, 33, 34, 35, 36, 37, 39, 42, 43, 44, 47, 49]}"
+132,family_practice,North,zh,0.852,360,F,36,Asian,group,2,35,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 8, 9, 10, 11, 16, 18, 19, 21, 24, 28, 29, 32, 34, 38, 41, 43, 44, 45, 46, 49, 50, 51, 52], ""2024"": [4, 5, 7, 9, 10, 12, 15, 19, 21, 22, 25, 27, 28, 31, 32, 33, 38, 39, 40, 41, 42, 43, 46, 47, 48, 50]}"
+133,family_practice,West,zh,0.841,360,M,54,White,group,3,8,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 6, 7, 8, 9, 10, 11, 14, 16, 18, 20, 22, 23, 27, 30, 32, 37, 39, 40, 44, 45, 47, 48, 50], ""2024"": [1, 5, 7, 10, 11, 12, 13, 16, 17, 18, 20, 22, 23, 25, 29, 32, 33, 35, 40, 43, 44, 45, 46, 47, 48, 50]}"
+134,family_practice,Central,en,0.924,360,M,59,Other,group,2,4,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 7, 8, 9, 10, 15, 18, 21, 23, 25, 26, 27, 28, 29, 31, 34, 36, 40, 42, 43, 48, 50], ""2024"": [2, 3, 4, 5, 6, 11, 12, 14, 15, 17, 18, 21, 24, 25, 26, 28, 30, 32, 35, 37, 41, 42, 47, 48, 51, 52]}"
+135,family_practice,East,es,0.732,360,M,64,Asian,solo,4,24,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 13, 14, 16, 17, 19, 20, 22, 25, 27, 31, 32, 33, 34, 36, 37, 39, 40, 42, 45, 46, 47, 51, 52], ""2024"": [1, 5, 6, 7, 8, 9, 12, 14, 15, 18, 19, 22, 24, 28, 31, 32, 33, 35, 36, 37, 40, 41, 42, 44, 46, 51]}"
+136,family_practice,West,en,0.781,360,M,63,White,solo,1,40,False,,0,0.0,46800,"{""2023"": [4, 5, 8, 9, 12, 13, 14, 18, 20, 21, 24, 25, 27, 30, 31, 32, 35, 36, 37, 40, 42, 45, 46, 49, 51, 52], ""2024"": [1, 2, 3, 5, 6, 8, 9, 10, 18, 19, 21, 24, 26, 29, 30, 31, 33, 34, 35, 36, 38, 39, 42, 45, 47, 48]}"
+137,family_practice,North,es,0.89,360,M,47,White,solo,4,28,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 9, 12, 13, 14, 18, 19, 21, 22, 23, 32, 33, 34, 35, 36, 38, 40, 45, 48, 49, 50, 52], ""2024"": [3, 4, 12, 14, 15, 16, 18, 20, 22, 23, 25, 28, 31, 33, 34, 35, 37, 38, 39, 41, 43, 44, 45, 50, 51, 52]}"
+138,family_practice,South,zh,0.68,360,F,53,Black,group,2,15,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 7, 10, 11, 12, 18, 23, 24, 25, 26, 28, 30, 32, 33, 37, 38, 39, 45, 46, 49, 51, 52], ""2024"": [1, 2, 3, 6, 9, 14, 17, 21, 22, 23, 24, 26, 27, 28, 29, 32, 34, 35, 39, 42, 43, 46, 48, 49, 51, 52]}"
+139,family_practice,East,zh,0.668,360,F,65,White,solo,2,34,True,,0,0.0,46800,"{""2023"": [2, 3, 7, 9, 11, 13, 14, 16, 19, 26, 27, 29, 30, 33, 35, 36, 37, 39, 42, 44, 46, 47, 48, 49, 51, 52], ""2024"": [1, 3, 4, 5, 7, 13, 16, 19, 21, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 36, 38, 41, 44, 45, 47, 49]}"
+140,family_practice,North,en,0.749,360,F,48,Other,group,3,20,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 9, 13, 14, 16, 18, 23, 24, 25, 26, 27, 28, 33, 35, 37, 38, 40, 41, 44, 46, 49, 50, 51, 52], ""2024"": [4, 5, 9, 12, 15, 18, 20, 22, 23, 25, 28, 31, 34, 35, 38, 39, 40, 41, 42, 43, 46, 47, 48, 49, 50, 51]}"
+141,family_practice,Central,zh,0.782,360,M,50,Other,solo,5,30,False,,0,0.0,46800,"{""2023"": [2, 4, 6, 8, 9, 11, 13, 17, 18, 21, 24, 25, 26, 29, 30, 33, 35, 36, 39, 41, 42, 43, 45, 46, 47, 49], ""2024"": [5, 7, 8, 10, 11, 13, 15, 16, 20, 21, 23, 25, 27, 31, 32, 34, 35, 36, 37, 39, 41, 42, 45, 46, 51, 52]}"
+142,family_practice,West,zh,0.739,360,M,37,Hispanic,solo,5,16,True,,0,0.0,46800,"{""2023"": [2, 4, 6, 8, 10, 13, 14, 15, 16, 18, 19, 20, 21, 23, 28, 30, 31, 35, 37, 39, 41, 42, 45, 48, 50, 52], ""2024"": [1, 2, 5, 10, 11, 12, 13, 15, 19, 22, 24, 25, 26, 27, 28, 29, 32, 38, 40, 44, 45, 47, 49, 50, 51, 52]}"
+143,family_practice,North,en,0.878,360,F,63,Other,group,5,31,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 9, 11, 13, 14, 16, 17, 18, 22, 23, 24, 26, 28, 30, 31, 35, 37, 39, 41, 42, 45, 48, 51], ""2024"": [2, 3, 4, 6, 7, 9, 10, 12, 14, 15, 18, 19, 23, 24, 25, 29, 32, 34, 35, 36, 41, 45, 47, 50, 51, 52]}"
+144,family_practice,North,es,0.637,360,F,52,Other,solo,2,6,True,,0,0.0,46800,"{""2023"": [3, 4, 8, 11, 12, 16, 18, 20, 21, 22, 23, 24, 28, 29, 32, 33, 35, 36, 37, 39, 40, 42, 43, 45, 47, 51], ""2024"": [2, 3, 9, 11, 13, 14, 15, 16, 18, 20, 21, 22, 24, 25, 27, 28, 29, 30, 34, 35, 41, 42, 43, 44, 45, 49]}"
+145,family_practice,South,en,0.754,360,F,47,Other,solo,3,37,True,,0,0.0,46800,"{""2023"": [2, 6, 8, 10, 12, 15, 21, 23, 25, 27, 29, 30, 31, 33, 37, 38, 39, 40, 41, 42, 43, 44, 46, 48, 49, 52], ""2024"": [2, 12, 14, 15, 16, 17, 19, 20, 21, 26, 27, 28, 29, 30, 31, 32, 36, 39, 40, 43, 44, 45, 46, 48, 51, 52]}"
+146,family_practice,North,zh,0.765,360,F,58,Other,group,2,19,True,,0,0.0,46800,"{""2023"": [2, 6, 7, 8, 10, 12, 13, 15, 17, 18, 19, 22, 23, 24, 33, 34, 36, 38, 40, 42, 45, 47, 49, 50, 51, 52], ""2024"": [3, 4, 5, 7, 8, 9, 10, 12, 15, 18, 23, 24, 25, 27, 28, 29, 32, 35, 37, 38, 40, 41, 42, 43, 45, 52]}"
+147,family_practice,South,zh,0.887,360,F,52,Hispanic,group,3,19,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 7, 9, 10, 14, 18, 22, 23, 24, 25, 27, 28, 31, 33, 35, 37, 39, 40, 41, 43, 44, 45, 49], ""2024"": [2, 3, 6, 7, 8, 14, 15, 21, 23, 25, 26, 28, 29, 31, 33, 34, 35, 39, 41, 42, 43, 44, 45, 48, 50, 51]}"
+148,family_practice,South,es,0.813,360,M,47,Other,group,4,31,True,,0,0.0,46800,"{""2023"": [4, 8, 10, 13, 14, 16, 18, 19, 20, 22, 23, 26, 27, 28, 31, 33, 35, 36, 38, 41, 43, 44, 45, 49, 51, 52], ""2024"": [4, 6, 7, 9, 10, 14, 16, 17, 19, 22, 23, 24, 26, 31, 32, 35, 36, 37, 38, 40, 41, 42, 45, 47, 50, 52]}"
+149,family_practice,Central,es,0.821,360,M,65,Hispanic,group,1,3,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 7, 8, 10, 11, 14, 15, 16, 17, 19, 23, 24, 27, 28, 29, 31, 32, 33, 37, 40, 42, 44, 47, 51], ""2024"": [1, 2, 3, 4, 5, 7, 9, 12, 14, 15, 16, 21, 25, 27, 28, 32, 33, 34, 36, 39, 40, 41, 44, 49, 50, 52]}"
+150,family_practice,North,es,0.752,360,F,44,Hispanic,group,3,2,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 8, 9, 10, 17, 18, 19, 21, 25, 27, 30, 32, 35, 36, 37, 39, 41, 42, 43, 44, 45, 47, 49, 52], ""2024"": [1, 2, 3, 8, 9, 10, 14, 23, 24, 26, 28, 29, 31, 32, 34, 35, 36, 37, 38, 39, 44, 45, 46, 47, 48, 50]}"
+151,family_practice,South,es,0.577,360,M,48,Other,group,2,10,False,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 9, 10, 13, 15, 16, 17, 21, 24, 27, 29, 30, 31, 32, 35, 36, 37, 39, 40, 45, 46, 51, 52], ""2024"": [2, 3, 4, 8, 11, 13, 14, 16, 18, 19, 20, 21, 22, 27, 30, 31, 32, 33, 39, 41, 42, 47, 48, 49, 50, 52]}"
+152,family_practice,West,es,0.662,360,F,52,Hispanic,group,4,15,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 7, 9, 11, 13, 14, 17, 18, 26, 27, 30, 31, 34, 39, 40, 43, 44, 45, 47, 49, 50, 51, 52], ""2024"": [2, 3, 4, 8, 15, 18, 20, 21, 22, 23, 24, 25, 30, 31, 35, 36, 37, 38, 39, 44, 45, 46, 48, 50, 51, 52]}"
+153,family_practice,South,zh,0.769,360,F,32,Asian,solo,2,13,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 7, 9, 11, 14, 16, 17, 19, 22, 23, 26, 27, 29, 30, 33, 34, 38, 41, 42, 43, 47, 48, 49], ""2024"": [3, 5, 6, 11, 12, 13, 16, 17, 22, 23, 24, 25, 27, 31, 33, 36, 37, 39, 41, 42, 43, 45, 47, 49, 50, 52]}"
+154,family_practice,North,en,0.762,360,M,41,White,solo,3,26,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 6, 8, 9, 12, 13, 14, 16, 20, 21, 22, 23, 25, 28, 29, 32, 34, 36, 41, 46, 48, 50, 52], ""2024"": [1, 3, 4, 6, 8, 9, 16, 18, 19, 22, 26, 28, 29, 30, 33, 36, 37, 38, 39, 40, 41, 43, 44, 48, 50, 51]}"
+155,family_practice,East,en,0.649,360,F,50,Black,solo,3,27,True,,0,0.0,46800,"{""2023"": [1, 6, 8, 9, 10, 11, 13, 16, 18, 19, 21, 24, 26, 27, 29, 30, 31, 32, 37, 38, 41, 44, 49, 50, 51, 52], ""2024"": [2, 5, 7, 8, 10, 14, 17, 18, 20, 21, 22, 24, 25, 27, 28, 29, 34, 36, 38, 39, 40, 43, 45, 46, 49, 52]}"
+156,family_practice,North,en,0.774,360,M,63,White,solo,1,32,True,,0,0.0,46800,"{""2023"": [1, 2, 6, 7, 9, 14, 16, 17, 18, 20, 23, 24, 26, 27, 29, 30, 31, 32, 33, 36, 40, 43, 48, 49, 50, 52], ""2024"": [1, 4, 7, 8, 9, 11, 12, 14, 15, 16, 18, 20, 24, 25, 26, 28, 30, 31, 37, 39, 43, 44, 45, 46, 48, 49]}"
+157,family_practice,North,zh,0.765,360,M,30,White,solo,4,6,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 6, 9, 10, 12, 14, 16, 18, 19, 22, 24, 25, 27, 32, 34, 35, 37, 38, 39, 42, 43, 46], ""2024"": [3, 6, 7, 8, 12, 15, 18, 19, 20, 28, 29, 30, 31, 32, 35, 37, 40, 41, 42, 44, 46, 47, 49, 50, 51, 52]}"
+158,family_practice,West,zh,0.603,360,F,65,White,solo,2,3,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 18, 27, 30, 31, 32, 36, 37, 38, 39, 41, 42, 48, 49, 51, 52], ""2024"": [5, 8, 9, 10, 11, 13, 14, 15, 17, 18, 21, 22, 26, 27, 28, 29, 31, 33, 35, 36, 40, 44, 46, 47, 48, 52]}"
+159,family_practice,South,en,0.82,360,F,59,Other,group,2,21,True,,0,0.0,46800,"{""2023"": [1, 2, 6, 7, 10, 12, 14, 15, 16, 23, 25, 26, 28, 29, 30, 32, 33, 35, 38, 40, 44, 45, 49, 50, 51, 52], ""2024"": [1, 3, 5, 8, 10, 14, 16, 19, 22, 23, 24, 25, 27, 28, 32, 34, 36, 41, 42, 43, 45, 46, 47, 48, 49, 51]}"
+160,family_practice,North,zh,0.642,360,F,31,White,solo,4,40,True,,0,0.0,46800,"{""2023"": [1, 5, 8, 9, 11, 13, 14, 15, 16, 17, 19, 23, 24, 27, 30, 31, 33, 35, 37, 38, 42, 45, 46, 47, 49, 50], ""2024"": [3, 5, 7, 8, 9, 10, 13, 15, 21, 23, 24, 26, 27, 28, 30, 32, 34, 35, 38, 41, 43, 46, 47, 48, 49, 50]}"
+161,family_practice,Central,es,0.601,360,F,59,White,group,3,1,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 6, 8, 11, 13, 14, 15, 17, 18, 19, 21, 22, 24, 26, 28, 30, 31, 36, 43, 44, 46, 48, 49, 50], ""2024"": [1, 3, 4, 7, 10, 11, 12, 13, 14, 16, 19, 20, 23, 24, 27, 28, 30, 37, 39, 40, 42, 43, 49, 50, 51, 52]}"
+162,family_practice,North,zh,0.718,360,F,42,Asian,group,3,17,True,,0,0.0,46800,"{""2023"": [1, 7, 8, 12, 13, 18, 19, 20, 21, 25, 26, 28, 30, 31, 32, 34, 36, 38, 41, 42, 43, 44, 45, 47, 49, 52], ""2024"": [4, 5, 7, 8, 10, 11, 12, 14, 17, 19, 20, 21, 24, 27, 29, 30, 31, 35, 36, 38, 40, 44, 47, 50, 51, 52]}"
+163,family_practice,North,en,0.638,360,F,63,Black,solo,2,39,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 12, 15, 17, 19, 22, 24, 26, 27, 29, 30, 35, 38, 39, 41, 42, 43, 45, 46, 47, 48, 49, 50, 52], ""2024"": [1, 3, 4, 5, 6, 8, 9, 12, 14, 19, 20, 23, 27, 29, 32, 34, 35, 37, 38, 39, 40, 41, 42, 43, 48, 52]}"
+164,family_practice,South,en,0.884,360,F,62,Hispanic,solo,4,11,True,,0,0.0,46800,"{""2023"": [3, 4, 6, 7, 8, 9, 11, 13, 14, 15, 16, 21, 23, 29, 31, 32, 33, 35, 39, 40, 41, 42, 43, 45, 47, 48], ""2024"": [2, 5, 7, 8, 10, 12, 13, 15, 18, 20, 22, 23, 27, 28, 34, 35, 37, 39, 43, 44, 45, 48, 49, 50, 51, 52]}"
+165,family_practice,East,zh,0.905,360,F,32,Other,solo,2,24,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 7, 8, 10, 14, 15, 18, 22, 26, 27, 28, 29, 30, 32, 34, 35, 38, 39, 40, 42, 43, 45, 49, 52], ""2024"": [1, 3, 6, 7, 8, 11, 15, 16, 20, 22, 23, 24, 25, 26, 30, 31, 32, 33, 37, 38, 39, 42, 44, 46, 47, 49]}"
+166,family_practice,Central,es,0.773,360,M,52,White,group,2,24,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 7, 8, 9, 12, 13, 14, 17, 20, 22, 23, 27, 30, 31, 34, 36, 37, 39, 42, 45, 47, 49, 50, 51], ""2024"": [1, 2, 3, 4, 5, 6, 11, 14, 15, 21, 22, 24, 27, 29, 31, 33, 38, 39, 40, 41, 42, 43, 45, 49, 51, 52]}"
+167,family_practice,East,zh,0.975,360,M,54,White,solo,3,30,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 6, 9, 10, 11, 19, 20, 21, 22, 26, 27, 30, 33, 35, 38, 39, 40, 41, 44, 46, 48, 49, 50], ""2024"": [1, 2, 3, 5, 10, 13, 16, 19, 22, 25, 26, 27, 29, 32, 33, 35, 36, 37, 38, 39, 41, 42, 44, 45, 48, 51]}"
+168,family_practice,North,es,0.824,360,M,45,Asian,group,5,30,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 7, 8, 9, 10, 13, 16, 19, 20, 24, 26, 28, 31, 33, 34, 35, 37, 38, 39, 43, 44, 48, 51, 52], ""2024"": [4, 5, 7, 8, 11, 13, 14, 16, 17, 19, 23, 25, 27, 30, 31, 34, 36, 37, 39, 41, 42, 44, 47, 48, 49, 51]}"
+169,family_practice,South,zh,0.777,360,F,38,White,group,4,7,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 10, 11, 12, 13, 17, 18, 20, 21, 23, 24, 26, 33, 35, 36, 37, 38, 41, 44, 45, 47, 49, 50, 51], ""2024"": [2, 3, 4, 5, 6, 7, 9, 11, 12, 15, 16, 17, 18, 20, 22, 23, 24, 31, 32, 35, 37, 38, 39, 40, 48, 52]}"
+170,family_practice,South,es,0.829,360,M,43,Hispanic,group,2,4,True,,0,0.0,46800,"{""2023"": [1, 6, 7, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 26, 27, 29, 32, 34, 35, 39, 40, 41, 44, 48, 51, 52], ""2024"": [1, 3, 4, 5, 6, 7, 8, 9, 10, 15, 16, 18, 21, 24, 25, 28, 29, 30, 31, 33, 36, 39, 45, 47, 48, 51]}"
+171,family_practice,East,es,0.842,360,M,54,White,group,1,33,True,,0,0.0,46800,"{""2023"": [1, 4, 11, 13, 14, 15, 16, 17, 20, 22, 25, 29, 31, 32, 33, 34, 38, 39, 40, 41, 42, 43, 44, 46, 47, 52], ""2024"": [1, 3, 4, 5, 6, 7, 8, 11, 16, 18, 20, 22, 23, 25, 28, 31, 32, 35, 36, 37, 39, 41, 42, 43, 44, 52]}"
+172,family_practice,West,en,0.852,360,F,49,Other,group,1,10,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 11, 13, 16, 17, 18, 19, 20, 22, 24, 25, 27, 28, 30, 34, 35, 36, 38, 41, 42, 44, 46, 49, 52], ""2024"": [1, 4, 6, 8, 10, 12, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 27, 30, 31, 34, 36, 38, 40, 42, 47, 49]}"
+173,family_practice,Central,zh,0.788,360,M,52,Black,solo,5,17,True,,0,0.0,46800,"{""2023"": [3, 4, 6, 7, 8, 10, 11, 13, 14, 15, 20, 21, 22, 23, 27, 28, 32, 33, 37, 39, 41, 42, 43, 44, 45, 48], ""2024"": [1, 3, 5, 8, 11, 14, 15, 17, 18, 20, 25, 26, 28, 32, 33, 34, 35, 36, 38, 39, 40, 46, 47, 49, 51, 52]}"
+174,family_practice,North,en,0.733,360,M,57,Hispanic,solo,3,27,True,,0,0.0,46800,"{""2023"": [1, 2, 7, 9, 15, 17, 21, 23, 24, 25, 26, 27, 28, 30, 32, 33, 34, 35, 40, 41, 42, 43, 44, 46, 50, 51], ""2024"": [1, 6, 10, 11, 12, 13, 14, 15, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34, 36, 43, 45, 46, 52]}"
+175,family_practice,Central,es,0.906,360,F,55,Asian,solo,4,30,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 8, 10, 11, 13, 15, 16, 19, 20, 21, 23, 24, 26, 28, 30, 33, 34, 36, 42, 49, 50, 51, 52], ""2024"": [2, 3, 4, 6, 9, 10, 12, 16, 18, 19, 21, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 42, 45, 46, 47, 50]}"
+176,family_practice,West,en,0.801,360,F,39,Black,group,5,16,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 7, 10, 11, 12, 13, 14, 15, 18, 21, 22, 23, 26, 27, 29, 31, 32, 33, 36, 38, 40, 44, 46, 51], ""2024"": [1, 2, 7, 8, 10, 15, 18, 19, 22, 24, 27, 28, 31, 32, 34, 37, 38, 39, 40, 42, 43, 44, 46, 48, 49, 50]}"
+177,family_practice,North,es,0.918,360,M,34,Other,solo,4,11,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 9, 11, 15, 16, 19, 20, 22, 24, 26, 28, 30, 31, 37, 38, 39, 40, 41, 44, 45, 46, 47, 51], ""2024"": [1, 4, 5, 6, 7, 8, 11, 12, 13, 18, 23, 25, 27, 28, 31, 33, 35, 37, 42, 44, 45, 46, 47, 48, 50, 51]}"
+178,family_practice,North,en,0.777,360,M,64,Asian,group,5,35,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 9, 11, 12, 16, 19, 20, 21, 23, 27, 29, 30, 32, 36, 37, 38, 39, 42, 44, 45, 46, 47, 51], ""2024"": [8, 10, 11, 14, 15, 16, 18, 20, 21, 22, 25, 26, 27, 28, 29, 31, 33, 34, 36, 37, 38, 42, 44, 45, 46, 48]}"
+179,family_practice,East,zh,0.717,360,M,32,Black,group,4,31,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 8, 9, 12, 13, 15, 18, 19, 20, 23, 24, 25, 27, 29, 30, 31, 32, 35, 36, 37, 42, 47, 50, 52], ""2024"": [1, 2, 9, 11, 13, 15, 16, 17, 18, 20, 21, 23, 28, 31, 32, 33, 34, 36, 37, 41, 42, 45, 48, 49, 50, 51]}"
+180,family_practice,North,es,0.574,360,F,41,White,group,3,8,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 7, 10, 11, 13, 20, 22, 23, 29, 31, 34, 35, 36, 37, 40, 41, 43, 47, 49, 50, 51, 52], ""2024"": [2, 3, 7, 8, 10, 13, 16, 17, 18, 21, 23, 24, 28, 29, 31, 32, 36, 37, 38, 39, 41, 42, 44, 46, 49, 51]}"
+181,family_practice,South,zh,0.637,360,M,42,White,solo,3,18,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 8, 9, 10, 11, 18, 19, 22, 27, 29, 31, 33, 36, 37, 39, 40, 41, 42, 43, 46, 47, 49, 51, 52], ""2024"": [1, 2, 3, 6, 8, 9, 11, 12, 14, 15, 16, 17, 21, 23, 29, 30, 31, 33, 38, 41, 42, 43, 44, 46, 47, 52]}"
+182,family_practice,Central,zh,0.937,360,M,48,Hispanic,group,4,36,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 7, 8, 9, 11, 13, 14, 15, 16, 18, 21, 24, 25, 26, 27, 29, 30, 37, 40, 42, 46, 47, 48, 51], ""2024"": [4, 6, 7, 8, 10, 11, 12, 16, 17, 19, 25, 26, 27, 28, 30, 31, 35, 37, 38, 40, 43, 45, 47, 48, 50, 52]}"
+183,family_practice,West,es,0.89,360,F,36,Black,group,1,25,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 8, 11, 14, 19, 21, 22, 23, 25, 27, 30, 32, 33, 34, 35, 36, 39, 40, 42, 43, 44, 46, 50], ""2024"": [2, 3, 4, 5, 8, 10, 13, 15, 16, 17, 18, 19, 20, 23, 24, 25, 29, 33, 36, 38, 39, 43, 45, 46, 50, 51]}"
+184,family_practice,Central,en,0.873,360,M,40,Black,solo,5,24,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 12, 14, 16, 17, 21, 29, 31, 32, 33, 34, 35, 36, 40, 41, 44, 45, 46, 47, 48, 49, 51, 52], ""2024"": [4, 7, 8, 12, 13, 16, 18, 19, 21, 26, 27, 30, 31, 32, 33, 35, 36, 39, 40, 43, 46, 48, 49, 50, 51, 52]}"
+185,family_practice,South,en,0.957,360,F,55,White,group,4,25,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 11, 12, 15, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 32, 34, 35, 37, 40, 41, 43, 45, 46, 52], ""2024"": [1, 3, 6, 8, 9, 10, 11, 18, 20, 21, 24, 25, 26, 28, 29, 30, 33, 35, 36, 37, 39, 40, 43, 44, 46, 51]}"
+186,family_practice,South,es,0.897,360,F,50,White,group,2,36,False,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 18, 22, 28, 29, 32, 33, 34, 35, 36, 40, 42, 46, 48, 52], ""2024"": [2, 3, 5, 6, 7, 8, 10, 12, 13, 14, 15, 19, 22, 28, 29, 31, 32, 36, 37, 38, 41, 44, 47, 48, 49, 52]}"
+187,family_practice,West,zh,0.608,360,F,38,White,group,4,12,True,,0,0.0,46800,"{""2023"": [2, 6, 7, 10, 11, 12, 13, 14, 16, 17, 20, 23, 25, 27, 28, 29, 31, 32, 33, 40, 41, 46, 48, 49, 51, 52], ""2024"": [1, 3, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16, 19, 23, 30, 31, 32, 33, 34, 35, 37, 43, 45, 46, 50, 52]}"
+188,family_practice,South,en,0.802,360,F,42,Black,solo,4,9,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 7, 9, 10, 12, 14, 15, 20, 22, 23, 25, 26, 28, 30, 31, 33, 35, 39, 42, 47, 49, 50, 51, 52], ""2024"": [1, 3, 4, 8, 9, 12, 14, 16, 17, 18, 19, 20, 23, 27, 32, 33, 36, 38, 39, 41, 42, 45, 46, 47, 50, 51]}"
+189,family_practice,West,es,0.94,360,M,60,Other,group,4,15,True,,0,0.0,46800,"{""2023"": [2, 4, 6, 7, 8, 9, 10, 12, 13, 14, 17, 19, 21, 22, 23, 25, 27, 28, 32, 35, 38, 39, 45, 47, 48, 52], ""2024"": [7, 8, 9, 11, 12, 13, 17, 19, 20, 21, 23, 24, 26, 29, 30, 31, 34, 36, 38, 39, 41, 45, 46, 47, 48, 50]}"
+190,family_practice,North,zh,0.815,360,F,36,Hispanic,group,5,5,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 8, 10, 14, 17, 18, 19, 22, 26, 28, 29, 30, 32, 34, 35, 36, 37, 39, 40, 42, 47, 48, 49, 51], ""2024"": [2, 3, 4, 10, 13, 17, 18, 22, 23, 28, 30, 31, 32, 33, 34, 35, 37, 38, 39, 41, 44, 46, 48, 49, 51, 52]}"
+191,family_practice,South,zh,0.613,360,M,43,Other,solo,2,6,True,,0,0.0,46800,"{""2023"": [3, 5, 8, 9, 10, 11, 12, 14, 17, 20, 22, 24, 26, 28, 29, 31, 34, 35, 37, 39, 42, 44, 47, 49, 50, 51], ""2024"": [1, 3, 4, 8, 9, 10, 12, 13, 15, 16, 17, 19, 21, 24, 25, 32, 33, 34, 37, 39, 40, 41, 46, 47, 48, 52]}"
+192,family_practice,West,en,0.843,360,M,64,White,group,2,6,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 7, 8, 11, 13, 14, 17, 20, 21, 22, 23, 27, 28, 29, 33, 35, 38, 40, 41, 45, 51, 52], ""2024"": [4, 5, 6, 9, 11, 15, 16, 21, 23, 25, 26, 29, 31, 32, 33, 35, 38, 43, 44, 45, 46, 48, 49, 50, 51, 52]}"
+193,family_practice,East,en,0.638,360,F,34,Black,group,2,11,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 9, 10, 12, 13, 15, 17, 19, 20, 22, 24, 27, 29, 30, 33, 35, 36, 38, 39, 41, 46, 49, 50], ""2024"": [1, 2, 6, 12, 15, 20, 23, 25, 27, 29, 30, 31, 33, 36, 37, 38, 40, 41, 42, 44, 45, 47, 49, 50, 51, 52]}"
+194,family_practice,West,zh,0.861,360,F,51,Hispanic,solo,5,27,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 7, 9, 12, 15, 16, 17, 20, 22, 23, 24, 27, 29, 32, 34, 35, 37, 39, 41, 43, 45, 48, 49, 51], ""2024"": [3, 4, 7, 9, 10, 13, 14, 15, 20, 23, 26, 27, 28, 29, 33, 34, 36, 37, 38, 40, 42, 44, 46, 47, 49, 50]}"
+195,family_practice,South,en,0.68,360,F,48,Other,solo,2,10,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 7, 8, 10, 11, 15, 18, 19, 20, 22, 23, 24, 26, 27, 28, 29, 31, 32, 35, 37, 38, 39, 42, 44], ""2024"": [4, 7, 8, 9, 14, 15, 16, 18, 20, 21, 22, 23, 28, 34, 35, 36, 38, 41, 42, 43, 45, 46, 48, 50, 51, 52]}"
+196,family_practice,North,en,0.928,360,F,55,Other,group,4,27,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 9, 10, 11, 13, 14, 18, 21, 22, 25, 26, 29, 30, 31, 32, 34, 35, 36, 38, 39, 41, 42, 46, 50], ""2024"": [4, 5, 8, 9, 10, 11, 12, 13, 16, 20, 21, 22, 24, 25, 27, 28, 29, 30, 31, 33, 34, 35, 36, 48, 51, 52]}"
+197,family_practice,West,es,0.573,360,F,37,White,solo,5,9,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 7, 8, 11, 13, 14, 15, 19, 21, 25, 26, 27, 29, 30, 31, 33, 34, 35, 38, 39, 44, 49, 50], ""2024"": [1, 6, 7, 8, 9, 10, 11, 13, 14, 15, 19, 21, 22, 26, 27, 28, 31, 36, 37, 42, 43, 44, 45, 47, 48, 50]}"
+198,family_practice,Central,es,0.683,360,F,34,Asian,group,5,21,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 10, 14, 16, 17, 18, 19, 21, 22, 23, 24, 32, 36, 39, 40, 41, 42, 43, 44, 46, 50, 51], ""2024"": [1, 2, 4, 14, 15, 18, 24, 25, 26, 27, 30, 31, 33, 34, 36, 37, 39, 40, 41, 42, 43, 44, 46, 49, 50, 52]}"
+199,family_practice,South,en,0.657,360,M,62,Other,group,5,24,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 7, 12, 13, 14, 15, 16, 19, 20, 22, 23, 24, 26, 33, 36, 38, 39, 43, 44, 46, 47, 48, 49, 52], ""2024"": [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 15, 17, 20, 22, 25, 26, 28, 31, 36, 38, 39, 41, 46, 47, 50, 52]}"
+200,family_practice,Central,es,0.911,360,F,54,White,group,3,6,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 14, 15, 16, 17, 18, 19, 22, 23, 24, 25, 26, 28, 30, 31, 39, 40, 41, 42, 43, 44, 46, 47, 50], ""2024"": [3, 5, 6, 8, 9, 11, 13, 14, 16, 17, 18, 19, 20, 22, 23, 25, 29, 33, 37, 39, 40, 42, 44, 45, 46, 50]}"
+201,internal_medicine,Central,en,0.657,360,F,63,Other,solo,4,1,True,,0,0.0,46800,"{""2023"": [1, 2, 7, 8, 10, 15, 19, 20, 23, 24, 26, 27, 28, 31, 33, 34, 37, 39, 40, 41, 42, 45, 47, 48, 49, 50], ""2024"": [1, 3, 10, 11, 16, 20, 21, 22, 23, 25, 26, 27, 29, 31, 32, 33, 34, 35, 37, 38, 40, 42, 43, 44, 48, 50]}"
+202,internal_medicine,Central,es,0.98,360,M,56,Hispanic,group,4,29,True,,0,0.0,46800,"{""2023"": [6, 7, 8, 9, 10, 17, 19, 21, 22, 24, 26, 27, 30, 32, 34, 36, 37, 39, 40, 41, 43, 44, 45, 46, 49, 51], ""2024"": [1, 2, 6, 8, 9, 12, 13, 14, 18, 19, 20, 22, 23, 24, 26, 28, 29, 31, 32, 34, 38, 39, 40, 42, 44, 50]}"
+203,internal_medicine,West,en,0.679,360,F,32,Other,group,3,9,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 7, 9, 11, 12, 14, 16, 17, 19, 20, 23, 25, 27, 32, 34, 35, 37, 39, 45, 49, 50, 51], ""2024"": [1, 2, 3, 6, 7, 8, 13, 14, 15, 18, 19, 21, 24, 25, 26, 27, 28, 30, 33, 36, 40, 44, 47, 50, 51, 52]}"
+204,internal_medicine,North,es,0.996,360,M,57,Asian,group,2,23,True,,0,0.0,46800,"{""2023"": [6, 7, 8, 10, 11, 13, 15, 17, 19, 21, 23, 24, 25, 27, 33, 34, 35, 36, 38, 39, 40, 42, 48, 49, 50, 51], ""2024"": [4, 5, 6, 8, 12, 13, 14, 16, 18, 21, 22, 25, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 49, 52]}"
+205,internal_medicine,Central,en,0.678,360,F,33,Other,solo,3,30,True,,0,0.0,46800,"{""2023"": [4, 7, 10, 11, 12, 14, 21, 22, 23, 24, 26, 27, 28, 29, 31, 34, 36, 39, 41, 43, 44, 45, 46, 47, 48, 51], ""2024"": [2, 3, 7, 10, 11, 13, 14, 17, 18, 22, 25, 26, 27, 28, 30, 31, 33, 36, 40, 42, 43, 44, 45, 47, 49, 51]}"
+206,internal_medicine,West,en,1.0,360,F,45,Black,group,4,23,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 7, 9, 12, 13, 15, 17, 21, 22, 26, 28, 33, 34, 39, 41, 43, 44, 45, 46, 47, 50, 51, 52], ""2024"": [1, 4, 5, 8, 9, 12, 13, 14, 16, 17, 18, 21, 22, 23, 26, 27, 28, 30, 31, 32, 34, 35, 40, 47, 48, 51]}"
+207,internal_medicine,West,en,0.751,360,F,54,Asian,solo,4,2,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 15, 16, 18, 26, 27, 28, 31, 33, 37, 43, 45, 46, 47, 48, 49, 52], ""2024"": [2, 3, 8, 9, 10, 14, 16, 17, 18, 20, 22, 26, 27, 29, 32, 34, 36, 37, 39, 41, 42, 45, 46, 48, 49, 50]}"
+208,internal_medicine,West,en,0.664,360,F,56,Asian,solo,5,30,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 9, 12, 14, 18, 21, 22, 24, 28, 29, 30, 31, 33, 36, 37, 38, 39, 40, 41, 43, 45, 47, 52], ""2024"": [4, 5, 6, 11, 15, 17, 20, 21, 22, 23, 24, 25, 29, 30, 31, 32, 33, 35, 40, 41, 42, 45, 46, 47, 48, 51]}"
+209,internal_medicine,North,es,0.986,360,F,64,Other,group,3,33,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 7, 8, 11, 13, 14, 15, 19, 20, 22, 23, 24, 25, 27, 29, 31, 32, 36, 37, 39, 41, 43, 45, 46], ""2024"": [4, 5, 6, 8, 9, 14, 15, 17, 19, 21, 24, 25, 26, 27, 30, 31, 34, 37, 40, 43, 44, 46, 47, 49, 50, 51]}"
+210,internal_medicine,Central,zh,0.767,360,M,61,Other,group,4,27,True,,0,0.0,46800,"{""2023"": [1, 2, 8, 9, 11, 12, 16, 17, 18, 22, 23, 26, 27, 28, 30, 32, 34, 36, 38, 42, 43, 45, 46, 50, 51, 52], ""2024"": [2, 7, 8, 9, 13, 15, 19, 20, 21, 22, 24, 26, 27, 28, 33, 36, 37, 38, 39, 40, 43, 44, 45, 49, 50, 52]}"
+211,internal_medicine,Central,es,0.936,360,M,42,Other,solo,5,35,True,,0,0.0,46800,"{""2023"": [1, 8, 11, 12, 14, 15, 16, 18, 21, 22, 23, 25, 26, 27, 28, 29, 31, 35, 38, 39, 40, 46, 47, 48, 49, 50], ""2024"": [2, 6, 8, 10, 11, 13, 14, 16, 17, 19, 21, 26, 27, 28, 31, 33, 34, 35, 37, 39, 40, 43, 45, 48, 50, 51]}"
+212,internal_medicine,North,en,0.739,360,M,60,Black,solo,3,8,True,,0,0.0,46800,"{""2023"": [3, 4, 9, 10, 17, 18, 20, 22, 23, 24, 26, 27, 28, 29, 31, 34, 36, 37, 38, 43, 44, 45, 48, 50, 51, 52], ""2024"": [1, 2, 4, 8, 9, 11, 12, 13, 16, 17, 19, 20, 24, 26, 27, 29, 30, 31, 33, 36, 37, 39, 41, 46, 47, 48]}"
+213,internal_medicine,East,es,0.689,360,F,54,Black,group,5,34,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 7, 8, 17, 20, 21, 23, 26, 27, 30, 31, 33, 37, 38, 39, 40, 41, 43, 44, 48, 49, 50, 51], ""2024"": [1, 2, 3, 4, 8, 11, 14, 17, 18, 22, 24, 26, 29, 31, 34, 36, 37, 40, 43, 44, 45, 46, 47, 50, 51, 52]}"
+214,internal_medicine,East,zh,0.983,360,M,53,Hispanic,group,3,25,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 7, 10, 11, 12, 14, 16, 19, 20, 23, 26, 29, 30, 33, 35, 36, 38, 39, 40, 41, 47, 50, 52], ""2024"": [2, 4, 12, 13, 14, 16, 20, 21, 27, 28, 29, 30, 33, 34, 36, 37, 40, 41, 42, 43, 44, 46, 48, 50, 51, 52]}"
+215,internal_medicine,East,es,0.766,360,M,32,Other,group,4,34,False,,0,0.0,46800,"{""2023"": [1, 4, 6, 8, 12, 13, 16, 18, 20, 21, 26, 27, 28, 34, 35, 36, 37, 38, 40, 42, 43, 44, 45, 47, 48, 49], ""2024"": [2, 4, 8, 9, 16, 17, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 32, 36, 39, 40, 41, 42, 45, 47, 49, 51]}"
+216,internal_medicine,East,en,0.64,360,F,53,Hispanic,group,4,14,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 7, 9, 12, 15, 18, 19, 21, 22, 23, 25, 27, 28, 32, 33, 34, 35, 36, 37, 38, 41, 46, 47, 49], ""2024"": [1, 2, 3, 5, 7, 8, 11, 14, 15, 16, 18, 20, 22, 25, 29, 30, 32, 35, 36, 38, 39, 43, 44, 46, 47, 51]}"
+217,internal_medicine,North,en,0.953,360,M,59,Other,group,2,25,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 7, 10, 11, 14, 17, 18, 20, 21, 22, 23, 24, 25, 26, 36, 37, 38, 39, 40, 43, 47, 49, 51], ""2024"": [2, 3, 4, 5, 6, 7, 8, 10, 11, 16, 17, 18, 19, 23, 26, 27, 28, 29, 31, 36, 41, 43, 44, 46, 51, 52]}"
+218,internal_medicine,North,es,0.762,360,F,61,White,group,5,21,True,,0,0.0,46800,"{""2023"": [2, 5, 7, 9, 10, 12, 13, 14, 16, 18, 19, 20, 22, 23, 25, 28, 33, 34, 36, 37, 38, 40, 41, 43, 44, 48], ""2024"": [3, 7, 8, 11, 15, 16, 19, 20, 25, 26, 27, 30, 31, 32, 33, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 52]}"
+219,internal_medicine,North,zh,0.837,360,F,65,Black,group,5,32,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 6, 7, 9, 14, 15, 17, 19, 20, 24, 29, 30, 35, 37, 38, 39, 40, 41, 44, 45, 46, 49, 50, 51], ""2024"": [1, 2, 4, 6, 8, 10, 11, 12, 13, 16, 19, 22, 27, 29, 31, 32, 35, 36, 38, 39, 41, 42, 46, 48, 50, 51]}"
+220,internal_medicine,West,es,0.727,360,F,32,White,group,1,13,True,,0,0.0,46800,"{""2023"": [3, 6, 7, 9, 11, 12, 13, 14, 17, 18, 20, 21, 24, 26, 27, 28, 31, 33, 34, 36, 40, 41, 45, 46, 47, 51], ""2024"": [2, 5, 6, 7, 8, 10, 11, 12, 13, 16, 19, 20, 26, 27, 29, 33, 37, 38, 40, 41, 43, 45, 47, 48, 49, 51]}"
+221,internal_medicine,West,zh,0.787,360,M,36,Hispanic,group,2,37,True,,0,0.0,46800,"{""2023"": [4, 7, 8, 10, 12, 13, 14, 16, 18, 20, 21, 23, 25, 26, 27, 29, 31, 32, 33, 34, 36, 39, 42, 43, 46, 52], ""2024"": [1, 3, 5, 7, 8, 11, 14, 15, 17, 18, 20, 22, 23, 30, 32, 33, 34, 35, 36, 38, 40, 42, 44, 45, 46, 50]}"
+222,internal_medicine,East,es,0.728,360,M,31,Other,solo,1,24,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 12, 15, 21, 22, 23, 24, 25, 27, 32, 33, 35, 36, 38, 39, 42, 44, 45, 46, 47, 49, 50, 52], ""2024"": [2, 5, 9, 12, 16, 20, 22, 23, 24, 25, 26, 27, 28, 31, 32, 34, 35, 38, 39, 40, 41, 42, 45, 47, 50, 51]}"
+223,internal_medicine,East,zh,0.684,360,F,58,Black,solo,5,14,True,,0,0.0,46800,"{""2023"": [1, 4, 7, 9, 11, 13, 16, 17, 21, 22, 24, 27, 28, 30, 32, 33, 36, 37, 38, 40, 44, 45, 46, 48, 49, 50], ""2024"": [3, 4, 8, 10, 13, 14, 15, 16, 19, 21, 23, 24, 26, 27, 28, 29, 32, 36, 38, 39, 41, 43, 44, 48, 49, 50]}"
+224,internal_medicine,South,en,0.83,360,F,63,Asian,solo,1,18,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 7, 8, 9, 12, 13, 16, 17, 18, 19, 20, 25, 27, 32, 33, 36, 39, 42, 43, 46, 49, 51, 52], ""2024"": [2, 3, 4, 8, 9, 10, 12, 13, 20, 23, 25, 27, 28, 30, 31, 33, 34, 37, 39, 40, 41, 42, 43, 44, 50, 52]}"
+225,internal_medicine,East,es,0.752,360,M,60,White,solo,5,9,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 9, 10, 11, 16, 23, 25, 26, 27, 28, 30, 31, 32, 33, 36, 38, 39, 45, 47, 48, 50, 51, 52], ""2024"": [2, 3, 4, 7, 11, 13, 14, 15, 16, 17, 19, 21, 23, 26, 28, 33, 34, 36, 37, 38, 41, 43, 44, 48, 51, 52]}"
+226,internal_medicine,East,es,0.834,360,F,54,Black,solo,2,16,False,,0,0.0,46800,"{""2023"": [3, 5, 7, 9, 10, 11, 13, 15, 16, 18, 19, 20, 21, 22, 26, 28, 29, 30, 32, 33, 34, 35, 38, 42, 48, 51], ""2024"": [2, 3, 5, 6, 7, 9, 13, 14, 19, 20, 22, 23, 24, 27, 28, 30, 33, 34, 36, 37, 38, 39, 43, 46, 48, 51]}"
+227,internal_medicine,South,en,1.0,360,F,39,Black,solo,2,26,True,,0,0.0,46800,"{""2023"": [1, 4, 6, 7, 11, 14, 16, 17, 18, 19, 21, 22, 23, 28, 30, 32, 34, 35, 40, 44, 46, 47, 48, 49, 50, 52], ""2024"": [3, 4, 6, 7, 9, 11, 18, 19, 20, 21, 22, 23, 24, 26, 29, 32, 35, 39, 42, 43, 45, 47, 48, 49, 50, 52]}"
+228,internal_medicine,West,en,0.897,360,F,63,Other,group,2,32,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 7, 8, 10, 11, 12, 14, 16, 18, 21, 22, 30, 31, 37, 38, 40, 44, 45, 47, 48, 49, 50, 52], ""2024"": [2, 4, 7, 8, 9, 11, 12, 16, 20, 21, 22, 23, 24, 25, 26, 27, 31, 34, 36, 37, 39, 41, 43, 44, 45, 46]}"
+229,internal_medicine,West,en,0.637,360,M,46,Asian,solo,1,5,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 8, 10, 11, 13, 14, 16, 18, 20, 23, 24, 28, 31, 32, 34, 37, 38, 39, 41, 42, 46, 47, 52], ""2024"": [3, 4, 5, 9, 10, 11, 12, 13, 14, 18, 20, 23, 24, 28, 33, 34, 36, 42, 43, 44, 45, 46, 49, 50, 51, 52]}"
+230,internal_medicine,East,es,1.0,360,F,46,White,solo,5,28,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 8, 13, 15, 16, 17, 18, 21, 22, 23, 24, 28, 34, 36, 38, 42, 43, 44, 45, 46, 47, 48, 49], ""2024"": [2, 4, 7, 9, 10, 14, 15, 17, 23, 24, 26, 28, 29, 30, 31, 32, 34, 35, 36, 38, 42, 44, 45, 48, 49, 52]}"
+231,internal_medicine,South,es,0.834,360,F,52,Other,solo,5,4,True,,0,0.0,46800,"{""2023"": [3, 5, 8, 9, 12, 13, 14, 20, 21, 22, 23, 24, 26, 31, 33, 34, 36, 38, 40, 41, 42, 43, 46, 47, 49, 50], ""2024"": [2, 6, 7, 10, 11, 14, 15, 17, 18, 21, 24, 26, 27, 28, 31, 32, 37, 38, 39, 41, 42, 46, 47, 49, 51, 52]}"
+232,internal_medicine,North,zh,0.996,360,M,47,Hispanic,solo,5,22,True,,0,0.0,46800,"{""2023"": [1, 2, 10, 11, 12, 14, 15, 17, 19, 20, 21, 28, 29, 30, 35, 37, 38, 39, 41, 43, 44, 46, 48, 50, 51, 52], ""2024"": [1, 2, 3, 12, 13, 14, 15, 16, 19, 21, 22, 24, 25, 27, 29, 30, 31, 33, 35, 36, 37, 38, 44, 46, 47, 49]}"
+233,internal_medicine,East,es,0.865,360,F,50,White,solo,3,3,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 10, 12, 15, 16, 17, 19, 21, 22, 23, 25, 27, 29, 31, 35, 37, 41, 42, 44, 45, 49, 50, 52], ""2024"": [1, 3, 6, 7, 12, 15, 16, 18, 19, 20, 21, 24, 25, 26, 32, 35, 37, 39, 40, 41, 44, 46, 48, 50, 51, 52]}"
+234,internal_medicine,South,en,0.862,360,F,33,White,group,3,35,True,,0,0.0,46800,"{""2023"": [5, 7, 9, 13, 14, 17, 20, 23, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39, 41, 44, 45, 46, 47, 50], ""2024"": [1, 2, 6, 7, 12, 15, 17, 18, 20, 21, 22, 23, 30, 31, 32, 33, 34, 35, 39, 40, 42, 45, 49, 50, 51, 52]}"
+235,internal_medicine,South,en,0.897,360,F,45,Asian,group,3,25,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 8, 13, 14, 15, 18, 19, 20, 22, 24, 25, 26, 27, 28, 29, 30, 33, 34, 39, 44, 45, 49, 51, 52], ""2024"": [1, 2, 3, 4, 7, 8, 11, 12, 13, 14, 16, 20, 22, 26, 27, 28, 29, 30, 31, 33, 36, 39, 41, 42, 43, 50]}"
+236,internal_medicine,Central,es,0.726,360,F,41,Hispanic,solo,4,28,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 8, 10, 11, 13, 15, 20, 21, 22, 23, 25, 26, 27, 28, 29, 33, 34, 35, 39, 41, 49, 50, 51], ""2024"": [1, 2, 4, 5, 11, 12, 13, 14, 16, 17, 18, 20, 23, 29, 30, 32, 37, 38, 39, 40, 41, 44, 46, 47, 49, 52]}"
+237,internal_medicine,South,en,0.663,360,M,37,Black,group,4,4,False,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 8, 12, 15, 17, 18, 22, 24, 26, 28, 30, 31, 32, 33, 34, 41, 43, 45, 46, 47, 48, 50, 52], ""2024"": [2, 4, 7, 8, 9, 10, 11, 12, 13, 14, 16, 18, 23, 24, 26, 27, 32, 34, 35, 38, 43, 45, 46, 48, 49, 51]}"
+238,internal_medicine,West,es,1.0,360,M,64,Hispanic,group,3,31,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 8, 9, 11, 14, 16, 18, 19, 26, 27, 29, 31, 32, 34, 35, 39, 43, 46, 47, 49, 50, 51, 52], ""2024"": [1, 3, 4, 8, 11, 12, 15, 16, 17, 18, 20, 21, 23, 25, 29, 30, 31, 32, 34, 35, 37, 39, 41, 48, 49, 51]}"
+239,internal_medicine,South,es,0.747,360,M,57,Asian,group,5,22,False,,0,0.0,46800,"{""2023"": [3, 4, 7, 8, 10, 11, 12, 13, 14, 15, 19, 21, 25, 28, 29, 30, 31, 34, 37, 38, 40, 41, 42, 44, 45, 52], ""2024"": [1, 3, 4, 5, 6, 10, 12, 15, 18, 19, 21, 22, 23, 25, 27, 28, 29, 32, 33, 37, 40, 42, 43, 46, 47, 50]}"
+240,internal_medicine,West,en,0.766,360,F,32,Other,solo,2,39,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 7, 8, 9, 10, 13, 16, 17, 19, 21, 22, 23, 25, 30, 31, 34, 35, 39, 43, 46, 47, 48, 49, 52], ""2024"": [2, 3, 6, 7, 10, 11, 12, 17, 20, 21, 23, 24, 26, 30, 33, 35, 36, 37, 39, 40, 42, 43, 44, 46, 47, 49]}"
+241,internal_medicine,North,zh,0.624,360,F,65,Black,solo,3,3,True,,0,0.0,46800,"{""2023"": [1, 4, 7, 9, 10, 11, 18, 21, 26, 27, 29, 30, 31, 35, 38, 40, 41, 43, 44, 45, 46, 48, 49, 50, 51, 52], ""2024"": [1, 2, 3, 4, 8, 9, 10, 15, 17, 19, 21, 22, 24, 25, 26, 27, 29, 31, 34, 36, 37, 38, 41, 47, 48, 50]}"
+242,internal_medicine,West,es,0.684,360,M,56,Black,group,1,32,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 10, 13, 14, 15, 16, 20, 21, 24, 25, 27, 29, 32, 34, 36, 40, 41, 42, 43, 46, 47, 48, 50], ""2024"": [1, 5, 6, 7, 9, 10, 13, 14, 15, 17, 18, 21, 24, 26, 27, 28, 32, 35, 36, 39, 40, 41, 44, 48, 51, 52]}"
+243,internal_medicine,West,en,0.687,360,M,53,Black,group,1,25,True,,0,0.0,46800,"{""2023"": [2, 5, 8, 10, 12, 13, 15, 16, 17, 19, 20, 21, 24, 25, 27, 29, 31, 38, 39, 40, 42, 43, 46, 47, 48, 49], ""2024"": [2, 4, 5, 7, 9, 11, 12, 13, 14, 15, 17, 18, 19, 21, 27, 29, 30, 32, 33, 34, 36, 38, 39, 46, 48, 52]}"
+244,internal_medicine,South,es,0.758,360,M,50,Black,group,3,10,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 7, 11, 14, 15, 16, 17, 18, 22, 25, 27, 28, 32, 37, 38, 42, 43, 47, 48, 49, 50, 51, 52], ""2024"": [4, 5, 7, 9, 10, 11, 13, 18, 20, 21, 23, 27, 29, 32, 33, 34, 35, 37, 38, 39, 40, 43, 44, 50, 51, 52]}"
+245,internal_medicine,Central,en,0.679,360,M,38,Hispanic,group,3,12,False,,0,0.0,46800,"{""2023"": [2, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 34, 35, 36, 44, 45, 48, 50, 52], ""2024"": [1, 2, 6, 7, 8, 11, 12, 13, 14, 15, 16, 18, 23, 24, 26, 30, 33, 38, 40, 41, 46, 47, 48, 49, 50, 52]}"
+246,internal_medicine,Central,zh,0.923,360,F,51,Hispanic,solo,5,3,True,,0,0.0,46800,"{""2023"": [1, 4, 6, 9, 11, 12, 15, 16, 17, 19, 21, 25, 26, 28, 29, 30, 33, 36, 38, 39, 40, 43, 44, 46, 49, 51], ""2024"": [2, 3, 11, 12, 15, 17, 18, 19, 23, 26, 28, 29, 30, 31, 32, 33, 35, 36, 37, 39, 40, 44, 46, 49, 50, 52]}"
+247,internal_medicine,East,en,0.958,360,M,34,Black,group,2,23,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 8, 9, 10, 12, 16, 18, 19, 21, 24, 25, 28, 31, 32, 33, 34, 36, 38, 41, 42, 43, 45, 51], ""2024"": [1, 6, 7, 9, 10, 14, 16, 19, 20, 21, 25, 26, 27, 28, 29, 31, 32, 34, 37, 38, 39, 41, 42, 43, 46, 48]}"
+248,internal_medicine,South,zh,0.88,360,M,64,Hispanic,solo,5,16,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 8, 10, 13, 14, 16, 17, 19, 21, 22, 23, 24, 27, 29, 33, 34, 37, 39, 41, 43, 44, 46, 49, 52], ""2024"": [2, 3, 4, 5, 9, 10, 11, 13, 15, 17, 18, 19, 20, 22, 24, 25, 26, 31, 33, 35, 36, 40, 44, 46, 50, 51]}"
+249,internal_medicine,Central,en,0.939,360,F,56,White,solo,3,2,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 8, 10, 12, 13, 14, 15, 16, 17, 18, 21, 23, 26, 27, 32, 35, 37, 39, 40, 42, 44, 45, 48, 50], ""2024"": [4, 5, 9, 11, 12, 13, 16, 17, 19, 23, 24, 25, 27, 30, 33, 34, 38, 39, 41, 42, 44, 45, 46, 48, 49, 51]}"
+250,internal_medicine,South,es,0.699,360,M,65,Other,group,3,26,True,,0,0.0,46800,"{""2023"": [2, 9, 10, 13, 15, 17, 19, 22, 24, 26, 27, 28, 31, 33, 34, 37, 38, 39, 40, 41, 42, 45, 46, 47, 50, 52], ""2024"": [2, 4, 6, 7, 8, 9, 10, 12, 13, 14, 16, 18, 22, 25, 28, 32, 33, 35, 37, 41, 45, 46, 47, 48, 49, 50]}"
+251,internal_medicine,North,es,0.905,360,M,41,Other,group,5,36,True,,0,0.0,46800,"{""2023"": [4, 5, 6, 8, 11, 12, 13, 14, 17, 18, 19, 25, 26, 27, 31, 33, 34, 36, 42, 43, 44, 45, 46, 49, 50, 52], ""2024"": [3, 4, 6, 9, 10, 11, 13, 14, 18, 20, 21, 24, 29, 32, 33, 34, 36, 39, 40, 43, 44, 45, 48, 49, 51, 52]}"
+252,internal_medicine,West,es,0.867,360,M,60,Black,solo,1,32,True,,0,0.0,46800,"{""2023"": [1, 2, 6, 7, 9, 11, 15, 16, 18, 19, 20, 22, 23, 25, 27, 28, 29, 30, 31, 32, 33, 34, 39, 46, 48, 52], ""2024"": [1, 7, 9, 10, 13, 15, 17, 18, 20, 21, 22, 23, 26, 27, 30, 31, 35, 36, 38, 40, 42, 43, 44, 45, 49, 51]}"
+253,internal_medicine,Central,zh,0.832,360,F,49,Asian,group,2,29,True,,0,0.0,46800,"{""2023"": [2, 4, 6, 7, 13, 14, 15, 17, 18, 20, 21, 23, 24, 28, 29, 30, 34, 38, 39, 42, 45, 46, 47, 49, 50, 51], ""2024"": [5, 6, 7, 9, 13, 15, 16, 18, 22, 23, 24, 31, 32, 33, 35, 37, 38, 40, 42, 43, 44, 45, 47, 50, 51, 52]}"
+254,internal_medicine,East,es,0.923,360,M,49,Asian,group,5,28,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 7, 14, 15, 16, 17, 20, 21, 22, 23, 25, 26, 27, 29, 32, 34, 36, 37, 40, 45, 48, 50, 51], ""2024"": [4, 6, 7, 9, 10, 11, 14, 15, 18, 19, 21, 22, 23, 24, 25, 29, 31, 32, 34, 35, 41, 42, 44, 45, 46, 49]}"
+255,internal_medicine,West,zh,0.85,360,M,36,White,group,1,20,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 17, 19, 26, 29, 33, 34, 37, 40, 41, 42, 43, 46, 47, 48, 52], ""2024"": [2, 3, 4, 5, 7, 10, 14, 20, 23, 24, 26, 27, 28, 29, 32, 33, 34, 35, 36, 38, 41, 42, 44, 45, 48, 49]}"
+256,internal_medicine,Central,en,0.72,360,F,57,Black,group,2,6,False,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 8, 9, 12, 17, 21, 22, 23, 24, 25, 27, 28, 29, 32, 35, 39, 40, 43, 44, 46, 49, 52], ""2024"": [2, 3, 4, 5, 6, 7, 8, 11, 13, 14, 15, 18, 19, 20, 23, 25, 26, 27, 33, 35, 36, 40, 42, 46, 50, 52]}"
+257,internal_medicine,South,es,0.939,360,M,57,Hispanic,group,2,40,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 6, 7, 10, 11, 12, 15, 16, 18, 20, 23, 24, 25, 26, 29, 31, 33, 36, 40, 42, 48, 49, 50, 52], ""2024"": [2, 6, 7, 8, 10, 11, 12, 14, 16, 19, 24, 25, 26, 27, 28, 29, 31, 35, 36, 39, 41, 43, 45, 47, 48, 49]}"
+258,internal_medicine,East,es,0.943,360,F,60,Hispanic,group,4,28,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 8, 10, 12, 13, 14, 19, 21, 22, 25, 27, 28, 30, 33, 39, 44, 45, 46, 47, 48, 49, 50, 51, 52], ""2024"": [1, 6, 7, 11, 12, 14, 15, 16, 19, 20, 21, 24, 26, 30, 35, 36, 37, 38, 39, 41, 42, 43, 45, 46, 48, 50]}"
+259,internal_medicine,West,en,0.802,360,F,46,Asian,solo,5,21,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 7, 8, 9, 14, 17, 20, 22, 24, 25, 28, 30, 31, 33, 34, 37, 38, 39, 42, 45, 47, 48, 50], ""2024"": [1, 3, 4, 5, 7, 12, 15, 19, 21, 22, 25, 27, 28, 29, 30, 31, 33, 36, 38, 40, 45, 46, 47, 49, 50, 52]}"
+260,internal_medicine,North,zh,0.891,360,M,47,White,group,5,2,True,,0,0.0,46800,"{""2023"": [4, 6, 7, 9, 11, 12, 13, 14, 16, 17, 25, 26, 28, 29, 31, 33, 35, 36, 37, 38, 39, 40, 45, 49, 51, 52], ""2024"": [1, 2, 3, 4, 6, 7, 11, 13, 14, 15, 16, 19, 22, 27, 29, 32, 34, 35, 43, 45, 46, 47, 48, 49, 51, 52]}"
+261,internal_medicine,West,zh,0.808,360,M,31,Hispanic,group,1,22,True,,0,0.0,46800,"{""2023"": [6, 7, 9, 10, 12, 13, 15, 18, 19, 20, 21, 22, 24, 27, 28, 29, 30, 31, 32, 34, 35, 40, 42, 46, 47, 50], ""2024"": [1, 2, 4, 5, 6, 7, 8, 11, 13, 15, 16, 17, 18, 23, 24, 30, 31, 33, 35, 38, 40, 41, 43, 46, 47, 49]}"
+262,internal_medicine,West,zh,0.768,360,M,40,White,solo,3,17,True,,0,0.0,46800,"{""2023"": [4, 5, 6, 7, 9, 10, 16, 17, 18, 19, 20, 24, 27, 29, 30, 31, 35, 36, 37, 43, 44, 45, 46, 47, 48, 52], ""2024"": [4, 6, 7, 8, 10, 13, 14, 16, 20, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 38, 41, 44, 46, 51, 52]}"
+263,internal_medicine,North,zh,0.794,360,F,44,Hispanic,solo,1,39,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 7, 9, 10, 11, 12, 13, 14, 17, 19, 21, 22, 24, 25, 26, 28, 30, 34, 36, 37, 38, 39, 42, 50], ""2024"": [1, 2, 4, 5, 6, 8, 13, 14, 15, 18, 24, 25, 27, 28, 32, 33, 35, 38, 40, 42, 45, 46, 47, 50, 51, 52]}"
+264,internal_medicine,West,en,0.767,360,M,39,Black,solo,5,16,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 6, 11, 14, 15, 16, 18, 19, 21, 23, 24, 25, 29, 32, 33, 38, 39, 42, 46, 47, 50, 51, 52], ""2024"": [1, 3, 7, 10, 12, 13, 16, 18, 19, 20, 23, 25, 26, 31, 32, 34, 36, 37, 38, 41, 43, 44, 48, 49, 50, 51]}"
+265,internal_medicine,West,zh,0.618,360,F,54,White,solo,5,5,True,,0,0.0,46800,"{""2023"": [3, 4, 6, 8, 10, 11, 12, 15, 16, 19, 20, 23, 24, 25, 30, 33, 34, 35, 36, 38, 39, 40, 41, 43, 47, 49], ""2024"": [1, 2, 4, 10, 11, 12, 13, 14, 18, 20, 22, 26, 29, 31, 32, 34, 36, 37, 38, 40, 42, 44, 46, 47, 50, 51]}"
+266,internal_medicine,Central,en,0.997,360,F,37,Other,solo,2,35,True,,0,0.0,46800,"{""2023"": [1, 6, 7, 8, 10, 11, 12, 15, 16, 17, 18, 21, 24, 25, 26, 31, 34, 35, 37, 38, 41, 43, 49, 50, 51, 52], ""2024"": [5, 7, 12, 14, 15, 17, 18, 20, 23, 24, 26, 27, 31, 32, 33, 34, 37, 38, 41, 42, 46, 47, 49, 50, 51, 52]}"
+267,internal_medicine,East,en,0.927,360,M,30,Other,solo,4,33,True,,0,0.0,46800,"{""2023"": [3, 4, 7, 8, 11, 12, 15, 16, 17, 19, 23, 26, 27, 28, 29, 31, 33, 35, 37, 38, 40, 41, 44, 45, 47, 50], ""2024"": [7, 8, 9, 12, 13, 16, 17, 18, 19, 21, 23, 24, 25, 26, 30, 36, 37, 38, 40, 41, 42, 43, 45, 47, 48, 50]}"
+268,internal_medicine,East,es,0.697,360,M,43,Asian,group,2,5,True,,0,0.0,46800,"{""2023"": [6, 9, 10, 11, 13, 17, 18, 19, 21, 22, 24, 26, 27, 29, 31, 34, 36, 37, 38, 39, 42, 43, 46, 47, 49, 51], ""2024"": [2, 5, 10, 11, 14, 16, 20, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 39, 43, 44, 46, 47, 49, 50, 51, 52]}"
+269,internal_medicine,East,es,0.734,360,F,46,Black,solo,5,5,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 8, 9, 11, 13, 17, 18, 19, 21, 24, 25, 27, 28, 31, 35, 41, 42, 44, 45, 47, 48, 50, 51], ""2024"": [1, 2, 3, 4, 5, 6, 8, 11, 12, 14, 17, 18, 20, 23, 24, 27, 29, 30, 33, 37, 40, 42, 44, 45, 46, 50]}"
+270,internal_medicine,North,zh,0.662,360,M,35,White,group,5,17,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 6, 9, 12, 13, 14, 16, 17, 20, 21, 22, 25, 27, 30, 33, 34, 38, 39, 40, 42, 43, 47, 48, 51], ""2024"": [3, 4, 6, 7, 9, 10, 11, 14, 15, 19, 21, 22, 25, 26, 30, 32, 33, 34, 35, 36, 38, 47, 48, 49, 50, 52]}"
+271,internal_medicine,East,zh,0.886,360,M,48,Asian,group,2,7,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 6, 8, 12, 13, 14, 17, 18, 21, 23, 24, 26, 27, 28, 29, 33, 34, 35, 36, 39, 41, 44, 45, 49], ""2024"": [1, 2, 4, 5, 6, 9, 11, 18, 19, 20, 22, 23, 24, 26, 28, 29, 32, 33, 34, 35, 41, 45, 46, 50, 51, 52]}"
+272,internal_medicine,West,en,1.0,360,F,31,White,solo,2,28,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 11, 14, 15, 16, 17, 19, 21, 23, 24, 25, 27, 28, 29, 30, 32, 33, 35, 36, 38, 40, 41, 45, 47], ""2024"": [3, 4, 6, 7, 12, 13, 16, 17, 18, 23, 24, 25, 27, 30, 31, 32, 35, 36, 40, 41, 42, 43, 44, 46, 51, 52]}"
+273,internal_medicine,East,es,0.656,360,F,43,Black,group,4,6,True,,0,0.0,46800,"{""2023"": [4, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 19, 23, 26, 27, 30, 32, 33, 34, 39, 41, 43, 44, 45, 48, 50], ""2024"": [1, 2, 4, 8, 10, 12, 14, 17, 19, 20, 25, 26, 27, 30, 31, 32, 34, 36, 41, 42, 43, 44, 48, 49, 50, 51]}"
+274,internal_medicine,West,en,0.905,360,M,62,White,solo,1,34,False,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 10, 11, 12, 17, 18, 20, 21, 23, 24, 28, 30, 31, 32, 35, 36, 37, 38, 40, 41, 43, 46, 52], ""2024"": [1, 3, 4, 5, 7, 10, 18, 23, 24, 26, 30, 32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49]}"
+275,internal_medicine,West,zh,0.874,360,F,65,White,solo,5,15,True,,0,0.0,46800,"{""2023"": [2, 6, 7, 8, 9, 11, 12, 14, 15, 16, 20, 25, 26, 27, 28, 29, 33, 34, 36, 37, 39, 40, 45, 47, 48, 52], ""2024"": [5, 6, 8, 9, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23, 25, 26, 27, 29, 30, 31, 32, 40, 43, 46, 50, 52]}"
+276,internal_medicine,West,en,0.667,360,F,31,Black,solo,4,28,True,,0,0.0,46800,"{""2023"": [2, 3, 7, 9, 13, 15, 18, 19, 20, 22, 24, 26, 29, 30, 31, 33, 36, 38, 39, 42, 43, 45, 47, 50, 51, 52], ""2024"": [3, 4, 5, 6, 9, 11, 12, 13, 15, 16, 17, 22, 24, 25, 27, 29, 33, 37, 40, 42, 44, 46, 47, 48, 51, 52]}"
+277,internal_medicine,Central,zh,0.886,360,F,58,Other,solo,2,39,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 9, 10, 12, 13, 14, 18, 21, 22, 27, 28, 32, 38, 39, 40, 43, 44, 46, 47, 48, 50, 52], ""2024"": [1, 6, 10, 11, 12, 14, 15, 20, 22, 23, 25, 26, 27, 28, 30, 31, 32, 33, 34, 37, 38, 39, 42, 45, 46, 50]}"
+278,internal_medicine,West,en,0.862,360,F,65,Other,group,3,9,True,,0,0.0,46800,"{""2023"": [3, 6, 8, 11, 12, 14, 17, 19, 21, 22, 23, 24, 25, 26, 27, 32, 36, 37, 39, 43, 45, 46, 49, 50, 51, 52], ""2024"": [1, 2, 4, 5, 6, 8, 13, 14, 20, 21, 22, 23, 24, 25, 28, 29, 33, 35, 38, 41, 42, 44, 47, 48, 51, 52]}"
+279,internal_medicine,West,es,0.761,360,M,54,Other,solo,1,40,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 7, 10, 11, 12, 14, 16, 17, 21, 22, 27, 30, 31, 32, 34, 36, 38, 40, 42, 46, 48, 50, 51, 52], ""2024"": [5, 6, 10, 12, 13, 14, 16, 17, 20, 24, 26, 28, 32, 33, 34, 35, 37, 39, 40, 41, 42, 43, 44, 45, 49, 51]}"
+280,internal_medicine,West,en,0.715,360,F,59,Hispanic,group,2,24,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 9, 10, 11, 12, 13, 15, 17, 18, 19, 24, 25, 26, 32, 34, 43, 45, 46, 48, 49, 50, 51, 52], ""2024"": [2, 7, 9, 13, 15, 19, 21, 24, 26, 27, 28, 29, 30, 31, 35, 37, 39, 40, 42, 44, 45, 46, 47, 48, 49, 50]}"
+281,internal_medicine,South,es,0.804,360,M,64,White,solo,3,22,True,,0,0.0,46800,"{""2023"": [3, 7, 8, 10, 12, 15, 17, 18, 20, 22, 23, 24, 25, 27, 29, 30, 32, 33, 35, 36, 39, 46, 47, 50, 51, 52], ""2024"": [1, 3, 6, 9, 12, 13, 15, 16, 18, 26, 27, 28, 29, 30, 31, 34, 35, 37, 39, 40, 42, 44, 45, 49, 50, 52]}"
+282,internal_medicine,North,es,0.82,360,F,65,White,group,1,9,True,,0,0.0,46800,"{""2023"": [1, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 36, 39, 45, 47, 49], ""2024"": [1, 5, 6, 7, 8, 15, 17, 18, 20, 21, 22, 23, 24, 25, 28, 30, 32, 33, 35, 36, 37, 39, 42, 46, 47, 52]}"
+283,internal_medicine,West,es,0.949,360,M,60,Hispanic,solo,1,40,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 7, 8, 9, 10, 12, 13, 16, 17, 19, 25, 26, 28, 30, 32, 37, 40, 42, 43, 47, 49, 51, 52], ""2024"": [1, 3, 4, 7, 10, 12, 13, 14, 15, 17, 18, 19, 22, 24, 27, 28, 29, 34, 35, 37, 39, 41, 45, 47, 48, 49]}"
+284,internal_medicine,North,en,0.796,360,F,39,Other,group,3,14,True,,0,0.0,46800,"{""2023"": [1, 3, 9, 10, 11, 12, 14, 15, 17, 19, 20, 21, 24, 25, 27, 28, 29, 33, 34, 37, 40, 41, 42, 47, 48, 49], ""2024"": [1, 2, 3, 6, 7, 9, 11, 12, 13, 14, 15, 16, 19, 22, 23, 25, 29, 37, 38, 39, 43, 45, 47, 49, 51, 52]}"
+285,internal_medicine,Central,zh,0.933,360,F,56,White,group,5,12,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 7, 9, 10, 11, 12, 17, 18, 19, 20, 25, 27, 31, 32, 35, 37, 40, 42, 44, 45, 47, 49, 50], ""2024"": [2, 4, 6, 7, 10, 11, 17, 21, 22, 23, 24, 27, 28, 31, 32, 34, 38, 39, 41, 42, 43, 44, 46, 48, 50, 51]}"
+286,internal_medicine,West,en,0.747,360,F,37,Other,group,2,18,True,,0,0.0,46800,"{""2023"": [2, 4, 9, 11, 14, 15, 16, 17, 18, 19, 28, 30, 31, 32, 33, 34, 39, 40, 41, 42, 43, 44, 45, 46, 47, 52], ""2024"": [1, 3, 4, 9, 11, 12, 14, 21, 23, 25, 29, 31, 32, 33, 34, 37, 38, 39, 40, 43, 45, 47, 48, 49, 50, 52]}"
+287,internal_medicine,West,zh,0.851,360,M,63,Other,group,2,14,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 8, 10, 11, 14, 15, 17, 18, 19, 20, 22, 27, 29, 30, 32, 34, 35, 38, 43, 46, 50, 51, 52], ""2024"": [1, 2, 5, 6, 8, 9, 10, 13, 15, 19, 21, 22, 23, 25, 28, 29, 31, 33, 35, 38, 39, 46, 47, 49, 50, 52]}"
+288,internal_medicine,West,zh,0.849,360,M,34,Black,group,3,39,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 10, 13, 14, 16, 17, 19, 20, 24, 26, 27, 29, 30, 33, 37, 38, 39, 40, 42, 45, 46, 47, 50, 51], ""2024"": [1, 2, 7, 9, 10, 13, 17, 19, 20, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34, 37, 41, 45, 46, 48, 51, 52]}"
+289,internal_medicine,Central,en,0.913,360,F,37,Hispanic,solo,2,16,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 6, 10, 11, 12, 13, 15, 17, 18, 21, 22, 24, 25, 26, 28, 34, 37, 38, 40, 44, 46, 48, 50, 51], ""2024"": [1, 2, 6, 8, 12, 13, 19, 20, 21, 24, 25, 27, 28, 29, 31, 32, 33, 34, 38, 39, 41, 45, 47, 48, 49, 52]}"
+290,internal_medicine,South,en,0.746,360,F,59,Hispanic,group,4,2,True,,0,0.0,46800,"{""2023"": [4, 6, 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, 21, 22, 23, 24, 26, 29, 30, 31, 32, 34, 43, 50, 51, 52], ""2024"": [3, 4, 7, 9, 12, 14, 18, 20, 21, 22, 25, 27, 28, 29, 31, 34, 35, 38, 41, 42, 45, 46, 47, 48, 50, 52]}"
+291,internal_medicine,East,es,0.872,360,M,59,White,solo,1,39,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 21, 23, 24, 27, 28, 32, 35, 39, 41, 43, 45, 50, 52], ""2024"": [1, 2, 6, 7, 13, 14, 17, 19, 21, 25, 26, 27, 30, 31, 35, 39, 40, 42, 43, 45, 46, 48, 49, 50, 51, 52]}"
+292,internal_medicine,North,en,0.67,360,M,45,Asian,solo,5,3,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 8, 11, 17, 18, 19, 20, 22, 23, 25, 27, 31, 36, 37, 39, 40, 41, 43, 44, 45, 47, 48, 52], ""2024"": [4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 18, 20, 21, 23, 24, 25, 29, 34, 36, 38, 40, 42, 48, 50, 51, 52]}"
+293,internal_medicine,Central,es,0.932,360,M,41,Hispanic,solo,4,35,True,,0,0.0,46800,"{""2023"": [3, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 25, 30, 32, 34, 38, 39, 41, 44, 47, 48, 51, 52], ""2024"": [1, 2, 3, 4, 9, 10, 11, 13, 14, 15, 21, 28, 29, 30, 35, 36, 38, 39, 40, 41, 42, 45, 46, 48, 49, 50]}"
+294,internal_medicine,East,zh,0.96,360,F,47,Asian,group,2,28,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 7, 10, 14, 17, 22, 23, 24, 27, 30, 31, 34, 36, 37, 38, 39, 40, 41, 44, 45, 46, 47], ""2024"": [3, 4, 5, 6, 8, 9, 10, 11, 14, 18, 19, 22, 27, 29, 30, 31, 33, 35, 37, 39, 40, 41, 43, 46, 49, 51]}"
+295,internal_medicine,East,es,0.86,360,M,61,Hispanic,group,3,15,True,,0,0.0,46800,"{""2023"": [1, 3, 8, 9, 10, 12, 14, 15, 16, 17, 18, 21, 23, 24, 25, 33, 36, 40, 41, 42, 43, 47, 49, 50, 51, 52], ""2024"": [4, 5, 6, 7, 8, 9, 12, 15, 17, 19, 21, 23, 24, 26, 28, 31, 33, 37, 42, 43, 44, 46, 47, 48, 50, 51]}"
+296,internal_medicine,West,zh,0.75,360,M,47,Black,group,4,36,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 7, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 25, 26, 28, 29, 34, 35, 36, 42, 43, 47, 50], ""2024"": [1, 2, 3, 5, 9, 10, 11, 15, 20, 21, 25, 26, 28, 30, 32, 33, 36, 37, 38, 39, 41, 42, 46, 49, 50, 52]}"
+297,internal_medicine,East,es,0.797,360,F,59,Black,solo,1,8,True,,0,0.0,46800,"{""2023"": [4, 5, 7, 9, 10, 14, 15, 16, 17, 19, 21, 23, 24, 25, 29, 33, 35, 36, 38, 41, 44, 45, 47, 48, 49, 52], ""2024"": [1, 4, 5, 6, 7, 11, 12, 18, 19, 20, 22, 27, 28, 30, 33, 34, 35, 38, 39, 40, 46, 48, 49, 50, 51, 52]}"
+298,internal_medicine,East,zh,0.701,360,M,53,Hispanic,solo,5,6,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 7, 8, 9, 12, 13, 14, 15, 18, 20, 21, 22, 26, 27, 33, 34, 36, 39, 42, 45, 49, 52], ""2024"": [3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 16, 20, 21, 26, 28, 29, 31, 32, 36, 38, 46, 48, 49, 50, 51, 52]}"
+299,internal_medicine,West,es,0.892,360,M,60,White,solo,5,21,True,,0,0.0,46800,"{""2023"": [2, 4, 6, 9, 10, 15, 17, 18, 19, 20, 21, 23, 24, 25, 27, 28, 31, 33, 36, 40, 43, 44, 45, 46, 50, 51], ""2024"": [1, 5, 6, 9, 10, 11, 12, 15, 16, 21, 25, 28, 32, 33, 35, 36, 39, 40, 41, 42, 43, 44, 45, 49, 51, 52]}"
+300,internal_medicine,Central,en,0.96,360,F,55,Asian,group,2,30,True,,0,0.0,46800,"{""2023"": [3, 11, 14, 16, 18, 19, 21, 22, 24, 25, 30, 32, 33, 35, 37, 38, 39, 40, 42, 43, 44, 46, 47, 48, 50, 51], ""2024"": [1, 3, 4, 5, 6, 8, 12, 14, 17, 18, 20, 21, 23, 24, 26, 27, 29, 30, 32, 34, 36, 39, 46, 50, 51, 52]}"
+301,pediatrics,North,en,0.622,360,F,54,Other,group,4,5,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 6, 8, 10, 12, 13, 18, 19, 21, 23, 25, 26, 29, 32, 39, 40, 43, 45, 47, 48, 49, 50, 51, 52], ""2024"": [2, 3, 4, 5, 7, 10, 12, 13, 16, 17, 18, 19, 21, 23, 25, 27, 29, 30, 37, 41, 42, 44, 47, 49, 50, 51]}"
+302,pediatrics,North,es,0.76,360,M,37,Asian,solo,2,6,True,,0,0.0,46800,"{""2023"": [4, 5, 7, 10, 11, 13, 14, 16, 17, 18, 19, 21, 23, 24, 25, 27, 30, 32, 33, 38, 40, 41, 42, 49, 50, 52], ""2024"": [3, 4, 5, 6, 7, 9, 11, 14, 15, 16, 18, 19, 21, 25, 27, 28, 30, 31, 32, 37, 41, 43, 44, 45, 46, 49]}"
+303,pediatrics,East,en,0.686,360,F,47,White,solo,3,29,False,,0,0.0,46800,"{""2023"": [4, 11, 12, 14, 15, 17, 18, 20, 22, 23, 24, 25, 26, 27, 29, 33, 37, 40, 41, 42, 43, 45, 46, 48, 50, 51], ""2024"": [2, 7, 9, 14, 15, 17, 18, 19, 21, 24, 25, 30, 31, 32, 34, 35, 36, 40, 41, 43, 45, 46, 47, 49, 50, 51]}"
+304,pediatrics,North,es,0.668,360,M,42,Asian,solo,3,6,True,,0,0.0,46800,"{""2023"": [2, 7, 8, 9, 10, 11, 12, 13, 15, 17, 24, 26, 28, 30, 34, 35, 37, 38, 40, 41, 44, 45, 46, 47, 50, 52], ""2024"": [1, 3, 4, 7, 12, 14, 15, 17, 18, 19, 21, 25, 26, 28, 33, 35, 36, 37, 39, 40, 42, 46, 47, 49, 50, 51]}"
+305,pediatrics,North,es,0.852,360,M,30,Other,group,5,15,True,,0,0.0,46800,"{""2023"": [2, 3, 7, 8, 9, 10, 13, 15, 17, 20, 21, 22, 25, 29, 33, 35, 38, 39, 40, 42, 43, 44, 46, 47, 48, 51], ""2024"": [1, 8, 9, 10, 15, 16, 17, 19, 22, 23, 24, 26, 27, 28, 29, 30, 36, 39, 40, 41, 44, 47, 48, 50, 51, 52]}"
+306,pediatrics,North,en,0.823,360,F,48,Asian,solo,5,10,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 11, 12, 15, 17, 20, 22, 23, 25, 29, 31, 34, 36, 38, 39, 40, 41, 42, 43, 44, 48, 49, 50, 52], ""2024"": [1, 2, 5, 6, 7, 10, 11, 12, 16, 18, 19, 20, 24, 29, 30, 33, 34, 36, 39, 41, 43, 44, 47, 48, 49, 50]}"
+307,pediatrics,Central,zh,0.662,360,F,55,Hispanic,solo,1,2,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 7, 11, 12, 13, 17, 20, 21, 22, 23, 25, 26, 27, 30, 34, 36, 37, 39, 40, 43, 49, 52], ""2024"": [1, 8, 9, 10, 11, 13, 14, 15, 16, 18, 20, 22, 24, 25, 26, 27, 28, 33, 38, 42, 45, 46, 48, 50, 51, 52]}"
+308,pediatrics,North,zh,0.872,360,F,33,White,group,5,27,True,,0,0.0,46800,"{""2023"": [2, 10, 11, 12, 15, 16, 17, 20, 21, 22, 26, 29, 30, 31, 35, 36, 38, 39, 40, 42, 43, 44, 45, 47, 48, 52], ""2024"": [3, 6, 7, 9, 13, 14, 16, 17, 18, 22, 23, 25, 26, 28, 30, 31, 32, 33, 35, 36, 37, 38, 43, 46, 48, 51]}"
+309,pediatrics,West,zh,0.764,360,F,60,Black,solo,4,21,True,,0,0.0,46800,"{""2023"": [1, 2, 8, 9, 12, 14, 15, 17, 19, 23, 28, 30, 33, 34, 35, 36, 37, 38, 40, 41, 44, 45, 46, 49, 50, 51], ""2024"": [5, 9, 12, 14, 16, 17, 18, 19, 22, 23, 24, 26, 27, 28, 29, 31, 33, 35, 38, 40, 42, 43, 46, 47, 48, 50]}"
+310,pediatrics,East,zh,0.614,360,F,32,Black,solo,2,1,False,,0,0.0,46800,"{""2023"": [1, 3, 5, 11, 12, 13, 15, 18, 20, 21, 24, 25, 26, 29, 31, 32, 33, 36, 40, 43, 45, 46, 47, 48, 50, 52], ""2024"": [2, 4, 5, 7, 9, 11, 12, 13, 20, 23, 24, 25, 26, 28, 29, 31, 32, 33, 35, 37, 38, 41, 42, 44, 51, 52]}"
+311,pediatrics,East,en,0.737,360,F,51,White,group,5,7,True,,0,0.0,46800,"{""2023"": [1, 5, 7, 9, 10, 11, 12, 14, 15, 16, 17, 20, 22, 24, 29, 30, 32, 35, 37, 38, 39, 44, 48, 50, 51, 52], ""2024"": [2, 3, 5, 8, 10, 12, 13, 17, 18, 19, 21, 24, 25, 28, 29, 31, 33, 34, 35, 40, 41, 44, 47, 48, 50, 52]}"
+312,pediatrics,North,es,0.874,360,M,57,Asian,solo,2,4,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 8, 10, 11, 13, 15, 17, 20, 21, 23, 24, 25, 27, 28, 31, 33, 34, 37, 39, 40, 41, 43, 46, 51], ""2024"": [2, 8, 9, 11, 12, 14, 16, 18, 19, 20, 21, 24, 25, 27, 31, 32, 36, 38, 39, 40, 43, 45, 46, 47, 50, 51]}"
+313,pediatrics,South,zh,0.827,360,M,58,Other,group,4,2,False,,0,0.0,46800,"{""2023"": [1, 3, 6, 10, 13, 14, 16, 17, 20, 21, 24, 26, 27, 28, 30, 31, 34, 38, 40, 41, 43, 46, 47, 49, 50, 52], ""2024"": [3, 4, 5, 7, 10, 12, 13, 14, 16, 17, 18, 19, 25, 30, 31, 34, 36, 38, 39, 41, 44, 46, 48, 49, 50, 51]}"
+314,pediatrics,West,zh,0.761,360,F,39,Hispanic,group,3,14,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 8, 11, 14, 20, 22, 26, 29, 30, 31, 32, 33, 36, 38, 39, 40, 41, 42, 44, 46, 47, 48, 50, 52], ""2024"": [1, 2, 4, 5, 8, 12, 14, 15, 16, 18, 19, 21, 22, 24, 25, 27, 28, 29, 32, 33, 34, 37, 39, 41, 45, 49]}"
+315,pediatrics,North,es,0.852,360,F,36,White,group,5,10,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 6, 7, 8, 9, 13, 14, 18, 19, 21, 22, 24, 25, 27, 28, 29, 31, 35, 36, 39, 41, 49, 51, 52], ""2024"": [4, 5, 6, 8, 9, 11, 16, 18, 19, 21, 22, 23, 25, 26, 27, 28, 29, 32, 35, 36, 40, 41, 42, 43, 45, 47]}"
+316,pediatrics,Central,es,0.753,360,M,41,Other,group,3,8,True,,0,0.0,46800,"{""2023"": [2, 5, 7, 10, 12, 13, 16, 17, 18, 20, 24, 25, 30, 31, 32, 33, 34, 35, 36, 38, 42, 43, 44, 48, 49, 50], ""2024"": [1, 2, 3, 4, 5, 6, 10, 16, 17, 22, 24, 26, 30, 36, 37, 38, 39, 41, 44, 45, 46, 47, 48, 49, 50, 52]}"
+317,pediatrics,North,en,0.865,360,M,30,Asian,solo,4,40,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 7, 8, 9, 12, 13, 15, 16, 18, 19, 22, 23, 33, 35, 37, 38, 39, 42, 44, 48, 49, 51, 52], ""2024"": [2, 5, 6, 8, 9, 11, 12, 14, 15, 16, 21, 23, 24, 25, 27, 29, 31, 32, 34, 40, 41, 43, 44, 45, 46, 47]}"
+318,pediatrics,West,zh,0.924,360,M,50,Other,group,3,17,False,,0,0.0,46800,"{""2023"": [3, 4, 6, 7, 8, 10, 13, 15, 17, 19, 24, 27, 30, 36, 37, 38, 39, 41, 43, 45, 46, 47, 48, 49, 50, 52], ""2024"": [1, 3, 5, 7, 8, 9, 11, 12, 13, 14, 15, 17, 20, 21, 22, 23, 25, 27, 32, 38, 40, 41, 42, 44, 47, 52]}"
+319,pediatrics,North,es,0.907,360,F,59,Black,group,5,33,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 9, 10, 11, 13, 15, 17, 18, 19, 21, 22, 23, 24, 29, 30, 31, 36, 39, 42, 43, 44, 45, 47, 48], ""2024"": [3, 5, 6, 7, 8, 9, 11, 13, 14, 19, 21, 22, 24, 25, 26, 28, 29, 30, 32, 38, 39, 41, 43, 46, 47, 48]}"
+320,pediatrics,North,zh,0.771,360,M,51,Other,group,2,11,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 7, 9, 11, 12, 13, 15, 18, 22, 23, 27, 29, 31, 34, 35, 36, 37, 38, 40, 41, 42, 44, 48, 50], ""2024"": [2, 3, 4, 5, 6, 8, 9, 10, 13, 14, 15, 24, 25, 26, 27, 30, 31, 32, 34, 35, 38, 44, 45, 49, 50, 51]}"
+321,pediatrics,East,es,0.762,360,M,49,Black,group,1,33,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 11, 15, 17, 19, 20, 21, 22, 23, 25, 28, 30, 31, 32, 33, 36, 39, 40, 41, 42, 43, 45, 47, 51], ""2024"": [1, 2, 3, 4, 5, 11, 12, 13, 14, 15, 16, 17, 20, 21, 22, 27, 31, 33, 35, 37, 38, 39, 44, 46, 49, 50]}"
+322,pediatrics,Central,en,0.977,360,M,61,Hispanic,solo,1,21,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 12, 15, 18, 19, 21, 23, 24, 27, 28, 30, 31, 32, 36, 39, 42, 43, 45, 46, 47, 48, 50, 51, 52], ""2024"": [1, 5, 9, 10, 11, 12, 14, 15, 16, 17, 18, 22, 23, 24, 26, 31, 32, 34, 36, 40, 41, 42, 43, 44, 51, 52]}"
+323,pediatrics,North,es,0.592,360,F,52,White,solo,5,5,True,,0,0.0,46800,"{""2023"": [2, 3, 4, 5, 7, 11, 12, 15, 16, 18, 19, 21, 22, 24, 25, 26, 28, 29, 33, 35, 36, 37, 38, 40, 48, 50], ""2024"": [1, 4, 5, 8, 10, 12, 14, 16, 17, 18, 19, 20, 23, 27, 30, 31, 32, 37, 38, 40, 41, 43, 44, 46, 47, 49]}"
+324,pediatrics,West,es,0.765,360,F,65,Hispanic,group,3,15,True,,0,0.0,46800,"{""2023"": [1, 6, 10, 11, 15, 17, 18, 22, 23, 24, 26, 28, 30, 34, 36, 37, 38, 39, 40, 42, 44, 46, 49, 50, 51, 52], ""2024"": [1, 3, 5, 7, 8, 11, 14, 15, 17, 18, 20, 23, 24, 26, 28, 33, 37, 39, 40, 43, 45, 46, 47, 48, 49, 51]}"
+325,pediatrics,South,en,1.0,360,M,64,Black,group,5,34,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 9, 10, 13, 14, 15, 16, 18, 23, 25, 26, 30, 32, 34, 35, 39, 40, 41, 42, 44, 45, 47, 48, 51], ""2024"": [1, 9, 11, 13, 15, 17, 18, 20, 21, 23, 25, 26, 27, 29, 30, 31, 32, 33, 34, 35, 38, 39, 41, 49, 50, 51]}"
+326,pediatrics,South,es,0.645,360,M,62,Hispanic,solo,4,11,True,,0,0.0,46800,"{""2023"": [2, 3, 8, 10, 12, 13, 14, 15, 17, 20, 23, 24, 26, 31, 32, 33, 34, 35, 36, 38, 41, 42, 45, 47, 48, 49], ""2024"": [2, 4, 6, 11, 14, 15, 17, 23, 24, 26, 27, 28, 33, 34, 37, 39, 40, 43, 45, 46, 47, 48, 49, 50, 51, 52]}"
+327,pediatrics,East,en,0.743,360,M,36,White,group,5,22,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 20, 21, 22, 26, 29, 30, 35, 37, 39, 41, 47, 48, 49, 50], ""2024"": [4, 5, 6, 8, 10, 12, 14, 16, 22, 23, 24, 26, 27, 29, 30, 33, 37, 38, 39, 40, 42, 43, 45, 46, 49, 51]}"
+328,pediatrics,East,es,0.667,360,F,45,White,solo,3,6,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 8, 9, 10, 13, 14, 15, 16, 17, 21, 22, 25, 26, 29, 31, 34, 38, 44, 46, 48, 50, 52], ""2024"": [1, 2, 3, 4, 10, 14, 15, 18, 19, 20, 25, 26, 29, 30, 31, 32, 34, 36, 37, 39, 40, 43, 44, 45, 46, 49]}"
+329,pediatrics,North,zh,0.851,360,F,61,Hispanic,solo,4,16,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 6, 11, 13, 18, 19, 20, 21, 22, 23, 27, 29, 31, 33, 34, 36, 37, 38, 41, 43, 44, 49, 51, 52], ""2024"": [2, 7, 8, 10, 11, 12, 13, 16, 17, 19, 22, 25, 26, 27, 29, 31, 32, 33, 38, 39, 41, 42, 44, 45, 46, 49]}"
+330,pediatrics,Central,zh,0.678,360,M,51,Asian,group,4,35,True,,0,0.0,46800,"{""2023"": [1, 4, 8, 9, 10, 13, 15, 18, 20, 21, 22, 25, 26, 29, 32, 33, 34, 36, 38, 39, 40, 41, 42, 44, 47, 49], ""2024"": [3, 5, 6, 7, 14, 15, 16, 18, 20, 23, 24, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 40, 43, 46, 48, 52]}"
+331,pediatrics,East,en,0.78,360,M,49,Other,group,3,37,True,,0,0.0,46800,"{""2023"": [4, 5, 6, 7, 14, 17, 18, 21, 24, 25, 26, 27, 28, 29, 30, 32, 33, 35, 37, 38, 40, 41, 42, 45, 50, 51], ""2024"": [1, 5, 6, 8, 11, 12, 14, 18, 19, 21, 24, 25, 26, 28, 32, 34, 36, 37, 38, 39, 43, 44, 47, 50, 51, 52]}"
+332,pediatrics,North,zh,1.0,360,M,48,Black,solo,1,30,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 7, 8, 10, 11, 12, 16, 19, 20, 23, 24, 27, 31, 33, 35, 39, 40, 41, 42, 44, 45, 48, 51, 52], ""2024"": [1, 2, 3, 4, 7, 9, 11, 13, 17, 21, 23, 25, 27, 28, 29, 30, 34, 36, 37, 38, 40, 44, 47, 50, 51, 52]}"
+333,pediatrics,West,es,0.846,360,M,33,Black,group,3,14,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 7, 9, 13, 15, 17, 18, 19, 21, 22, 24, 25, 27, 33, 34, 35, 36, 38, 39, 40, 44, 47, 48], ""2024"": [2, 3, 7, 10, 17, 18, 20, 25, 26, 28, 29, 31, 32, 33, 34, 35, 36, 37, 39, 41, 42, 43, 47, 48, 50, 51]}"
+334,pediatrics,West,en,0.637,360,M,58,Other,group,1,25,True,,0,0.0,46800,"{""2023"": [3, 7, 9, 10, 13, 14, 15, 16, 17, 20, 21, 24, 25, 26, 27, 28, 29, 30, 32, 34, 39, 41, 43, 46, 51, 52], ""2024"": [1, 3, 5, 8, 9, 11, 12, 13, 14, 16, 19, 20, 22, 31, 32, 33, 34, 36, 37, 38, 46, 47, 48, 49, 50, 51]}"
+335,pediatrics,Central,en,0.904,360,F,63,Other,solo,5,8,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 7, 8, 11, 15, 16, 18, 21, 22, 23, 25, 26, 27, 28, 29, 31, 32, 36, 41, 43, 47, 48, 50, 52], ""2024"": [3, 4, 6, 7, 13, 14, 15, 16, 17, 18, 20, 22, 23, 24, 25, 26, 37, 38, 39, 45, 46, 47, 48, 49, 50, 52]}"
+336,pediatrics,North,en,0.87,360,F,61,Black,solo,4,2,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 9, 12, 14, 15, 17, 19, 24, 26, 28, 29, 31, 32, 33, 38, 40, 42, 43, 44, 45, 46, 47, 48, 49], ""2024"": [3, 4, 5, 15, 16, 17, 18, 19, 20, 21, 23, 26, 27, 28, 31, 34, 36, 40, 41, 42, 43, 44, 47, 48, 49, 50]}"
+337,pediatrics,West,es,0.697,360,M,63,White,group,2,29,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 9, 11, 13, 14, 15, 18, 20, 21, 22, 26, 27, 29, 32, 35, 36, 37, 38, 41, 44, 45, 46, 51], ""2024"": [1, 4, 5, 7, 9, 11, 14, 15, 16, 17, 21, 22, 23, 24, 30, 32, 33, 36, 38, 39, 41, 44, 45, 48, 50, 51]}"
+338,pediatrics,West,en,0.804,360,M,61,Black,group,3,34,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 11, 12, 13, 15, 17, 18, 20, 24, 26, 27, 29, 31, 32, 34, 38, 39, 40, 42, 43, 45, 47, 50, 51], ""2024"": [1, 2, 3, 5, 9, 13, 14, 16, 17, 19, 20, 21, 26, 32, 33, 36, 37, 38, 39, 40, 42, 43, 44, 47, 50, 52]}"
+339,pediatrics,East,zh,0.761,360,F,62,White,solo,2,40,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 7, 9, 10, 11, 13, 14, 15, 18, 21, 23, 25, 26, 28, 32, 33, 36, 38, 40, 44, 48, 50], ""2024"": [2, 4, 5, 6, 7, 8, 9, 11, 22, 23, 24, 25, 27, 28, 31, 33, 34, 35, 37, 39, 42, 44, 45, 46, 47, 52]}"
+340,pediatrics,North,es,0.855,360,M,37,Black,solo,2,24,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 9, 10, 11, 12, 13, 17, 19, 22, 25, 26, 30, 32, 33, 34, 35, 37, 39, 41, 44, 45, 46, 47, 52], ""2024"": [1, 4, 5, 7, 8, 10, 11, 14, 15, 17, 19, 24, 26, 27, 31, 33, 39, 41, 42, 43, 44, 46, 47, 48, 49, 50]}"
+341,pediatrics,West,zh,1.0,360,F,45,Asian,solo,1,40,True,,0,0.0,46800,"{""2023"": [2, 6, 7, 8, 10, 12, 13, 14, 19, 22, 23, 24, 25, 26, 28, 29, 35, 36, 37, 38, 40, 41, 44, 47, 50, 52], ""2024"": [2, 3, 4, 5, 7, 10, 12, 14, 15, 17, 21, 24, 28, 31, 34, 36, 37, 38, 39, 41, 42, 43, 44, 45, 48, 50]}"
+342,pediatrics,North,zh,0.9,360,F,44,Asian,group,5,6,True,,0,0.0,46800,"{""2023"": [2, 3, 5, 6, 8, 9, 11, 16, 17, 18, 19, 20, 21, 26, 27, 28, 29, 33, 34, 35, 38, 39, 40, 44, 47, 48], ""2024"": [1, 2, 3, 4, 5, 6, 13, 21, 22, 23, 24, 28, 29, 30, 33, 35, 36, 37, 39, 41, 43, 45, 47, 48, 49, 50]}"
+343,pediatrics,North,es,0.809,360,F,30,Other,solo,5,32,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 7, 10, 13, 15, 19, 23, 24, 25, 27, 30, 31, 32, 33, 37, 38, 41, 42, 43, 45, 47, 49], ""2024"": [1, 4, 7, 11, 16, 17, 18, 19, 21, 23, 24, 26, 27, 28, 31, 32, 33, 37, 40, 41, 45, 46, 47, 48, 49, 50]}"
+344,pediatrics,West,zh,0.697,360,M,32,White,group,1,20,True,,0,0.0,46800,"{""2023"": [1, 2, 4, 5, 7, 8, 10, 11, 16, 17, 19, 22, 26, 29, 30, 31, 33, 35, 36, 37, 43, 44, 46, 47, 50, 51], ""2024"": [1, 5, 6, 7, 8, 9, 10, 12, 14, 17, 19, 20, 21, 25, 29, 34, 36, 37, 39, 40, 41, 43, 45, 48, 49, 50]}"
+345,pediatrics,West,es,0.906,360,M,37,White,solo,2,1,True,,0,0.0,46800,"{""2023"": [2, 8, 11, 12, 14, 16, 19, 21, 23, 27, 28, 29, 30, 31, 33, 35, 36, 39, 40, 41, 43, 47, 48, 49, 50, 52], ""2024"": [2, 4, 9, 12, 14, 15, 18, 19, 20, 21, 25, 26, 29, 31, 32, 34, 35, 39, 40, 41, 44, 45, 46, 48, 49, 50]}"
+346,pediatrics,South,en,0.825,360,M,54,White,group,1,33,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 7, 8, 11, 15, 17, 19, 22, 23, 24, 25, 26, 27, 28, 29, 30, 33, 34, 37, 38, 44, 47, 49, 51], ""2024"": [5, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 22, 23, 26, 27, 32, 34, 36, 37, 39, 40, 42, 43, 44, 46, 50]}"
+347,pediatrics,Central,en,0.854,360,M,65,Other,solo,4,35,True,,0,0.0,46800,"{""2023"": [1, 2, 5, 8, 9, 10, 11, 13, 14, 17, 18, 21, 23, 26, 30, 33, 35, 36, 37, 39, 40, 41, 46, 48, 50, 52], ""2024"": [4, 5, 6, 7, 12, 13, 17, 18, 23, 24, 25, 27, 28, 29, 31, 32, 38, 39, 42, 43, 44, 45, 46, 49, 50, 51]}"
+348,pediatrics,North,es,0.737,360,M,56,White,solo,3,27,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 11, 12, 14, 16, 19, 21, 29, 31, 32, 34, 35, 37, 39, 40, 41, 42, 43, 47, 49, 51, 52], ""2024"": [2, 3, 4, 6, 7, 8, 9, 12, 17, 18, 20, 23, 25, 27, 28, 29, 34, 40, 41, 42, 44, 45, 46, 47, 49, 52]}"
+349,pediatrics,East,zh,0.813,360,F,31,Hispanic,group,1,38,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 9, 10, 12, 13, 19, 21, 23, 24, 25, 26, 27, 29, 32, 35, 36, 38, 40, 41, 45, 46, 47, 49, 51], ""2024"": [3, 4, 5, 6, 8, 9, 12, 16, 17, 18, 21, 22, 28, 29, 30, 31, 32, 33, 37, 38, 41, 44, 45, 48, 51, 52]}"
+350,pediatrics,South,en,0.628,360,M,53,Hispanic,solo,1,2,True,,0,0.0,46800,"{""2023"": [3, 5, 7, 8, 10, 14, 15, 16, 17, 18, 20, 21, 24, 25, 29, 31, 32, 33, 34, 37, 38, 39, 40, 46, 47, 49], ""2024"": [1, 2, 3, 4, 5, 9, 11, 12, 17, 18, 19, 21, 26, 30, 31, 32, 33, 36, 37, 39, 42, 43, 44, 47, 51, 52]}"
+351,pediatrics,East,en,0.825,360,F,35,White,group,4,10,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 7, 8, 13, 14, 16, 17, 18, 20, 21, 23, 25, 26, 29, 30, 32, 33, 36, 37, 38, 39, 40, 42, 47], ""2024"": [1, 3, 5, 6, 7, 9, 10, 12, 13, 15, 19, 21, 22, 23, 24, 26, 27, 33, 37, 38, 39, 41, 43, 44, 47, 52]}"
+352,pediatrics,East,zh,0.761,360,M,45,Hispanic,group,1,16,False,,0,0.0,46800,"{""2023"": [1, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19, 21, 22, 25, 27, 30, 31, 32, 37, 38, 41, 42, 43, 48], ""2024"": [1, 2, 3, 6, 8, 9, 11, 15, 22, 24, 27, 28, 30, 31, 33, 35, 36, 37, 38, 40, 42, 43, 48, 49, 50, 51]}"
+353,pediatrics,Central,en,0.929,360,F,65,Other,group,2,15,True,,0,0.0,46800,"{""2023"": [2, 5, 9, 11, 12, 13, 14, 18, 19, 20, 23, 24, 25, 29, 30, 32, 33, 34, 36, 37, 40, 42, 43, 49, 50, 51], ""2024"": [1, 8, 9, 12, 13, 14, 15, 17, 24, 25, 26, 27, 28, 30, 32, 34, 35, 36, 37, 40, 41, 44, 45, 48, 49, 50]}"
+354,pediatrics,West,es,0.953,360,F,59,Hispanic,group,2,16,True,,0,0.0,46800,"{""2023"": [3, 5, 8, 12, 14, 17, 18, 19, 20, 22, 23, 25, 26, 27, 28, 30, 31, 33, 34, 40, 41, 43, 44, 45, 48, 50], ""2024"": [1, 4, 5, 6, 8, 9, 10, 11, 12, 14, 17, 20, 22, 23, 24, 25, 32, 33, 36, 37, 39, 43, 45, 47, 50, 51]}"
+355,pediatrics,North,es,0.929,360,M,54,Asian,group,4,22,True,,0,0.0,46800,"{""2023"": [3, 6, 11, 12, 13, 14, 15, 17, 20, 22, 23, 25, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 43, 49, 50, 52], ""2024"": [1, 2, 9, 10, 13, 14, 23, 24, 26, 27, 30, 32, 33, 34, 37, 38, 40, 41, 42, 43, 47, 48, 49, 50, 51, 52]}"
+356,pediatrics,North,zh,0.834,360,M,49,Asian,group,2,21,True,,0,0.0,46800,"{""2023"": [2, 6, 8, 9, 14, 15, 16, 18, 20, 23, 25, 29, 35, 37, 39, 40, 41, 42, 43, 44, 45, 47, 49, 50, 51, 52], ""2024"": [6, 8, 10, 12, 14, 15, 17, 18, 20, 23, 24, 25, 26, 28, 29, 30, 34, 35, 36, 37, 41, 42, 43, 44, 49, 50]}"
+357,pediatrics,West,en,0.848,360,F,50,Black,group,4,27,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 7, 8, 9, 10, 11, 12, 19, 22, 23, 26, 32, 33, 35, 37, 38, 39, 40, 42, 46, 47, 49, 50, 51], ""2024"": [2, 4, 7, 10, 11, 14, 17, 18, 20, 26, 27, 28, 29, 31, 32, 35, 37, 38, 39, 41, 42, 44, 45, 46, 47, 49]}"
+358,pediatrics,West,es,0.72,360,F,53,White,solo,4,17,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 7, 8, 9, 10, 15, 17, 19, 22, 23, 24, 25, 28, 29, 30, 35, 39, 42, 43, 44, 45, 46, 48, 51], ""2024"": [2, 4, 5, 6, 7, 9, 13, 14, 15, 16, 20, 22, 23, 25, 32, 34, 36, 37, 38, 40, 44, 45, 46, 49, 50, 52]}"
+359,pediatrics,South,es,0.691,360,M,55,Black,group,4,20,False,,0,0.0,46800,"{""2023"": [3, 7, 10, 14, 15, 16, 23, 25, 26, 27, 28, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 44, 48, 49, 51, 52], ""2024"": [2, 3, 4, 6, 8, 11, 12, 13, 21, 22, 23, 28, 29, 30, 32, 34, 37, 40, 43, 45, 46, 47, 48, 49, 51, 52]}"
+360,pediatrics,South,zh,0.695,360,M,33,Hispanic,group,5,16,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 7, 11, 12, 13, 16, 18, 19, 28, 32, 33, 34, 35, 36, 38, 40, 42, 44, 46, 48, 50, 51, 52], ""2024"": [5, 6, 11, 12, 13, 14, 16, 18, 19, 20, 21, 22, 25, 26, 29, 31, 34, 35, 37, 39, 41, 42, 44, 45, 49, 50]}"
+361,pediatrics,Central,en,0.69,360,M,34,Other,solo,4,3,True,,0,0.0,46800,"{""2023"": [3, 5, 10, 11, 12, 13, 15, 17, 21, 23, 24, 25, 28, 29, 30, 33, 35, 36, 37, 39, 40, 41, 45, 46, 51, 52], ""2024"": [2, 5, 6, 8, 9, 12, 13, 15, 19, 20, 21, 22, 25, 26, 29, 30, 31, 32, 34, 38, 41, 43, 46, 48, 50, 52]}"
+362,pediatrics,North,es,0.634,360,M,51,Other,group,1,23,True,,0,0.0,46800,"{""2023"": [1, 3, 4, 5, 6, 7, 8, 11, 14, 16, 23, 24, 25, 27, 28, 32, 33, 34, 40, 43, 44, 45, 46, 47, 51, 52], ""2024"": [1, 3, 5, 6, 7, 12, 13, 14, 16, 17, 22, 24, 25, 30, 31, 35, 36, 37, 38, 39, 43, 47, 48, 49, 50, 52]}"
+363,pediatrics,East,es,0.831,360,M,42,Asian,group,2,3,True,,0,0.0,46800,"{""2023"": [3, 6, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 24, 25, 26, 28, 29, 30, 32, 35, 37, 38, 41, 43, 51], ""2024"": [2, 3, 4, 8, 12, 13, 14, 15, 16, 17, 18, 23, 26, 27, 29, 33, 36, 37, 39, 40, 41, 45, 49, 50, 51, 52]}"
+364,pediatrics,North,en,0.649,360,M,50,Asian,solo,3,28,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 18, 19, 21, 23, 24, 25, 27, 29, 30, 33, 34, 37, 41, 44, 46, 47], ""2024"": [2, 4, 5, 10, 12, 13, 15, 17, 20, 21, 22, 25, 31, 34, 37, 38, 39, 40, 41, 42, 43, 44, 46, 48, 51, 52]}"
+365,pediatrics,Central,zh,0.875,360,M,46,Other,group,1,21,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 5, 6, 10, 14, 19, 22, 24, 25, 26, 27, 31, 36, 37, 38, 39, 40, 42, 43, 44, 45, 48, 50, 51], ""2024"": [2, 5, 9, 10, 11, 12, 15, 16, 17, 21, 24, 25, 26, 29, 31, 35, 36, 37, 39, 40, 42, 43, 44, 45, 48, 51]}"
+366,pediatrics,South,zh,0.737,360,M,47,Black,solo,1,14,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 8, 9, 10, 12, 13, 18, 21, 22, 27, 28, 31, 32, 33, 35, 39, 41, 42, 43, 44, 47, 48], ""2024"": [1, 2, 4, 5, 6, 7, 8, 9, 14, 15, 19, 21, 22, 25, 26, 34, 35, 40, 42, 43, 45, 46, 48, 49, 50, 52]}"
+367,pediatrics,East,en,0.97,360,F,46,Other,group,2,27,True,,0,0.0,46800,"{""2023"": [3, 5, 6, 7, 8, 9, 10, 11, 13, 16, 17, 18, 19, 20, 22, 24, 27, 29, 30, 33, 36, 40, 42, 44, 48, 50], ""2024"": [2, 3, 4, 5, 6, 10, 11, 13, 14, 18, 19, 24, 25, 26, 27, 32, 33, 42, 43, 44, 45, 46, 47, 50, 51, 52]}"
+368,pediatrics,South,zh,0.683,360,M,49,Black,solo,1,35,True,,0,0.0,46800,"{""2023"": [1, 4, 5, 12, 16, 20, 21, 22, 23, 24, 28, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 41, 43, 47, 50, 52], ""2024"": [1, 3, 7, 8, 10, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 27, 28, 31, 34, 35, 37, 39, 41, 45, 46, 51]}"
+369,pediatrics,South,en,0.672,360,M,47,Hispanic,group,3,17,True,,0,0.0,46800,"{""2023"": [2, 5, 6, 7, 8, 10, 13, 17, 20, 21, 25, 26, 28, 31, 34, 35, 39, 40, 41, 43, 44, 46, 47, 49, 51, 52], ""2024"": [2, 3, 10, 12, 13, 15, 16, 18, 19, 20, 22, 23, 24, 25, 27, 28, 31, 34, 35, 42, 43, 45, 47, 48, 49, 51]}"
+370,pediatrics,West,en,0.868,360,M,65,Other,group,3,40,False,,0,0.0,46800,"{""2023"": [2, 4, 6, 10, 11, 12, 13, 14, 15, 17, 21, 22, 27, 28, 30, 32, 35, 38, 39, 41, 42, 43, 45, 46, 50, 51], ""2024"": [1, 2, 3, 6, 7, 8, 10, 11, 14, 15, 16, 18, 21, 26, 33, 35, 37, 39, 41, 43, 44, 46, 47, 49, 50, 52]}"
+371,pediatrics,West,en,0.795,360,M,44,Black,solo,3,11,True,,0,0.0,46800,"{""2023"": [2, 6, 7, 8, 9, 13, 15, 16, 20, 21, 22, 24, 25, 27, 28, 29, 31, 32, 33, 35, 38, 39, 41, 48, 49, 52], ""2024"": [2, 8, 10, 12, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 44, 47, 48, 52]}"
+372,pediatrics,North,en,0.787,360,M,46,Hispanic,group,2,9,True,,0,0.0,46800,"{""2023"": [3, 6, 7, 9, 15, 16, 18, 19, 21, 22, 25, 26, 27, 29, 32, 33, 34, 35, 36, 38, 40, 41, 43, 46, 47, 51], ""2024"": [5, 6, 7, 9, 13, 14, 16, 17, 20, 21, 22, 23, 25, 29, 32, 33, 36, 37, 38, 40, 44, 46, 47, 48, 49, 52]}"
+373,pediatrics,East,zh,0.849,360,M,31,Black,group,2,14,True,,0,0.0,46800,"{""2023"": [1, 3, 6, 8, 9, 11, 13, 14, 21, 22, 24, 26, 27, 28, 29, 31, 36, 38, 40, 42, 44, 46, 47, 48, 51, 52], ""2024"": [3, 7, 15, 17, 18, 20, 21, 23, 25, 26, 27, 28, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 43, 46, 47, 52]}"
+374,pediatrics,East,en,0.839,360,F,40,White,solo,1,31,True,,0,0.0,46800,"{""2023"": [1, 5, 6, 7, 8, 10, 11, 15, 16, 17, 18, 19, 21, 22, 25, 31, 32, 33, 35, 36, 40, 43, 44, 45, 46, 52], ""2024"": [1, 3, 5, 9, 12, 14, 18, 19, 21, 25, 26, 27, 31, 34, 36, 37, 39, 40, 42, 44, 45, 46, 48, 49, 50, 51]}"
+375,pediatrics,Central,es,0.822,360,F,48,Hispanic,group,4,29,True,,0,0.0,46800,"{""2023"": [2, 3, 6, 7, 11, 12, 13, 14, 15, 16, 19, 20, 21, 24, 25, 28, 29, 34, 37, 41, 45, 46, 49, 50, 51, 52], ""2024"": [1, 3, 4, 9, 10, 12, 14, 16, 19, 21, 22, 25, 26, 27, 28, 31, 32, 33, 34, 35, 37, 42, 45, 47, 48, 49]}"
+376,pediatrics,Central,en,0.736,360,M,59,White,group,5,36,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 6, 7, 8, 10, 11, 16, 17, 18, 19, 20, 21, 23, 24, 27, 30, 33, 37, 42, 45, 46, 48, 51], ""2024"": [4, 5, 7, 8, 10, 11, 15, 17, 21, 23, 24, 25, 27, 28, 30, 32, 33, 36, 38, 42, 43, 44, 45, 47, 49, 51]}"
+377,pediatrics,West,es,0.883,360,M,40,Black,solo,5,11,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 8, 11, 15, 19, 22, 25, 26, 27, 29, 31, 32, 33, 34, 35, 37, 40, 42, 43, 44, 46, 47, 48, 52], ""2024"": [1, 2, 4, 5, 6, 7, 13, 14, 17, 18, 20, 25, 26, 28, 31, 33, 34, 35, 38, 40, 41, 42, 43, 44, 50, 52]}"
+378,pediatrics,South,zh,0.774,360,M,54,Other,group,3,39,True,,0,0.0,46800,"{""2023"": [1, 2, 3, 4, 5, 8, 10, 12, 13, 15, 17, 20, 21, 22, 23, 24, 30, 31, 36, 37, 39, 40, 41, 42, 44, 50], ""2024"": [1, 3, 9, 12, 13, 15, 16, 18, 20, 21, 22, 25, 26, 27, 29, 33, 35, 37, 42, 43, 46, 47, 48, 49, 50, 52]}"
+379,pediatrics,West,es,0.941,360,M,61,Black,group,5,6,True,,0,0.0,46800,"{""2023"": [3, 4, 5, 6, 8, 9, 10, 13, 14, 17, 19, 21, 29, 30, 32, 35, 36, 37, 38, 39, 40, 41, 43, 44, 50, 51], ""2024"": [3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18, 21, 26, 27, 28, 30, 31, 36, 41, 44, 45, 47, 51]}"
+380,pediatrics,Central,en,0.849,360,M,31,White,group,1,7,True,,0,0.0,46800,"{""2023"": [2, 4, 5, 12, 13, 15, 17, 25, 26, 28, 29, 31, 32, 33, 34, 35, 38, 40, 42, 43, 44, 46, 48, 49, 51, 52], ""2024"": [1, 2, 3, 7, 11, 19, 20, 21, 22, 24, 25, 28, 30, 31, 32, 38, 39, 40, 41, 42, 43, 44, 45, 47, 50, 51]}"

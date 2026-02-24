@@ -245,8 +245,14 @@ def generate_arrivals(cfg, patients):
         year_idx = day_offset // 365
         
         for patient in patients:
-            patient_start_day = (patient.patient_id % 365)
-            if day_offset < patient_start_day:
+            patient_start_day = (patient.patient_id % days_total)
+            days_since_start = day_offset - patient_start_day
+            if days_since_start < 0:
+                continue
+
+            ramp_days = max(1, cfg.arrival_activation_ramp_days)
+            activation_factor = min(1.0, days_since_start / ramp_days)
+            if activation_factor <= 0:
                 continue
             
             expected_visits = patient.cp #新改的
@@ -258,7 +264,7 @@ def generate_arrivals(cfg, patients):
             )
             
             patient_factor = 0.8 + (patient.patient_id % 10) * 0.04
-            daily_probability = (expected_visits * seasonal_factor * patient_factor) / 365.0
+            daily_probability = (expected_visits * seasonal_factor * patient_factor * activation_factor) / 365.0
             
             last_visit = patient_last_visit.get(patient.patient_id)
             if last_visit and (current_date - last_visit).days < 7:
