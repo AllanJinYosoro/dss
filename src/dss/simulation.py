@@ -76,15 +76,15 @@ class Simulation:
                 patient.allocated_doctor_id = selected_doc_id
                 original_doctor_obj.current_panel_size += 1 
                 original_doctor_obj.expected_workload += patient.cp
-                ordered = ranked
+                
 
-            else: #非第一次来访 优先自己的PCP，次考虑其他同专业+有空闲医生 
-                prim_id = patient.allocated_doctor_id
-                doctor_candidates = [d for d in doctors if d.specialty == specialty and d.expected_workload <d.max_workload]
-                primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
-                others = [d for d in doctor_candidates if d.doctor_id != prim_id]
-                ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
-                ordered = ([primary_doc] if primary_doc else []) + ranked_others
+            prim_id = patient.allocated_doctor_id
+            doctor_candidates = [d for d in doctors if d.specialty == specialty]
+            primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
+            """ 
+            others = [d for d in doctor_candidates if d.doctor_id != prim_id]
+            ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
+            ordered = ([primary_doc] if primary_doc else []) + ranked_others """
 
             q_idx = self._quarter_index(calendar_start, arrival.arrival_date)
             if q_idx != quarter_state.quarter_index:
@@ -99,7 +99,7 @@ class Simulation:
                 quarter_seen = 0
                 quarter_state.quarter_index = q_idx
             
-
+            #需要改动
             appt = self.scheduler.schedule(arrival, ordered, quarter_state)
 
             # simulate no-show outcome if scheduled
