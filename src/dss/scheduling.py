@@ -8,7 +8,7 @@ from datetime import date, timedelta
 from typing import Optional, Sequence
 
 from .config import SimulationConfig
-from .models import Appointment, Doctor, Arrival, QuarterState
+from .models import Appointment, Arrival, Doctor, QuarterState
 
 
 class Scheduler:
@@ -17,17 +17,38 @@ class Scheduler:
 
     def _overbook_factor(self, state: QuarterState) -> float:
         # Allow modest overbooking proportional to observed no-show rate.
-        return min(self.cfg.overbook_ceiling, max(self.cfg.overbook_floor, state.no_show_rate * 1.2))
+        return min(
+            self.cfg.overbook_ceiling,
+            max(self.cfg.overbook_floor, state.no_show_rate * 1.2),
+        )
 
     def _first_available_day(
-        self, doctor: Doctor, start: date, latest: date, need_minutes: int, state: QuarterState
+        self,
+        doctor: Doctor,
+        start: date,
+        latest: date,
+        need_minutes: int,
+        state: QuarterState,
     ) -> Optional[date]:
+        """Find the first available weekday (Mon-Fri) with enough capacity.
+
+        Requirements:
+        - Doctor works only 5 days per week (weekdays only, Monday-Friday)
+        - Doctor works at most 6 hours (360 minutes) per day
+        """
         overbook = self._overbook_factor(state)
         day = start
         while day <= latest:
-            capacity = doctor.daily_minutes * (1 + overbook)
-            if doctor.schedule.get(day, 0) + need_minutes <= capacity:
-                return day
+            # Check if it's a weekday (Monday=0 to Friday=4)
+            # Doctors only work Monday-Friday (5 days per week)
+            if day.weekday() < 5:  # 0-4 are Monday-Friday
+                # Calculate daily capacity (6 hours = 360 minutes)
+                daily_capacity = doctor.daily_minutes * (1 + overbook)
+                current_minutes = doctor.schedule.get(day, 0)
+
+                # Check if there's enough capacity for this appointment
+                if current_minutes + need_minutes <= daily_capacity:
+                    return day
             day += timedelta(days=1)
         return None
 
@@ -36,7 +57,11 @@ class Scheduler:
     ) -> Appointment:
         for doctor in doctor_choices:
             slot = self._first_available_day(
-                doctor, arrival.arrival_date, arrival.latest_date, arrival.service_minutes, state
+                doctor,
+                arrival.arrival_date,
+                arrival.latest_date,
+                arrival.service_minutes,
+                state,
             )
             if slot:
                 doctor.book(slot, arrival.service_minutes)
