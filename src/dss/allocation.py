@@ -8,8 +8,6 @@ from dataclasses import dataclass
 from datetime import date
 from typing import List, Sequence
 
-import numpy as np
-
 from .config import SimulationConfig
 from .models import Doctor, Patient
 
@@ -24,7 +22,10 @@ class AllocationEngine:
     def rank_doctors(self, patient: Patient, doctors: Sequence[Doctor], day: date) -> List[Doctor]:
         ranked = []
         for doc in doctors:
-            #load_ratio = doc.schedule.get(day, 0) / doc.daily_minutes
+            annual_remaining = doc.annual_remaining_minutes(day.year)
+            if annual_remaining <= 0:
+                continue
+
             pref = 0.0
             pref += patient.preference_vector["region_bias"] * (doc.region == patient.region)
             pref += patient.preference_vector["language_bias"] * (doc.language == patient.language)
@@ -35,9 +36,9 @@ class AllocationEngine:
             pref += patient.preference_vector["service_count_bias"] * (doc.services_count / 5)
             pref += patient.preference_vector['experience_bias'] * (round(doc.experience_years/10)*0.25)
             pref += patient.preference_vector['board_certification_bias']* doc.board_certified
-            #pref += np.random.uniform(-self.cfg.preference_noise, self.cfg.preference_noise)
-            #capacity_term = 0.2 * (1 - load_ratio)
-            #ranked.append((pref + capacity_term, doc))
-            ranked.append((pref,doc))
+            annual_capacity = max(1.0, float(doc.annual_capacity_minutes(day.year)))
+            remaining_ratio = annual_remaining / annual_capacity
+            capacity_term = 0.35 * remaining_ratio
+            ranked.append((pref + capacity_term, doc))
         ranked.sort(key=lambda x: x[0], reverse=True)
         return [d for _, d in ranked]

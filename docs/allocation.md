@@ -20,3 +20,8 @@
 ## 输出
 - 有序医生列表，供调度模块使用；列表首位为主治（若存在）。
 - 若无可用医生，调度模块返回未分配的预约记录。
+
+## 26-Week Annual Capacity Constraint
+- Doctor candidates are filtered by annual remaining minutes based on fixed 26 working weeks.
+- Ranking includes a capacity term from annual remaining ratio.
+- This keeps allocation decisions consistent with schedule feasibility.

@@ -12,19 +12,18 @@ from typing import Dict, List, Optional
 @dataclass
 class Patient:
     patient_id: int
-    age:int #新增
+    age: int
     age_group: str  # AD/MA/SE/EL
     gender: str
     race: str
     region: str
     language: str
-    historical_visits: float #原visit_freq: str  # high / low
-    cp: float #每年平均来访次数
-    cp_group: str #class_code 
+    historical_visits: float
+    cp: float
+    cp_group: str
     specialty_request: str
-    allocated_doctor_id: int
+    allocated_doctor_id: Optional[int]
     preference_vector: Dict[str, float]
-    
 
 
 @dataclass
@@ -41,14 +40,14 @@ class Doctor:
     service_type: str
     services_count: int
     experience_years: int
-    board_certified: bool #新增
+    board_certified: bool
     current_panel_size: int
     expected_workload: float
     max_workload: float
+    # year -> list of ISO week numbers (1..52) when this doctor works
+    working_weeks_by_year: Dict[int, List[int]]
     hires_at: Optional[date] = None
-    
-    schedule: Dict[date, int] = field(default_factory=dict) 
-    
+    schedule: Dict[date, int] = field(default_factory=dict)
 
     def remaining_minutes(self, day: date) -> int:
         return self.daily_minutes - self.schedule.get(day, 0)
@@ -56,9 +55,23 @@ class Doctor:
     def book(self, day: date, minutes: int) -> None:
         self.schedule[day] = self.schedule.get(day, 0) + minutes
 
+    def is_working_day(self, day: date) -> bool:
+        if day.weekday() >= 5:
+            return False
+        return day.isocalendar().week in set(self.working_weeks_by_year.get(day.year, []))
+
+    def annual_capacity_minutes(self, year: int) -> int:
+        return len(self.working_weeks_by_year.get(year, [])) * 5 * self.daily_minutes
+
+    def annual_booked_minutes(self, year: int) -> int:
+        return sum(v for d, v in self.schedule.items() if d.year == year)
+
+    def annual_remaining_minutes(self, year: int) -> int:
+        return self.annual_capacity_minutes(year) - self.annual_booked_minutes(year)
+
 
 @dataclass
-class Appointment: #先放着，原本的没有
+class Appointment:
     patient_id: int
     arrival_id: int
     doctor_id: Optional[int]
@@ -81,8 +94,8 @@ class Arrival:
     service_minutes: int
     specialty_request: str
     no_show_risk: float
-    patient_class: str #新加的
-    expected_visits: float #新加的
+    patient_class: str
+    expected_visits: float
 
 
 @dataclass
@@ -97,3 +110,4 @@ class QuarterState:
         self.bookings += 1
         if not made:
             self.turnaways += 1
+

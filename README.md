@@ -62,3 +62,9 @@ uv run dss --no-plot --artifacts-dir artifacts
 ```
 
 See `docs/observability.md` for metric definitions and plot descriptions.
+
+## Doctor 26-Week Calendar Rule
+- Each doctor works 26 weeks per year, Monday to Friday only.
+- A doctor's annual capacity is computed from this calendar: `26 * 5 * daily_minutes`.
+- Allocation uses annual remaining minutes under this calendar when ranking/filtering doctors.
+- Scheduling can only place appointments on doctor working days inside those selected 26 weeks.

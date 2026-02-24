@@ -7,25 +7,20 @@ from __future__ import annotations
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
 
 from .allocation import AllocationEngine
 from .config import SimulationConfig
-from .data_generation import (
-    generate_doctors,
-    generate_patients,
-    generate_arrivals,
-    load_data,
-    save_data,
-)
-from .models import Appointment, Doctor, Patient, QuarterState, Arrival
+from .data_generation import generate_arrivals, generate_doctors, generate_patients, load_data, save_data
+from .models import Appointment, Arrival, Doctor, Patient, QuarterState
 from .scheduling import Scheduler
 from .staffing import StaffingManager
 
 DEFAULT_DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+
 
 class Simulation:
     def __init__(self, cfg: SimulationConfig, data_dir: Optional[Path] = None, regenerate: bool = False):
@@ -36,98 +31,101 @@ class Simulation:
         self.scheduler = Scheduler(cfg)
         self.staffing = StaffingManager(cfg)
 
-    def run(self) -> Tuple[pd.DataFrame, Dict[str, float], pd.DataFrame]:
-        data_exists = all(
-            (self.data_dir / f).exists() for f in ["patients.csv", "doctors.csv", "arrivals.csv"]
-        )
+    def run(self) -> Tuple[pd.DataFrame, Dict[str, float], pd.DataFrame, pd.DataFrame]:
+        data_exists = all((self.data_dir / f).exists() for f in ["patients.csv", "doctors.csv", "arrivals.csv"])
         if data_exists and not self.regenerate:
             patients, doctors, arrivals = load_data(self.data_dir)
         else:
             patients = generate_patients(self.cfg)
             doctors = generate_doctors(self.cfg)
-            arrivals, _cal = generate_arrivals(self.cfg, patients)
+            arrivals, _calendar = generate_arrivals(self.cfg, patients)
             save_data(patients, doctors, arrivals, self.data_dir)
 
         appointments: List[Appointment] = []
+        schedule_log: List[Dict[str, object]] = []
         quarter_state = QuarterState(quarter_index=0, cp_bias=0.0, no_show_rate=self.cfg.baseline_no_show)
         quarter_no_show = 0
         quarter_seen = 0
-
         quarter_turnaways: Dict[str, int] = defaultdict(int)
         quarter_bookings: Dict[str, int] = defaultdict(int)
 
-        # 记录每次预约安排后的医生 schedule 变化（方案2：每次预约后保存）
-        schedule_log: List[Dict] = []
-
         calendar_start = arrivals[0].arrival_date if arrivals else self.cfg.start_date
-
-
         patient_lookup = {p.patient_id: p for p in patients}
         doctor_lookup = {d.doctor_id: d for d in doctors}
 
         for arrival in arrivals:
-            # 假设固定服务时间
+            # Keep this model assumption unchanged.
             arrival.service_minutes = 30
+
             patient = patient_lookup[arrival.patient_id]
             specialty = self.allocator.pick_specialty(patient)
-            if pd.isna(patient.allocated_doctor_id):  #第一次来访 分配PCP
-                doctor_candidates = [d for d in doctors if d.specialty == specialty and d.expected_workload <d.max_workload]
-                if doctor_candidates == []:
-                    print('warning:',patient.patient_id)
-                ranked = self.allocator.rank_doctors(patient, doctor_candidates, arrival.arrival_date)
-                selected_doc_id = ranked[0].doctor_id
-                original_doctor_obj = doctor_lookup[selected_doc_id]
-        # 修改原始对象
-                patient.allocated_doctor_id = selected_doc_id
-                original_doctor_obj.current_panel_size += 1 
-                original_doctor_obj.expected_workload += patient.cp
-                
 
-            prim_id = patient.allocated_doctor_id
-            doctor_candidates = [d for d in doctors if d.specialty == specialty]
-            primary_doc = next((d for d in doctor_candidates if d.doctor_id == prim_id), None)
-            
-            """ 
-            others = [d for d in doctor_candidates if d.doctor_id != prim_id]
-            ranked_others = self.allocator.rank_doctors(patient, others, arrival.arrival_date)
-            ordered = ([primary_doc] if primary_doc else []) + ranked_others
-            """
+            if pd.isna(patient.allocated_doctor_id):
+                first_candidates = [
+                    d
+                    for d in doctors
+                    if d.specialty == specialty
+                    and d.expected_workload < d.max_workload
+                    and d.annual_remaining_minutes(arrival.arrival_date.year) >= arrival.service_minutes
+                ]
+                if not first_candidates:
+                    continue
+                ranked = self.allocator.rank_doctors(patient, first_candidates, arrival.arrival_date)
+                if not ranked:
+                    continue
+                selected_doc = ranked[0]
+                patient.allocated_doctor_id = selected_doc.doctor_id
+                selected_doc.current_panel_size += 1
+                selected_doc.expected_workload += patient.cp
+
+            primary_id = patient.allocated_doctor_id
+            specialty_candidates = [
+                d
+                for d in doctors
+                if d.specialty == specialty
+                and d.annual_remaining_minutes(arrival.arrival_date.year) >= arrival.service_minutes
+            ]
+            primary_doc = next((d for d in specialty_candidates if d.doctor_id == primary_id), None)
+
+            ordered_raw = ([primary_doc] if primary_doc else []) + specialty_candidates
+            seen = set()
+            ordered: List[Doctor] = []
+            for d in ordered_raw:
+                if d.doctor_id not in seen:
+                    seen.add(d.doctor_id)
+                    ordered.append(d)
 
             q_idx = self._quarter_index(calendar_start, arrival.arrival_date)
             if q_idx != quarter_state.quarter_index:
-                # finalize prior quarter no-show estimate
                 if quarter_seen > 0:
                     quarter_state.no_show_rate = quarter_no_show / quarter_seen
                 quarter_state.cp_bias = 0.0
-                
                 quarter_turnaways = defaultdict(int)
                 quarter_bookings = defaultdict(int)
                 quarter_no_show = 0
                 quarter_seen = 0
                 quarter_state.quarter_index = q_idx
 
-            ordered = ([primary_doc] if primary_doc else []) + doctor_candidates
-            
-            #需要改动
             appt = self.scheduler.schedule(arrival, ordered, quarter_state)
 
-            # 方案2：每次预约后保存医生 schedule 变化
             if appt.allocated and appt.scheduled_date and appt.doctor_id is not None:
-                doctor_obj = doctor_lookup.get(appt.doctor_id)
-                if doctor_obj:
-                    schedule_record = {
-                        "arrival_id": arrival.arrival_id,
-                        "patient_id": arrival.patient_id,
-                        "doctor_id": appt.doctor_id,
-                        "arrival_date": arrival.arrival_date,
-                        "scheduled_date": appt.scheduled_date,
-                        "service_minutes": arrival.service_minutes,
-                        "total_minutes_on_day": doctor_obj.schedule.get(appt.scheduled_date, 0),
-                        "specialty": appt.specialty,
-                    }
-                    schedule_log.append(schedule_record)
+                doc = doctor_lookup.get(appt.doctor_id)
+                if doc:
+                    schedule_log.append(
+                        {
+                            "arrival_id": arrival.arrival_id,
+                            "patient_id": arrival.patient_id,
+                            "doctor_id": appt.doctor_id,
+                            "arrival_date": arrival.arrival_date,
+                            "scheduled_date": appt.scheduled_date,
+                            "service_minutes": arrival.service_minutes,
+                            "total_minutes_on_day": doc.schedule.get(appt.scheduled_date, 0),
+                            "specialty": appt.specialty,
+                            "is_working_day": doc.is_working_day(appt.scheduled_date),
+                            "year_week": f"{appt.scheduled_date.isocalendar().year}-{appt.scheduled_date.isocalendar().week:02d}",
+                        }
+                    )
 
-            # simulate no-show outcome if scheduled
             if appt.allocated and appt.scheduled_date:
                 pr = min(0.8, arrival.no_show_risk + 0.5 * quarter_state.no_show_rate)
                 appt.no_show = bool(np.random.random() < pr)
@@ -142,50 +140,41 @@ class Simulation:
             if not appt.allocated:
                 quarter_turnaways[specialty] += 1
 
-            
-            for specialty in ['family_practice','internal_medicine','pediatrics']:
-                if self.staffing.maybe_hire(doctors,specialty):
-                    doc = self.staffing._new_doctor(specialty,arrival.arrival_date)
-                    doctors.append(doc)
-                    doctor_lookup[doc.doctor_id] = doc
+            for sp in ["family_practice", "internal_medicine", "pediatrics"]:
+                if self.staffing.maybe_hire(doctors, sp):
+                    new_doc = self.staffing._new_doctor(sp, arrival.arrival_date)
+                    doctors.append(new_doc)
+                    doctor_lookup[new_doc.doctor_id] = new_doc
 
         df = self._to_dataframe(appointments, patients, arrivals)
-
-        data_doctor = [
-            {
-                "doctor_id": doc.doctor_id,
-                "specialty":doc.specialty,
-                "region":doc.region,
-                "language":doc.language,
-                "quality_score":doc.quality_score,
-                "daily_minutes":doc.daily_minutes,
-                "gender":doc.gender,
-                "age":doc.age,
-                "race":doc.race,
-                "service_type":doc.service_type,
-                "services_count":doc.services_count,
-                "experience_years":doc.experience_years,
-                "board_certified":doc.board_certified,
-                "current_panel_size":doc.current_panel_size,
-                "expected_workload": doc.expected_workload,
-                "max_workload": doc.max_workload,
-                "hires_at":doc.hires_at
-            } 
-            for doc in doctors
-        ]
-
-        # 直接创建 DataFrame
-        df_doctor = pd.DataFrame(data_doctor)
-
-        # 将 schedule_log 转换为 DataFrame
-        df_schedule = pd.DataFrame(schedule_log) if schedule_log else pd.DataFrame()
-
-        # 保存 schedule 日志到 CSV 文件
+        df_doctor = pd.DataFrame(
+            [
+                {
+                    "doctor_id": d.doctor_id,
+                    "specialty": d.specialty,
+                    "region": d.region,
+                    "language": d.language,
+                    "quality_score": d.quality_score,
+                    "daily_minutes": d.daily_minutes,
+                    "gender": d.gender,
+                    "age": d.age,
+                    "race": d.race,
+                    "service_type": d.service_type,
+                    "services_count": d.services_count,
+                    "experience_years": d.experience_years,
+                    "board_certified": d.board_certified,
+                    "current_panel_size": d.current_panel_size,
+                    "expected_workload": d.expected_workload,
+                    "max_workload": d.max_workload,
+                    "working_weeks_by_year": d.working_weeks_by_year,
+                    "hires_at": d.hires_at,
+                }
+                for d in doctors
+            ]
+        )
+        df_schedule = pd.DataFrame(schedule_log)
         if not df_schedule.empty:
-            schedule_path = self.data_dir / "schedule_log.csv"
-            df_schedule.to_csv(schedule_path, index=False)
-            print(f"Schedule log saved to: {schedule_path}")
-            print(f"Total schedule records: {len(df_schedule)}")
+            df_schedule.to_csv(self.data_dir / "schedule_log.csv", index=False)
 
         metrics = self._compute_metrics(df)
         return df, metrics, df_doctor, df_schedule
@@ -194,10 +183,7 @@ class Simulation:
         months = (current.year - start.year) * 12 + (current.month - start.month)
         return months // 3
 
-
-    def _to_dataframe(
-        self, appointments: List[Appointment], patients: List[Patient], arrivals: List[Arrival]
-    ) -> pd.DataFrame:
+    def _to_dataframe(self, appointments: List[Appointment], patients: List[Patient], arrivals: List[Arrival]) -> pd.DataFrame:
         patient_lookup = {p.patient_id: p for p in patients}
         arrival_lookup = {a.arrival_id: a for a in arrivals}
         records = []
@@ -230,8 +216,12 @@ class Simulation:
 
     def _compute_metrics(self, df: pd.DataFrame) -> Dict[str, float]:
         metrics: Dict[str, float] = {}
-        metrics["fill_rate"] = df["allocated"].mean()
-        metrics["avg_wait_if_scheduled"] = df[df["allocated"]]["wait_days"].mean()
-        metrics["no_show_rate"] = df["no_show"].dropna().mean()
-        metrics["general_match_rate"] = (df["specialty"] == "general").mean()
+        metrics["fill_rate"] = df["allocated"].mean() if not df.empty else 0.0
+        metrics["avg_wait_if_scheduled"] = (
+            df[df["allocated"]]["wait_days"].mean() if not df[df["allocated"]].empty else 0.0
+        )
+        no_show_series = df["no_show"].dropna() if "no_show" in df.columns else pd.Series(dtype=float)
+        metrics["no_show_rate"] = no_show_series.mean() if not no_show_series.empty else 0.0
+        metrics["general_match_rate"] = (df["specialty"] == "general").mean() if "specialty" in df.columns else 0.0
         return metrics
+

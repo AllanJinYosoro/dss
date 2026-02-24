@@ -88,3 +88,9 @@
   ```
   或继续使用项目内的 CLI：`uv run dss --regen-data`（沿用现有 pipeline）。
 
+
+## New Doctor Field: working_weeks_by_year
+- `doctors.csv` now includes `working_weeks_by_year`.
+- Format: JSON object mapping year to 26 ISO week numbers.
+- Example: `{"2023": [1,3,5,...], "2024": [2,4,6,...]}`
+- Generated at doctor creation and used directly in allocation/scheduling.
