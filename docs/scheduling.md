@@ -26,9 +26,3 @@
 
 ## 输出
 `Appointment`：patient_id, arrival_id, doctor_id, specialty, scheduled_date, wait_days, allocated flag, reason, no_show (后续模拟抽样)。
-
-## Working-Week Aware Scheduling
-- Scheduler only considers dates that satisfy both:
-  - weekday (Mon-Fri)
-  - week number belongs to `doctor.working_weeks_by_year[year]`
-- Before day-by-day search, scheduler checks annual remaining minutes under the doctor work calendar.

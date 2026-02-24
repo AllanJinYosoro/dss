@@ -47,5 +47,4 @@ class SimulationConfig:
     max_wait_days: int = 35
     preference_noise: float = 0.15
     baseline_no_show: float = 0.08
-    doctor_work_weeks_per_year: int = 26
     arrival_activation_ramp_days: int = 90

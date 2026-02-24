@@ -7,7 +7,6 @@ so the rest of the system can run on prebuilt or externally supplied datasets.
 
 from __future__ import annotations
 
-import json
 import os
 from datetime import date, timedelta
 from math import sin, pi
@@ -118,8 +117,6 @@ def _create_doctor(doctor_id, specialty, rng, cfg):
     experience = randint(1, 40)
     quality_adjustment = min(0.1, experience * 0.002)
     
-    working_weeks_by_year = _sample_working_weeks_by_year(cfg, rng)
-
     return Doctor(
         doctor_id=doctor_id,
         specialty=specialty,
@@ -136,16 +133,8 @@ def _create_doctor(doctor_id, specialty, rng, cfg):
         board_certified=random() > 0.1,
         current_panel_size=0,
         expected_workload=0.0,
-        max_workload = cfg.doctor_work_weeks_per_year * 5 * cfg.doctor_daily_minutes,
-        working_weeks_by_year=working_weeks_by_year,
+        max_workload = 1560.0
     )
-
-
-def _sample_working_weeks_by_year(cfg, rng):
-    years = range(cfg.start_date.year, cfg.start_date.year + cfg.years)
-    weeks = list(range(1, 53))
-    count = max(1, min(52, cfg.doctor_work_weeks_per_year))
-    return {int(y): sorted(rng.sample(weeks, count)) for y in years}
 
 def generate_doctors(cfg):
     doctors = []
@@ -356,8 +345,7 @@ def doctors_to_df(doctors):
             "hires_at": d.hires_at,
             "current_panel_size": d.current_panel_size,
             "expected_workload": d.expected_workload,
-            "max_workload":d.max_workload,
-            "working_weeks_by_year": json.dumps(d.working_weeks_by_year, sort_keys=True),
+            "max_workload":d.max_workload
         }
         records.append(record)
     
@@ -446,9 +434,6 @@ def _doctor_from_row(row):
     if pd.notna(row["hires_at"]) and str(row["hires_at"]).strip() != "":
         hires_at = pd.to_datetime(row["hires_at"]).date()
     
-    parsed_weeks = json.loads(row["working_weeks_by_year"])
-    working_weeks_by_year = {int(k): [int(w) for w in v] for k, v in parsed_weeks.items()}
-
     return Doctor(
         doctor_id=int(row["doctor_id"]),
         specialty=str(row["specialty"]),
@@ -466,8 +451,7 @@ def _doctor_from_row(row):
         hires_at=hires_at,
         current_panel_size=int(row.get("current_panel_size", 0)),
         expected_workload=float(row.get("expected_workload", 0.0)),
-        max_workload = float(row.get("max_workload",1560.0)),
-        working_weeks_by_year=working_weeks_by_year,
+        max_workload = float(row.get("max_workload",1560.0))
     )
 
 def _arrival_from_row(row):

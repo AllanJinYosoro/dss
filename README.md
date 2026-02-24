@@ -83,4 +83,3 @@ Default data directory: `data/`
 - `docs/scheduling.md`
 - `docs/staffing.md`
 - `docs/observability.md`
-
