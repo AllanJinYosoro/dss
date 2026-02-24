@@ -41,3 +41,12 @@
 - 用真实缺席率替换当前基于风险的简单混合模型。
 - 增加日历层面的医生不在岗/假期，以测试鲁棒性。
 - 将季度校准改为贝叶斯更新，降低噪声。
+
+## Reporting Layer
+A reporting layer is executed after each simulation run:
+- Computes standardized run metrics (`overall_fill_rate`, `average_waiting_time`, `physician_workload_std`, `rejection_rate`, `staffing_hires`).
+- Generates four operational plots and saves them under `artifacts/<run_id>/`.
+- Persists a structured text log (`run_metrics.log`) for downstream auditing and experiment tracking.
+
+Data flow extension:
+`simulation -> appointments/doctor outputs -> reporting metrics -> png artifacts + log`.

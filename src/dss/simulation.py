@@ -36,7 +36,7 @@ class Simulation:
         self.scheduler = Scheduler(cfg)
         self.staffing = StaffingManager(cfg)
 
-    def run(self) -> Tuple[pd.DataFrame, Dict[str, float]]:
+    def run(self) -> Tuple[pd.DataFrame, Dict[str, float], pd.DataFrame]:
         data_exists = all(
             (self.data_dir / f).exists() for f in ["patients.csv", "doctors.csv", "arrivals.csv"]
         )
@@ -59,10 +59,10 @@ class Simulation:
         calendar_start = arrivals[0].arrival_date if arrivals else self.cfg.start_date
 
 
+        patient_lookup = {p.patient_id: p for p in patients}
+        doctor_lookup = {d.doctor_id: d for d in doctors}
+
         for arrival in arrivals:
-            patient_lookup = {p.patient_id: p for p in patients}
-            doctor_lookup = {d.doctor_id: d for d in doctors}
-            
             patient = patient_lookup[arrival.patient_id]
             specialty = self.allocator.pick_specialty(patient)
             if pd.isna(patient.allocated_doctor_id):  #第一次来访 分配PCP
@@ -122,6 +122,7 @@ class Simulation:
                 if self.staffing.maybe_hire(doctors,specialty):
                     doc = self.staffing._new_doctor(specialty,arrival.arrival_date)
                     doctors.append(doc)
+                    doctor_lookup[doc.doctor_id] = doc
 
         df = self._to_dataframe(appointments, patients, arrivals)
 
@@ -141,7 +142,7 @@ class Simulation:
                 "experience_years":doc.experience_years,
                 "board_certified":doc.board_certified,
                 "current_panel_size":doc.current_panel_size,
-                "expeceted_workload": doc.expected_workload, 
+                "expected_workload": doc.expected_workload,
                 "max_workload": doc.max_workload,
                 "hires_at":doc.hires_at
             } 

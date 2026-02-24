@@ -45,3 +45,20 @@
   ```bash
   uv run dss --years 2 --patients-per-year 40000 --data-dir path/to/data --regen-data
   ```
+
+## Run Artifacts
+- Every run now writes observability outputs to `artifacts/<run_id>/` by default.
+- Override destination with `--artifacts-dir`.
+- Core log metrics written to `run_metrics.log`:
+  - `overall_fill_rate`
+  - `average_waiting_time`
+  - `physician_workload_std`
+  - `rejection_rate`
+  - `staffing_hires`
+
+### Example
+```bash
+uv run dss --no-plot --artifacts-dir artifacts
+```
+
+See `docs/observability.md` for metric definitions and plot descriptions.
