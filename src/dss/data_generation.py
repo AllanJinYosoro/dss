@@ -357,7 +357,7 @@ def doctors_to_df(doctors):
             "hires_at": d.hires_at,
             "current_panel_size": d.current_panel_size,
             "expected_workload": d.expected_workload,
-            "max_workload":d.max_workload
+            "max_workload":d.max_workload,
             "work_dates":d.work_dates
         }
         records.append(record)
@@ -464,7 +464,7 @@ def _doctor_from_row(row):
         hires_at=hires_at,
         current_panel_size=int(row.get("current_panel_size", 0)),
         expected_workload=float(row.get("expected_workload", 0.0)),
-        max_workload = float(row.get("max_workload",1560.0))
+        max_workload = float(row.get("max_workload",1560.0)),
         work_dates = row["work_dates"]
     )
 

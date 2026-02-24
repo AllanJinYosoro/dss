@@ -45,6 +45,7 @@ class Doctor:
     current_panel_size: int
     expected_workload: float
     max_workload: float
+    work_dates:List
     hires_at: Optional[date] = None
     
     schedule: Dict[date, int] = field(default_factory=dict) 
