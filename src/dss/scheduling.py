@@ -38,7 +38,7 @@ class Scheduler:
         """
         overbook = self._overbook_factor(state)
         day = start
-        while day <= latest:
+        while day <= latest and (day in doctor.work_dates):
             # Check if it's a weekday (Monday=0 to Friday=4)
             # Doctors only work Monday-Friday (5 days per week)
             if day.weekday() < 5:  # 0-4 are Monday-Friday
@@ -55,7 +55,8 @@ class Scheduler:
     def schedule(
         self, arrival: Arrival, doctor_choices: Sequence[Doctor], state: QuarterState
     ) -> Appointment:
-        # 首先检查primarydoctor是否可行，可行则直接安排，
+            print()
+            # 首先检查primarydoctor是否可行，可行则直接安排，
             doctor = doctor_choices[0] if doctor_choices else None
             slot = self._first_available_day(
                 doctor,
@@ -65,6 +66,7 @@ class Scheduler:
                 state,
             )
             if slot:
+                print("arrival: ", arrival.arrival_id,"assign PCP")
                 doctor.book(slot, arrival.service_minutes)
                 wait = (slot - arrival.arrival_date).days
                 return Appointment(
@@ -92,7 +94,7 @@ class Scheduler:
                     if slot and (not earliest_slot or slot < earliest_slot[1]):
                         earliest_slot = (doctor, slot)
                 if earliest_slot:
-                    # print("find earliest")
+                    print("arrival: ", arrival.arrival_id,"find the earliest available slot among all candidates")
                     doctor, slot = earliest_slot
                     doctor.book(slot, arrival.service_minutes)
                     wait = (slot - arrival.arrival_date).days
@@ -108,6 +110,7 @@ class Scheduler:
                         allocated=True,
                     )
                 else:
+                    print("arrival: ", arrival.arrival_id, "find no available slot among all candidates")
                     return Appointment(
                         patient_id=arrival.patient_id,
                         arrival_id=arrival.arrival_id,

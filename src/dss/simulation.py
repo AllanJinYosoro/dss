@@ -66,8 +66,6 @@ class Simulation:
         doctor_lookup = {d.doctor_id: d for d in doctors}
 
         for arrival in arrivals:
-            # 假设固定服务时间
-            arrival.service_minutes = 30
             patient = patient_lookup[arrival.patient_id]
             specialty = self.allocator.pick_specialty(patient)
             if pd.isna(patient.allocated_doctor_id):  #第一次来访 分配PCP

@@ -8,7 +8,7 @@ so the rest of the system can run on prebuilt or externally supplied datasets.
 from __future__ import annotations
 
 import os
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 from math import sin, pi
 from pathlib import Path
 from random import Random, uniform, choice, choices, randint, random
@@ -465,7 +465,7 @@ def _doctor_from_row(row):
         current_panel_size=int(row.get("current_panel_size", 0)),
         expected_workload=float(row.get("expected_workload", 0.0)),
         max_workload = float(row.get("max_workload",1560.0)),
-        work_dates = row["work_dates"]
+        work_dates = [datetime.strptime(date_str, '%Y-%m-%d').date() for date_str in eval(row["work_dates"])]
     )
 
 def _arrival_from_row(row):
