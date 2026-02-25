@@ -59,21 +59,20 @@ class Scheduler:
         """
         overbook = self._overbook_factor(state)
         day = start
-        while day <= latest and (day in normalize_to_date(doctor.work_dates)):
-            # Calculate daily capacity (6 hours = 360 minutes)
-            daily_capacity = doctor.daily_minutes * (1 + overbook)
-            current_minutes = doctor.schedule.get(day, 0)
-
-            # Check if there's enough capacity for this appointment
-            if current_minutes + need_minutes <= daily_capacity:
-                return day
+        while day <= latest:
+            if day in normalize_to_date(doctor.work_dates):
+                # Calculate daily capacity (6 hours = 360 minutes)
+                daily_capacity = doctor.daily_minutes * (1 + overbook)
+                current_minutes = doctor.schedule.get(day, 0)
+                # Check if there's enough capacity for this appointment
+                if current_minutes + need_minutes <= daily_capacity:
+                    return day
             day += timedelta(days=1)
         return None
 
     def schedule(
         self, arrival: Arrival, doctor_choices: Sequence[Doctor], state: QuarterState
     ) -> Appointment:
-            print()
             # 首先检查primarydoctor是否可行，可行则直接安排，
             doctor = doctor_choices[0] if doctor_choices else None
             slot = self._first_available_day(
@@ -84,7 +83,7 @@ class Scheduler:
                 state,
             )
             if slot:
-                print("arrival: ", arrival.arrival_id,"assign PCP")
+                # print("arrival: ", arrival.arrival_id,"assign PCP")
                 doctor.book(slot, arrival.service_minutes)
                 wait = (slot - arrival.arrival_date).days
                 return Appointment(
