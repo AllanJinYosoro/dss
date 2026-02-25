@@ -4,11 +4,32 @@ Scheduling algorithm: locate earliest feasible slot and account for no-show driv
 
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date, timedelta,datetime
 from typing import Optional, Sequence
 
 from .config import SimulationConfig
 from .models import Appointment, Arrival, Doctor, QuarterState
+
+def normalize_to_date(a):
+    """
+    将列表中的元素统一转换为 datetime.date 类型
+    支持: "2023-03-01" 字符串 或 datetime.date(2023,3,1) 对象
+    """
+    result = []
+    for item in a:
+        if isinstance(item, date) and not isinstance(item, datetime):
+            # 已经是 date 类型
+            result.append(item)
+        elif isinstance(item, datetime):
+            # 如果是 datetime，取 date 部分
+            result.append(item.date())
+        elif isinstance(item, str):
+            # 字符串格式，解析为 date
+            dt = datetime.strptime(item, '%Y-%m-%d')
+            result.append(dt.date())
+        else:
+            raise TypeError(f"不支持的类型: {type(item)}")
+    return result
 
 
 class Scheduler:
@@ -38,17 +59,14 @@ class Scheduler:
         """
         overbook = self._overbook_factor(state)
         day = start
-        while day <= latest and (day in doctor.work_dates):
-            # Check if it's a weekday (Monday=0 to Friday=4)
-            # Doctors only work Monday-Friday (5 days per week)
-            if day.weekday() < 5:  # 0-4 are Monday-Friday
-                # Calculate daily capacity (6 hours = 360 minutes)
-                daily_capacity = doctor.daily_minutes * (1 + overbook)
-                current_minutes = doctor.schedule.get(day, 0)
+        while day <= latest and (day in normalize_to_date(doctor.work_dates)):
+            # Calculate daily capacity (6 hours = 360 minutes)
+            daily_capacity = doctor.daily_minutes * (1 + overbook)
+            current_minutes = doctor.schedule.get(day, 0)
 
-                # Check if there's enough capacity for this appointment
-                if current_minutes + need_minutes <= daily_capacity:
-                    return day
+            # Check if there's enough capacity for this appointment
+            if current_minutes + need_minutes <= daily_capacity:
+                return day
             day += timedelta(days=1)
         return None
 

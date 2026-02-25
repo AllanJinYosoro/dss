@@ -466,6 +466,7 @@ def _doctor_from_row(row):
         expected_workload=float(row.get("expected_workload", 0.0)),
         max_workload = float(row.get("max_workload",1560.0)),
         work_dates = [datetime.strptime(date_str, '%Y-%m-%d').date() for date_str in eval(row["work_dates"])]
+        # work_dates = row["work_dates"]
     )
 
 def _arrival_from_row(row):
